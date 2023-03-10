@@ -1,0 +1,16 @@
+.section-title{
+    font-size:2.5rem;
+}
+.pagination-container{
+    width:150px;
+}
+.arrow-container{
+    width:24px;
+    cursor:pointer;
+}
+.arrow{
+    width:100%;
+}
+.right{
+    transform:rotateY(180deg);
+}

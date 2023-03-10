@@ -1,0 +1,32 @@
+[
+   {
+    "name": "Tyler, the Creator",
+    "occupation": "Designer",
+    "review": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, assumenda tempora obis ipsa temporibus. Reprehenderit!",
+    "image": "https://images.genius.com/d2a3ce3b4c89571274a7257d3a2cb5dd.1000x1000x1.jpg"
+   },
+   {
+    "name": "Bad Bunny",
+    "occupation": "Artist",
+    "review": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis ipsa temporibus voluptatum. Magnam ipsum suscipit id quidem.",
+    "image": "https://th.bing.com/th/id/R.ade28410db268820272118034c2c2463?rik=yQewxstBPJ3iDw&pid=ImgRaw&r=0"
+   },
+   {
+    "name": "Frank Ocean",
+    "occupation": "Singer",
+    "review": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, assumenda tempora. Voluptatem consectetur eveniet elit.",
+    "image": "https://th.bing.com/th/id/OIP.M-yt0unryvjypRbsT9sRAgHaHa?pid=ImgDet&rs=1"
+   }, 
+   {
+    "name": "Mariah the Scientist",
+    "occupation": "Singer",
+    "review": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, assumenda tempora. Magnam ipsum suscipit id quidem.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Mariah_The_Scientist.jpg"
+   },
+   {
+    "name": "Jack Harlow",
+    "occupation": "Rapper",
+    "review": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam ipsum suscipit id quidem. Ipsum dolor sit amet obis ipsa temporibus.",
+    "image": "https://s3-us-west-1.amazonaws.com/wasserman-media-library/music_artists/jack-harlow-20210622.jpg"
+   }     
+]

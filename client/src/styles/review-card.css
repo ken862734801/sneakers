@@ -1,0 +1,29 @@
+.review-card{
+    max-width:350px;
+    margin: 10px;
+    padding:24px;
+    border:1px solid #DDDDDD;
+    border-radius:8px;
+    background-color:white;
+}
+.review-card-header{
+    display:flex;
+    align-items: center;
+    margin-bottom:15px;
+}
+.review-card-image-container{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+}
+.review-card-image{
+    width:48px;
+    height:48px;
+    border-radius:inherit;
+}
+.review-card-information-container{
+    margin-left:8px;
+}
+.review-card-occupation{
+    font-size:0.90rem;
+}
