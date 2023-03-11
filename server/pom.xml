@@ -12,7 +12,7 @@
 	<artifactId>sneakers</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sneakers</name>
-	<description>Application for e-commerce site that stores data in and retrieves it from MongoDB.</description>
+	<description>Java application to store data in MongoDB and retrieve data through RESTful endpoints.</description>
 	<properties>
 		<java.version>19</java.version>
 	</properties>
@@ -20,6 +20,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>

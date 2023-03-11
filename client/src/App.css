@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
-
+:root{
+  --orange: #FD5545;
+  --yellow: #FBB239;
+  /* --gray: #F3F3F3; */
+  --gray: #FAFAFA;
+}
 *{
   margin:0;
   padding:0;
