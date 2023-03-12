@@ -1,13 +1,7 @@
 import "../../styles/review-card.css";
 
-interface Review {
-    name: string;
-    occupation: string;
-    review: string;
-    image: string;   
-}
 
-export default function ReviewCard (props: Review){
+export default function ReviewCard (props: any){
     return(
         <div className="review-card">
             <div className="review-card-header">
