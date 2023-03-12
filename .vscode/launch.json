@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "SneakersApplication",
+            "request": "launch",
+            "mainClass": "com.example.sneakers.SneakersApplication",
+            "projectName": "sneakers", 
+            "env": {
+                "MONGODB_URI": "mongodb+srv://ken862734801:mWpuDRehxjH0Ms3K@cluster0.hbovlsj.mongodb.net/sneakers-api"
+            }
+        }
+    ]
+}

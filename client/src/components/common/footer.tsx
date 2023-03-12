@@ -1,30 +1,58 @@
 import "../../styles/footer.css";
-import facebook from "../../images/facebook.png";
-import instagram from "../../images/instagram.png";
-import tiktok from "../../images/tiktok.png";
-import twitter from "../../images/twitter.png";
+import Facebook from "../../images/facebook.png";
+import Instagram from "../../images/instagram.png";
+import TikTok from "../../images/tiktok.png";
+import Twitter from "../../images/twitter.png";
 
 export default function Footer (){
     return (
         <section className="footer-section">
             <div className="footer-container">
                 <div className="footer-left-container">
+                    <a>Sneakers</a>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis sequi fuga excepturi consequatur. 
+                       Aperiam at totam exercitationem vel illum nesciunt, architecto sunt dolorem voluptatem.</p>
                     <div className="footer-button-container">
                         <button className="social-media-button">
-                            <img src={instagram}></img>
+                            <img src={Instagram}></img>
                         </button>
                         <button className="social-media-button">
-                            <img src={twitter}></img>
+                            <img src={Twitter}></img>
                         </button>
                         <button className="social-media-button">
-                            <img src={facebook}></img>
+                            <img src={Facebook}></img>
                         </button>
                         <button className="social-media-button">
-                            <img src={tiktok}></img>
+                            <img src={TikTok}></img>
                         </button>
                     </div>
                 </div>
-                <div className="footer-right-container"></div>
+                <div className="footer-right-container">
+                    <ul>
+                        <li>Quick Links</li>
+                        <li>Home</li>
+                        <li>Men</li>
+                        <li>Women</li>
+                        <li>Kids</li>
+                        <li>Sale</li>
+                    </ul>
+                    <ul>
+                        <li>Find Products</li>
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li>Return Policy</li>
+                        <li>Privacy Policy</li>
+                        <li>Payment Policy</li>
+                    </ul>
+                    <ul>
+                        <li>Get Help</li>
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li>Return Policy</li>
+                        <li>Privacy Policy</li>
+                        <li>Payment Policy</li>
+                    </ul>
+                </div>
             </div>
             <footer></footer>
         </section>

@@ -1,4 +1,14 @@
+import React, { useState, useEffect } from "react";
+
 export default function Men (){
+    // const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:8080/api/products")
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }, []);
+
     return (
         <div className="men">
             <div className="page-header">

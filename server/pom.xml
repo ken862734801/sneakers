@@ -36,6 +36,11 @@
 			<artifactId>spring-security-crypto</artifactId>
 			<version>5.6.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>3.12.11</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -43,6 +48,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<systemPropertyVariables>
+						<MONGODB_URI>${MONGODB_URI}</MONGODB_URI>
+					</systemPropertyVariables>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
