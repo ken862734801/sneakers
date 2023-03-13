@@ -1,15 +1,22 @@
 import { Link } from "react-router-dom";
 import { ShoppingCart, Search, AccountCircleOutlined } from "@material-ui/icons";
+import { Page } from "./types";
 
-export default function Header (){
+interface HeaderProps {
+    page: Page;
+    onPageChange: (newPage: Page) => void;
+}
+
+export default function Header ({page, onPageChange}: HeaderProps){
+   
     return (
         <header>
             <Link to={"/"}>Sneakers</Link>
             <nav>
-                <Link to={"/men"}>Men</Link>
-                <Link to={"/women"}>Women</Link>
-                <Link to={"/kids"}>Kids</Link>
-                <Link to={"/sale"}>Sale</Link>
+                <Link to={"/men"} onClick={() => onPageChange("men")}>Men</Link>
+                <Link to={"/women"} onClick={() => onPageChange("women")}>Women</Link>
+                <Link to={"/kids"} onClick={() => onPageChange("kids")}>Kids</Link>
+                <Link to={"/sale"} onClick={() => onPageChange("sale")}>Sale</Link>
             </nav>
             <div>
                 <Link to={"/cart"}><ShoppingCart/></Link>
