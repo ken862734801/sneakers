@@ -3,10 +3,10 @@ import { Page } from "../common/types";
 
 export default function ProductPage(props: any){
     useEffect(() => {
-        fetch("http://localhost:8080/api/products")
+        fetch(`http://localhost:8080/api/products/${props.path}`)
             .then(response => response.json())
             .then(data => console.log(data));
-    }, []);
+    }, [props.path]);
     
     return(
         <div className="product-page">

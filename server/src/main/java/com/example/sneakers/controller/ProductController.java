@@ -32,4 +32,16 @@ public class ProductController {
                 .map(product -> ResponseEntity.ok().body(product))
                 .orElse(ResponseEntity.notFound().build());
         }
+    @GetMapping("/men")
+    public List<Product> getAllMenProducts(){
+        return productService.getAllMenProducts();
+    }
+    @GetMapping("/women")
+    public List<Product> getAllWomenProducts(){
+        return productService.getAllWomenProducts();
+    }
+    @GetMapping("/kids")
+    public List<Product> getAllKidsProducts(){
+        return productService.getAllKidsProducts();
+    }
 }

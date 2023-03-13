@@ -25,10 +25,13 @@ public class SneakersApplication {
 	
 			mongoOperations.dropCollection(Product.class);
 
-            Product test = new Product("First Product");
-			Product test2 = new Product("Second Product");
+            Product test = new Product("Nike Air Force 1 '07", 110.0, "men");
+			Product test2 = new Product("Nike Dunk Low SE", 110.0, "women");
+			Product test3 = new Product("Nike Blazer Low '77", 70.00, "kids");
+
             productService.addProduct(test);
 			productService.addProduct(test2);
+			productService.addProduct(test3);
 
         };
     }

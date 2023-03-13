@@ -21,6 +21,15 @@ public class ProductService {
     public List<Product> getAllProducts(){
         return productRepository.findAll();
     }
+    public List<Product> getAllMenProducts(){
+        return productRepository.findByCategory("men");
+    }
+    public List<Product> getAllWomenProducts(){
+        return productRepository.findByCategory("women");
+    }
+    public List<Product> getAllKidsProducts(){
+        return productRepository.findByCategory("kids");
+    }
     public Optional<Product> getProductById(String id){
         return productRepository.findById(id);
     }
