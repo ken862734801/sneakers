@@ -4,7 +4,7 @@ import Header from './components/common/header';
 import Footer from './components/common/footer';
 import Home from './components/home/home';
 import Cart from './components/cart/cart';
-import ProductPage from './components/product/product-page';
+import ProductGrid from './components/product/product-grid';
 
 import './App.css';
 
@@ -57,25 +57,25 @@ function App() {
             <Routes>
                 <Route path= "/" element = {<Home/>}/>
                 <Route path = "/men" element = {
-                <ProductPage 
+                <ProductGrid 
                   name={pageInformation.men.name} 
                   description={pageInformation.men.description}
                   path={pageInformation.men.path}/>}
                 />
                 <Route path = "/women" element = {
-                <ProductPage
+                <ProductGrid
                   name={pageInformation.women.name}
                   description={pageInformation.women.description}
                   path={pageInformation.women.path}/>}
                 />
                 <Route path = "/kids" element={
-                <ProductPage
+                <ProductGrid
                   name={pageInformation.kids.name}
                   description={pageInformation.women.description}
                   path={pageInformation.kids.path}/>}
                 />
                 <Route path = "/sale" element={
-                <ProductPage
+                <ProductGrid
                   name={pageInformation.sale.name}
                   description={pageInformation.sale.description}
                   path={pageInformation.sale.path}/>}

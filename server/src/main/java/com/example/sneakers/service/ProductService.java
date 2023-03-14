@@ -30,6 +30,9 @@ public class ProductService {
     public List<Product> getAllKidsProducts(){
         return productRepository.findByCategory("kids");
     }
+    public List<Product> getAllSaleProducts(){
+        return productRepository.findByCategory("sale");
+    }
     public Optional<Product> getProductById(String id){
         return productRepository.findById(id);
     }

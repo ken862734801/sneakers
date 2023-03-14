@@ -44,4 +44,8 @@ public class ProductController {
     public List<Product> getAllKidsProducts(){
         return productService.getAllKidsProducts();
     }
+    @GetMapping("/sale")
+    public List<Product> getAllSaleProducts(){
+        return productService.getAllSaleProducts();
+    }
 }

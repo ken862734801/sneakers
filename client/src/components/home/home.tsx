@@ -58,6 +58,31 @@ export default function Home() {
 
   return (
     <div className="home">
+      <section className="hero-section">
+        <div className="hero-section-body">
+          <div className="hero-section-body-container">
+            <div className="hero-section-left-container">
+              <h1>Summer</h1>
+              <h1>Collections</h1>
+              <h2>2023</h2>
+              <p>Find your shoes from our various collections.
+                Here shoes are endless and customers are happy.
+              </p>
+              <div className="button-container">
+                <button>Shop Now <span></span></button>
+              </div>
+            </div>
+            <div className="hero-section-right-container"></div>
+          </div>
+        </div>
+      </section>
+      <div className="hero-section-footer">
+        <div className="hero-section-footer-container">
+          <li><span>20k +</span> Orders Completed</li>
+          <li><span>40k +</span> Regular Visitors</li>
+          <li><span>15k +</span> Happy Customers</li>
+        </div>
+      </div>
       <section className="offer-section">
         <h2 className="section-title">What We Offer</h2>
         <div className="offer-container">
@@ -76,6 +101,17 @@ export default function Home() {
           <div className="arrow-container">
             <img className="arrow right" src={arrow} onClick={handleNextReviewClick} />
           </div>
+        </div>
+      </section>
+      <section>
+        <div className="newsletter-container">
+          <h2>Join Our Newsletter</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Odit voluptatum ratione dolore molestiae? 
+            Repellat iste sequi quis ullam, natus nisi,dolorem eum odio doloribus labore!</p>
+            <div>
+              <input></input>
+              <button></button>
+            </div>
         </div>
       </section>
     </div>
