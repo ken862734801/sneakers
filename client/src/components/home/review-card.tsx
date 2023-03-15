@@ -1,7 +1,7 @@
 import "../../styles/review-card.css";
+import { Review } from "../common/types";
 
-
-export default function ReviewCard (props: any){
+export default function ReviewCard (props: Review){
     return(
         <div className="review-card">
             <div className="review-card-header">
@@ -14,7 +14,7 @@ export default function ReviewCard (props: any){
                 </div>
             </div>
             <div className="review-card-body">
-                <div className="review-card-text">{props.review}</div>
+                <p className="review-card-text">{props.review}</p>
             </div>
         </div>
     )

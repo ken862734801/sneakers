@@ -26,7 +26,7 @@ export default function ProductGrid(props: any){
                     return <ProductCard 
                                 key={index} 
                                 name={product.name} 
-                                image={product.image} 
+                                images={product.images} 
                                 price={product.price}
                             />
                 })}

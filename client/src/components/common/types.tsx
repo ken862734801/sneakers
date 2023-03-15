@@ -1,8 +1,15 @@
 export type Page = "men" | "women" | "kids" | "sale";
 
-export type Product = {
+export interface Product {
     name: string,
     price: number,
-    image: string
+    images: string[]
     // category: string
+}
+
+export interface Review {
+    name: string;
+    occupation: string;
+    review: string;
+    image: string;
 }

@@ -7,13 +7,6 @@ import arrow from "../../images/arrow.png";
 
 import "../../styles/home.css";
 
-interface Review {
-  name: string;
-  occupation: string;
-  review: string;
-  image: string;
-}
-
 export default function Home() {
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
@@ -51,7 +44,7 @@ export default function Home() {
   function renderReviewCards() {
     const startIndex = currentReviewPage * numReviewsDisplayed;
     const endIndex = startIndex + numReviewsDisplayed;
-    return Reviews.slice(startIndex, endIndex).map((review: Review, index: number) => (
+    return Reviews.slice(startIndex, endIndex).map((review , index: number) => (
       <ReviewCard key={index} name={review.name} occupation={review.occupation} review={review.review} image={review.image} />
     ));
   }
@@ -91,8 +84,9 @@ export default function Home() {
           })}
         </div>
       </section>
+      <section className="new-arrivals-section"></section>
       <section className="review-section">
-        <h2 className="section-title">What Our Clients Say About Us</h2>
+        <h2 className="section-title">What Our <span className="orange">Clients Say</span> About Us</h2>
         <div className="review-container">{renderReviewCards()}</div>
         <div className="pagination-container">
           <div className="arrow-container">

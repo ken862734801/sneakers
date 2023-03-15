@@ -4,9 +4,13 @@
   --yellow: #FBB239;
   /* --gray: #F3F3F3; */
   --gray: #FAFAFA;
+  --font: 'Syne', sans-serif;
 }
 *{
   margin:0;
   padding:0;
   box-sizing: border-box;
+}
+.orange{
+  color:var(--orange);
 }

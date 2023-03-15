@@ -1,6 +1,5 @@
 .review-card{
     max-width:350px;
-    height:200px;
     margin: 10px;
     padding:24px;
     border:1px solid #DDDDDD;
@@ -10,7 +9,7 @@
 .review-card-header{
     display:flex;
     align-items: center;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 .review-card-image-container{
     width:48px;
@@ -25,6 +24,19 @@
 .review-card-information-container{
     margin-left:8px;
 }
-/* .review-card-occupation{
-    font-size:0.95rem;
-} */
+.review-card-name{
+    color:var(--yellow);
+    font-weight: bold;
+    font-size:0.80rem;
+}
+.review-card-occupation{
+    font-weight:bold;
+    font-size:0.65rem;
+    color:gray;
+}
+.review-card-text{
+    line-height:2;
+    color:gray;
+    font-weight:bold;
+    font-size:0.80rem;
+}

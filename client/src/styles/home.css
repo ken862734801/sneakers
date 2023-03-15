@@ -1,6 +1,12 @@
+.home{
+    font-family: var(--font);
+}
 .section-title{
+    max-width:600px;
     font-size:2.5rem;
     text-align: center;
+    margin: 0 auto;
+    padding-bottom:40px;
 }
 .offer-section{
     background-color: var(--gray);
@@ -12,19 +18,27 @@
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
 }
+.review-section{
+    padding:40px 0px;
+    background-size:40px 40px;
+    background-image: repeating-linear-gradient(45deg, #f7f7f7 0, #f7f7f7 4px, #fcfcfc 0, #fcfcfc 50%);
+}
 .review-container{
     width: 80%;
     margin: 0 auto;
     display:flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 .pagination-container{
     width:150px;
+    margin:20px auto;
+    display:flex;
+    justify-content: space-around;
+    padding-top:20px;
 }
 .arrow-container{
-    width:24px;
+    width:30px;
     cursor:pointer;
 }
 .arrow{
