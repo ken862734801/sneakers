@@ -11,7 +11,7 @@ export default function Footer (){
                 <div className="footer-left-container">
                     <a>Sneakers</a>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis sequi fuga excepturi consequatur. 
-                       Aperiam at totam exercitationem vel illum nesciunt, architecto sunt dolorem voluptatem.</p>
+                       Aperiam at totam exercitationem vel illum nesciunt, architecto sunt dolorem voluptatem. Lorem ipsum dolor sit amet.</p>
                     <div className="footer-button-container">
                         <button className="social-media-button">
                             <img src={Instagram}></img>
