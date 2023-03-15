@@ -1,17 +1,16 @@
 .offer-card{
-    max-width:200px;
-    margin:10px;
-    padding:10px;
+    min-width:210px;
+    margin:10px auto;
+    padding:8px 0px;
     display:flex;
     flex-direction:column;
     justify-content: center;
     align-items: center;
     background-color: white;
     border-radius:8px;
-    border:1px solid red;
 }
 .offer-card-header{
-    padding:16px 0px;
+    padding:10px 0px;
 }
 .offer-card-image-container{
     width:100px;
@@ -30,13 +29,20 @@
 .offer-card-name{
     text-align: center;
     font-size:1rem;
+    font-weight:bold;
+    color:var(--yellow);
+    margin-bottom:12px;
 }
 .offer-card-text{
     text-align: center;
-    font-size:1rem;
+    font-weight:bold;
+    font-size:0.80rem;
+    width:180px;
+    line-height:2;
+    color:gray;
 }
 .offer-card-logo-container{
-    width:40px;
+    width:35px;
     margin: 0 auto;
 }
 .offer-card-logo-container > img {

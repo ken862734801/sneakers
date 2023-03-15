@@ -5,22 +5,22 @@ import Support from "../images/support.png";
 const Offers = [
     {
         "name": "Support",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga rem non.",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga.",
         "image": Support
     },
     {
-        "name": "Support",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga rem non.",
-        "image": Cashback  
-    },
-    {
-        "name": "Support",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga rem non.",
+        "name": "Cash Back",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga.",
         "image": Discount  
     },
     {
-        "name": "Support",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga rem non.",
+        "name": "Monthly Offer",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga.",
+        "image": Discount  
+    },
+    {
+        "name": "Membership",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga.",
         "image": Support  
     }
 ];

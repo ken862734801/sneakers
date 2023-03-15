@@ -79,7 +79,7 @@ export default function Home() {
         </div>
       </div>
       <section className="offer-section">
-        <h2 className="section-title">What We Offer</h2>
+        <h2 className="section-title">What We <span className="orange">Offer</span></h2>
         <div className="offer-container">
           {Offers.map((data, index) => {
             return <OfferCard key={index} name={data.name} image={data.image} text={data.text} />;
@@ -107,7 +107,7 @@ export default function Home() {
         </div>
       </div>
       </section>
-      <section>
+      {/* <section>
         <div className="newsletter-container">
           <h2>Join Our Newsletter</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Odit voluptatum ratione dolore molestiae? 
@@ -117,7 +117,7 @@ export default function Home() {
               <button></button>
             </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
