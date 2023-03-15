@@ -7,6 +7,7 @@
     text-align: center;
     margin: 0 auto;
     padding-bottom:40px;
+    font-weight:bold;
 }
 .offer-section{
     background-color: var(--gray);
@@ -47,6 +48,10 @@
 .right{
     transform:rotateY(180deg);
 }
+.arrow.disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
 @media screen and (max-width:768px){
     .offer-container{
         grid-template-rows: 1fr 1fr;

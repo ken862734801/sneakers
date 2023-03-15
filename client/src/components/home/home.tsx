@@ -40,13 +40,15 @@ export default function Home() {
       setCurrentReviewPage(currentReviewPage + 1);
     }
   }
+  
+  const isNextArrowDisabled = currentReviewPage === Math.ceil(Reviews.length / numReviewsDisplayed) - 1;
 
   function renderReviewCards() {
     const startIndex = currentReviewPage * numReviewsDisplayed;
     const endIndex = startIndex + numReviewsDisplayed;
-    return Reviews.slice(startIndex, endIndex).map((review , index: number) => (
+    return Reviews.slice(startIndex, endIndex).map((review, index) => (
       <ReviewCard key={index} name={review.name} occupation={review.occupation} review={review.review} image={review.image} />
-    ));
+    ))
   }
 
   return (
@@ -89,13 +91,21 @@ export default function Home() {
         <h2 className="section-title">What Our <span className="orange">Clients Say</span> About Us</h2>
         <div className="review-container">{renderReviewCards()}</div>
         <div className="pagination-container">
-          <div className="arrow-container">
-            <img className="arrow left" src={arrow} onClick={handlePrevReviewClick} />
-          </div>
-          <div className="arrow-container">
-            <img className="arrow right" src={arrow} onClick={handleNextReviewClick} />
-          </div>
+        <div className="arrow-container">
+          <img
+            className={`arrow left ${currentReviewPage === 0 ? 'disabled' : ''}`}
+            src={arrow}
+            onClick={handlePrevReviewClick}
+          />
         </div>
+        <div className="arrow-container">
+          <img
+            className={`arrow right ${isNextArrowDisabled ? 'disabled' : ''}`}
+            src={arrow}
+            onClick={handleNextReviewClick}
+          />
+        </div>
+      </div>
       </section>
       <section>
         <div className="newsletter-container">
