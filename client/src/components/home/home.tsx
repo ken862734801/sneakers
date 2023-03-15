@@ -73,9 +73,9 @@ export default function Home() {
       </section>
       <div className="hero-section-footer">
         <div className="hero-section-footer-container">
-          <li><span>20k +</span> Orders Completed</li>
-          <li><span>40k +</span> Regular Visitors</li>
-          <li><span>15k +</span> Happy Customers</li>
+          <li><span className="orange">20k +</span> Orders Completed</li>
+          <li><span className="orange">20k +</span> Regular Visitors</li>
+          <li><span className="orange">20k +</span> Happy Customers</li>
         </div>
       </div>
       <section className="offer-section">
