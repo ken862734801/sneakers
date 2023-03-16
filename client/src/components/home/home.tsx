@@ -3,7 +3,8 @@ import Offers from "../../data/offers";
 import OfferCard from "./offer-card";
 import Reviews from "../../data/reviews.json";
 import ReviewCard from "./review-card";
-import arrow from "../../images/arrow.png";
+import Arrow from "../../images/arrow.png";
+import CircleArrow from "../../images/circle-arrow.png";
 
 import "../../styles/home.css";
 
@@ -94,30 +95,32 @@ export default function Home() {
         <div className="arrow-container">
           <img
             className={`arrow left ${currentReviewPage === 0 ? 'disabled' : ''}`}
-            src={arrow}
+            src={Arrow}
             onClick={handlePrevReviewClick}
           />
         </div>
         <div className="arrow-container">
           <img
             className={`arrow right ${isNextArrowDisabled ? 'disabled' : ''}`}
-            src={arrow}
+            src={Arrow}
             onClick={handleNextReviewClick}
           />
         </div>
       </div>
       </section>
-      {/* <section>
+      <section className="newsletter-section">
         <div className="newsletter-container">
-          <h2>Join Our Newsletter</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Odit voluptatum ratione dolore molestiae? 
-            Repellat iste sequi quis ullam, natus nisi,dolorem eum odio doloribus labore!</p>
-            <div>
-              <input></input>
-              <button></button>
+          <h2>Join Our <span className="orange">News Letters</span></h2>
+          <p className="newsletter-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatum ratione dolore molestiae? 
+            Repellat iste sequi quis ullam natus nisi dolorem.</p>
+            <div className="newsletter-input-container">
+              <input placeholder="Enter your email here..."></input>
+              <button className="submit-button">
+                <img src={CircleArrow}></img>
+              </button>
             </div>
         </div>
-      </section> */}
+      </section>
     </div>
   );
 }
