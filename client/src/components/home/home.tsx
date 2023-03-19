@@ -5,13 +5,26 @@ import Reviews from "../../data/reviews.json";
 import ReviewCard from "./review-card";
 import Arrow from "../../images/arrow.png";
 import CircleArrow from "../../images/circle-arrow.png";
+import Widget from "./widget";
+import { Product } from "../common/types";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "../../styles/home.css";
 
 export default function Home() {
+  const [widgetData, setWidgetData] = useState<Product[]>([]);
+
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
 
+  useEffect(() => {
+    fetch("http://localhost:8080/api/products")
+      .then(response => response.json())
+      .then(data => setWidgetData(data));
+  }, []);
+
+  console.log(widgetData);
+  
   useEffect(() => {
     function updateNumReviewsDisplayed() {
       if (window.innerWidth <= 768) {
@@ -67,6 +80,17 @@ export default function Home() {
               <div className="button-container">
                 <button>Shop Now <span></span></button>
               </div>
+              <div className="widget-container">
+                <Widget/>
+                {/* <Splide aria-label="My Favorite Images">
+                  <SplideSlide>
+                    <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-mens-shoes-5QFp5Z.png" alt="Image 1"/>
+                  </SplideSlide>
+                  <SplideSlide>
+                    <img src={Arrow} alt="Image 2"/>
+                  </SplideSlide>
+                </Splide> */}
+              </div>
             </div>
             <div className="hero-section-right-container"></div>
           </div>
@@ -74,9 +98,9 @@ export default function Home() {
       </section>
       <div className="hero-section-footer">
         <div className="hero-section-footer-container">
-          <li><span className="orange">20k +</span> Orders Completed</li>
-          <li><span className="orange">20k +</span> Regular Visitors</li>
-          <li><span className="orange">20k +</span> Happy Customers</li>
+          <li><span className="number orange">20k +</span> Orders Completed</li>
+          <li><span className="number orange">20k +</span> Consistent Visitors</li>
+          <li><span className="number orange">20k +</span> Happy Customers</li>
         </div>
       </div>
       <section className="offer-section">

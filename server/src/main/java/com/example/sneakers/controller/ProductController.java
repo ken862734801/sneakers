@@ -31,7 +31,7 @@ public class ProductController {
         return productService.getProductById(id)
                 .map(product -> ResponseEntity.ok().body(product))
                 .orElse(ResponseEntity.notFound().build());
-        }
+    }
     @GetMapping("/men")
     public List<Product> getAllMenProducts(){
         return productService.getAllMenProducts();
@@ -47,5 +47,13 @@ public class ProductController {
     @GetMapping("/sale")
     public List<Product> getAllSaleProducts(){
         return productService.getAllSaleProducts();
+    }
+    @GetMapping("/featured")
+    public List<Product> getAllFeaturedProducts(){
+        return productService.getAllFeaturedProducts();
+    }
+    @GetMapping("/new")
+    public List<Product> getAllNewProducts(){
+        return productService.getAllNewProducts();
     }
 }

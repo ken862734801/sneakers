@@ -22,19 +22,28 @@ public class ProductService {
         return productRepository.findAll();
     }
     public List<Product> getAllMenProducts(){
-        return productRepository.findByCategory("men");
+        return productRepository.findByCategory("Men");
     }
     public List<Product> getAllWomenProducts(){
-        return productRepository.findByCategory("women");
+        return productRepository.findByCategory("Women");
     }
     public List<Product> getAllKidsProducts(){
-        return productRepository.findByCategory("kids");
+        return productRepository.findByCategory("Kids");
     }
     public List<Product> getAllSaleProducts(){
-        return productRepository.findByCategory("sale");
+        return productRepository.findByOnSale(true);
+    }
+    public List<Product> getAllFeaturedProducts(){
+        return productRepository.findByIsFeatured(true);
+    }
+    public List<Product> getAllNewProducts(){
+        return productRepository.findByIsNew(true);
     }
     public Optional<Product> getProductById(String id){
         return productRepository.findById(id);
+    }
+    public Optional<Product> getProductBySku(String sku){
+        return productRepository.findBySku(sku);
     }
     public Product addProduct (Product product){
         return productRepository.save(product);
