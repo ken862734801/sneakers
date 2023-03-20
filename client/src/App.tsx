@@ -5,6 +5,7 @@ import Footer from './components/common/footer';
 import Home from './components/home/home';
 import Cart from './components/cart/cart';
 import ProductGrid from './components/product/product-grid';
+import ProductPage from './components/product/product-page';
 
 import './App.css';
 
@@ -81,6 +82,7 @@ function App() {
                   path={pageInformation.sale.path}/>}
                 />
                 <Route path= "/cart" element = {<Cart/>}/>
+                <Route path="/us/:name/:id" element={<ProductPage/>}></Route>
             </Routes>
           </main>
       <Footer/>

@@ -13,7 +13,7 @@ export default function Widget (){
                 <div className="wiget-product-rating"></div>
                 <div className="widget-product-row">
                     <p className="widget-product-price">$140</p>
-                    <Favorite/>
+                    <Favorite fontSize="small"/>
                 </div>
                 <p className="widget-product-style">Men's</p>
                 <p className="widget-add-btn">Add to Cart</p>

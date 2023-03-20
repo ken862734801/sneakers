@@ -17,11 +17,11 @@ export default function Home() {
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
 
-  useEffect(() => {
-    fetch("http://localhost:8080/api/products")
-      .then(response => response.json())
-      .then(data => setFeaturedProducts(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:8080/api/products")
+  //     .then(response => response.json())
+  //     .then(data => setFeaturedProducts(data));
+  // }, []);
 
   console.log(featuredProducts);
 

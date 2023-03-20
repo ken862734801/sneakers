@@ -32,11 +32,12 @@
 .social-media-button{
     width:26px;
     height:26px;
-    padding:6px;
+    padding:5px;
     background-color: var(--orange);
     border:none;
     border-radius:4px;
     margin-right:20px;
+    cursor: pointer;
 }
 .social-media-button > img{
     width:100%;

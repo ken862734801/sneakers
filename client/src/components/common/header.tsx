@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ShoppingCart, Search, AccountCircleOutlined } from "@material-ui/icons";
 import { Page } from "./types";
-// import "../../styles/header.css";
+import "../../styles/header.css";
 
 interface HeaderProps {
     page: Page;

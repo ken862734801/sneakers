@@ -1,6 +1,7 @@
 export type Page = "men" | "women" | "kids" | "sale";
 
 export interface Product {
+    sku: string,
     name: string,
     price: number,
     images: string[]
