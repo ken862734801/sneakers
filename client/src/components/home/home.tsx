@@ -12,7 +12,6 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "../../styles/home.css";
 
 export default function Home() {
-  const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
 
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
@@ -23,7 +22,6 @@ export default function Home() {
   //     .then(data => setFeaturedProducts(data));
   // }, []);
 
-  console.log(featuredProducts);
 
   useEffect(() => {
     function updateNumReviewsDisplayed() {
