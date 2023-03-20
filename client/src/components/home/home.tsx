@@ -12,7 +12,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "../../styles/home.css";
 
 export default function Home() {
-  const [widgetData, setWidgetData] = useState<Product[]>([]);
+  const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
 
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
@@ -20,11 +20,11 @@ export default function Home() {
   useEffect(() => {
     fetch("http://localhost:8080/api/products")
       .then(response => response.json())
-      .then(data => setWidgetData(data));
+      .then(data => setFeaturedProducts(data));
   }, []);
 
-  console.log(widgetData);
-  
+  console.log(featuredProducts);
+
   useEffect(() => {
     function updateNumReviewsDisplayed() {
       if (window.innerWidth <= 768) {

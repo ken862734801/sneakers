@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Product } from "../common/types";
-import ProductCard from "../common/product-card";
+import ProductCard from "./product-card";
 
 export default function ProductGrid(props: any){
 
@@ -16,7 +16,7 @@ export default function ProductGrid(props: any){
 
 
     return(
-        <div className="product-page">
+        <div className="product-search-page">
             <div className="page-header">
                 <h2 className="page-title">{props.name}</h2>
                 <p>{props.description}</p>
