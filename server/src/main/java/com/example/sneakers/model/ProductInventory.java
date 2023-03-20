@@ -8,15 +8,17 @@ public class ProductInventory {
     private String reference;
     private String sku;
     private String name;
+    private String style;
     private String size;
     private int quantity;
 
     public ProductInventory(){};
 
-    public ProductInventory(Product product, String sku, String name, String size, int quantity, String reference){
-        this.reference = product.getId();
+    public ProductInventory(Product product, String sku, String name, String style, String size, int quantity, String reference){
+        this.reference = product.getSku();
         this.sku = sku;
         this.name = product.getName();
+        this.style = product.getStyle();
         this.size = size;
         this.quantity = quantity;
     };
@@ -40,6 +42,12 @@ public class ProductInventory {
     }
     public void setName(String name){
         this.name = name;
+    }
+    public String getStyle(){
+        return style;
+    }
+    public void setStyle(String style){
+        this.style = style;
     }
     public String getSize(){
         return size;

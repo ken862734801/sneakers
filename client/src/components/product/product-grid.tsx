@@ -8,7 +8,7 @@ export default function ProductGrid(props: any){
     const [data, setData] = useState<Product[]>([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/products/${props.path}`)
+        fetch(`http://localhost:8080/api/product/${props.path}`)
             .then(response => response.json())
             .then(data => setData(data));
                 console.log(data);

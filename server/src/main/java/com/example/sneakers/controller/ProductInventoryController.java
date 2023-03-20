@@ -31,11 +31,19 @@ public class ProductInventoryController {
     }
     @GetMapping("/{reference}")
     public ResponseEntity<List<ProductInventory>> getProductInventoryByReference(@PathVariable String reference){
-        List<ProductInventory> productInventoryList = productInventoryService.getAllProductInventoryByReference(reference);
-        if(productInventoryList.isEmpty()){
+        List<ProductInventory> referenceInventoryList = productInventoryService.getAllProductInventoryByReference(reference);
+        if(referenceInventoryList.isEmpty()){
             return ResponseEntity.notFound().build();
         } else {
-            return ResponseEntity.ok().body(productInventoryList);
+            return ResponseEntity.ok().body(referenceInventoryList);
         }
+    }
+    @GetMapping("/sku/{sku}")
+    public ResponseEntity<ProductInventory> getProductInventoryBySku(@PathVariable String sku){
+            return productInventoryService.getProductInventoryBySku(sku)
+            .stream()
+            .map(product -> ResponseEntity.ok().body(product))
+            .findFirst()
+            .orElse(ResponseEntity.notFound().build());
     }
 }
