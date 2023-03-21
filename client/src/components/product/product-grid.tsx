@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Product } from "../common/types";
 import ProductCard from "./product-card";
 import "../../styles/product-grid.css";
+import { ProductCardProps } from "../common/types";
 
 export default function ProductGrid(props: any){
 
-    const [data, setData] = useState<Product[]>([]);
+    const [data, setData] = useState<ProductCardProps[]>([]);
 
     useEffect(() => {
         fetch(`http://localhost:8080/api/product/${props.path}`)
@@ -16,20 +16,23 @@ export default function ProductGrid(props: any){
 
     return(
         <div className="product-grid-page">
-            <div className="page-header">
-                <h2 className="page-title">{props.name}</h2>
-                <p>{props.description}</p>
-            </div>
-            <div className="product-grid">
-                {data.map((product, index) => {
-                    return <ProductCard 
-                                key={index}
-                                sku={product.sku} 
-                                name={product.name} 
-                                images={product.images} 
-                                price={product.price}
-                            />
-                })}
+            <div className="product-grid-page-container">
+                <div className="page-header">
+                    <h2 className="page-title">{props.name}</h2>
+                    <p className="page-description">{props.description}</p>
+                </div>
+                <div className="product-grid">
+                    {data.map((product, index) => {
+                        return <ProductCard 
+                                    key={index}
+                                    sku={product.sku} 
+                                    name={product.name} 
+                                    images={product.images} 
+                                    price={product.price}
+                                    style = {product.style}
+                                />
+                    })}
+                </div>
             </div>
         </div>
     )

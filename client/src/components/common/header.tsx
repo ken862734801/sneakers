@@ -22,7 +22,7 @@ export default function Header ({page, onPageChange}: HeaderProps){
                     <Link to={"/kids"} onClick={() => onPageChange("kids")}>Kids</Link>
                     <Link to={"/sale"} onClick={() => onPageChange("sale")}>Sale</Link>
                 </nav>
-                <div className="user-functions-container">
+                <div className="header-icon-container">
                     <div>
                         <div>
                             <Search/>

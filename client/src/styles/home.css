@@ -41,7 +41,7 @@
     padding:40px 0px;
 }
 .offer-container{
-    width:80%;
+    width:85%;
     margin: 0 auto;
     display:grid;
     grid-template-columns: repeat(4, 1fr);

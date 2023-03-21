@@ -6,7 +6,6 @@ import ReviewCard from "./review-card";
 import Arrow from "../../images/arrow.png";
 import CircleArrow from "../../images/circle-arrow.png";
 import Widget from "./widget";
-import { Product } from "../common/types";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "../../styles/home.css";

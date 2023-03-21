@@ -1,11 +1,22 @@
 export type Page = "men" | "women" | "kids" | "sale";
 
-export interface Product {
+export interface ProductDetailProps {
     sku: string,
     name: string,
     price: number,
-    images: string[]
+    images: string[],
+    description: string,
+    style: string
     // category: string
+}
+
+export interface ProductCardProps {
+    sku: string,
+    name: string,
+    price: number,
+    images: string[],
+    style : string,
+
 }
 
 export interface Review {

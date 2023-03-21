@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { Product } from "../common/types";
+import { ProductDetailProps } from "../common/types";
 
 export default function ProductPage(){
     let {id} = useParams();
-    const [data, setData] = useState<Product | undefined>();
+    const [data, setData] = useState<ProductDetailProps | undefined>();
 
     useEffect(() => {
         async function fetchData() {
@@ -15,13 +15,20 @@ export default function ProductPage(){
         fetchData();
       }, []);
 
-      console.log(data?.name);
+      console.log(data);
 
     return (
         <div className="product-detail-page">
-            <p>This is the {id} product page!</p>
-            <p>{data?.name}</p>
-            <img src={data?.images[0]}/>
+            <div className="product-detail-container">
+                <div className="product-detail-left-container">
+                    <p>{data?.name}</p>
+                    <p>{data?.style}</p>
+                    <p>${data?.price}</p>
+                    <img src={data?.images[0]}/>
+                    <p>{data?.description}</p>
+                </div>
+                <div className="product-detail-right-container"></div>
+            </div>
         </div>
     )
 };
