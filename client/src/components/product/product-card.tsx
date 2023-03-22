@@ -11,7 +11,7 @@ export default function ProductCard(props: ProductCardProps){
             <div className="product-card" id={props.sku}>
                 <Link to={`/us/${productName.toLowerCase()}/${(props.sku).toLowerCase()}`}>
                     <div className="product-card-header">
-                        <FavoriteBorderOutlined fontSize="small"/>
+                        <FavoriteBorderOutlined className="favorite-button" fontSize="small"/>
                     </div>
                     <div className="product-card-image-container">
                         <img src={props.images[0]}/>

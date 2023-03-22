@@ -14,6 +14,11 @@ export default function Home() {
 
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
+  const [currentCategory, setCurrentCategory] = useState("Men");
+
+  function handleCategoryChange(category: string){
+    setCurrentCategory(category);
+  }
 
   // useEffect(() => {
   //   fetch("http://localhost:8080/api/products")
@@ -65,19 +70,19 @@ export default function Home() {
   return (
     <div className="home">
       <section className="hero-section">
-        <div className="hero-section-body">
-          <div className="hero-section-body-container">
+        <div className="hero-section-container">
             <div className="hero-section-left-container">
               <h1>Summer</h1>
               <h1>Collections</h1>
-              <h2>2023</h2>
+              <h1 className="orange">2022</h1>
               <p>Find your shoes from our various collections.
                 Here shoes are endless and customers are happy.
               </p>
               <div className="button-container">
-                <button>Shop Now <span></span></button>
+                <button>Shop Now <span><img src={CircleArrow}></img></span></button>
               </div>
               <div className="widget-container">
+                <Widget/>
                 <Widget/>
                 {/* <Splide aria-label="My Favorite Images">
                   <SplideSlide>
@@ -90,7 +95,6 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-section-right-container"></div>
-          </div>
         </div>
       </section>
       <div className="hero-section-footer">
@@ -108,7 +112,23 @@ export default function Home() {
           })}
         </div>
       </section>
-      <section className="new-arrivals-section"></section>
+      <section className="collection-section">
+        <h2 className="section-title">Our <span className="orange"> Collection</span></h2>
+        <nav className="collection-nav">
+          <li className={currentCategory === "Men" ? "active" : ""} onClick={()=> handleCategoryChange("Men")}>Men</li>
+          <li className={currentCategory === "Women" ? "active" : ""} onClick={()=> handleCategoryChange("Women")}>Women</li>
+          <li className={currentCategory === "Kids" ? "active" : ""} onClick={()=> handleCategoryChange("Kids")}>Kids</li>
+        </nav>
+        <div className="pagination-container">
+          <div className="arrow-container">
+            <img className="arrow left" src={Arrow}></img>
+          </div>
+          <div className="arrow-container">
+            <img className="arrow right" src={Arrow}></img>
+          </div>
+        </div>
+        <div className="collection-container"></div>
+      </section>
       <section className="review-section">
         <h2 className="section-title">What Our <span className="orange">Clients Say</span> About Us</h2>
         <div className="review-container">{renderReviewCards()}</div>
