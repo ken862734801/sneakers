@@ -2,7 +2,7 @@
     font-family: var(--font);
 }
 .hero-section{
-    padding:40px 0px;
+    padding:40px 0px 20px 0px;
 }
 .hero-section-container{
     width:75%;
@@ -69,8 +69,24 @@ button > span > img{
 .widget-container{
     margin:60px 0px 20px 0px;
     width:75%;
-    display:flex;
+    min-width:400px;
+    display:flex !important;
     justify-content: space-between;
+}
+.widget-splide{
+    width:100%;
+}
+.widget-splide-slide{
+    display:flex;
+}
+.splide__pagination{
+    top:120px;
+}
+.splide__pagination__page{
+    background: rgb(24, 24, 24) !important;
+}
+.splide__pagination__page.is-active{
+    background: black !important;
 }
 .section-title{
     max-width:600px;

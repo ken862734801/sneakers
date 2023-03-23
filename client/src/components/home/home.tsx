@@ -12,6 +12,19 @@ import "../../styles/home.css";
 
 export default function Home() {
 
+  const breakpoints = {
+    768: {
+      perPage: 1,
+    }
+  };
+
+  const options = {
+    gap: 15,
+    perPage: 2,
+    breakpoints,
+  };
+  
+
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
   const [currentCategory, setCurrentCategory] = useState("Men");
@@ -82,16 +95,26 @@ export default function Home() {
                 <button>Shop Now <span><img src={CircleArrow}></img></span></button>
               </div>
               <div className="widget-container">
-                <Widget/>
-                <Widget/>
-                {/* <Splide aria-label="My Favorite Images">
+                <Splide options={options} aria-label="featured products" className="widget-splide">
                   <SplideSlide>
-                    <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-mens-shoes-5QFp5Z.png" alt="Image 1"/>
+                    <Widget/>
                   </SplideSlide>
                   <SplideSlide>
-                    <img src={Arrow} alt="Image 2"/>
+                    <Widget/>
                   </SplideSlide>
-                </Splide> */}
+                  <SplideSlide>
+                    <Widget/>
+                  </SplideSlide>
+                  <SplideSlide>
+                    <Widget/>
+                  </SplideSlide>
+                  <SplideSlide>
+                    <Widget/>
+                  </SplideSlide>
+                  <SplideSlide>
+                    <Widget/>
+                  </SplideSlide>
+                </Splide>
               </div>
             </div>
             <div className="hero-section-right-container"></div>
