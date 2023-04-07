@@ -74,7 +74,7 @@
     {
         "sku": "DV7762-100",
         "name": "Nike Air Force 1",
-        "price": 90.0,
+        "price": 100.0,
         "description": "The Nike AF1s are a legend. First on the basketball courts in the '80s. Now wearable everywhere from school to the playground. They've been an icon for decades\u2014meaning a long time! Smooth durable leather lasts for many days of play. Fun colors bring an extra push to get you moving outside.",
         "images": [
           "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/172ed7f4-7b37-4424-8019-85592086d89c/air-force-1-big-kids-shoes-km6NJj.png",
@@ -88,48 +88,6 @@
         ],
         "category": "Kids",
         "style": "Big Kids' Shoes",
-        "isNew": false,
-        "onSale": false,
-        "isFeatured": false
-    },
-    {
-        "sku": "DV1336-800",
-        "name": "Air Jordan 1 Mid SE",
-        "price": 120.0,
-        "description": "Every time the AJ1 gets a remake, you get the classic sneaker in new colors and textures for a fresh look with a familiar feel. Premium materials and accents give modern expression to an all-time favorite.",
-        "category": "Kids",
-        "style": "Big Kids' Shoes",
-        "images": [
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/e3b49680-41ba-40a5-9f50-a634eb4db5c3/air-jordan-1-mid-se-big-kids-shoes-D80Qnn.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/23279477-146d-4cdc-8ec6-d769682c3808/air-jordan-1-mid-se-big-kids-shoes-D80Qnn.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/035d2333-fb55-411f-b387-3cd0ca1fbb69/air-jordan-1-mid-se-big-kids-shoes-D80Qnn.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/e7da4d2b-1d14-4e1f-88cd-d3074c12407d/air-jordan-1-mid-se-big-kids-shoes-D80Qnn.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/1e164398-2863-413d-8bbc-4513bfde4909/air-jordan-1-mid-se-big-kids-shoes-D80Qnn.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/60473bcb-484e-439b-a243-9dcd8f266981/air-jordan-1-mid-se-big-kids-shoes-D80Qnn.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/c12a0932-5139-42c4-866c-e2c5fee5467a/air-jordan-1-mid-se-big-kids-shoes-D80Qnn.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2d232f2a-61b4-4c45-9c16-49dd80c02956/air-jordan-1-mid-se-big-kids-shoes-D80Qnn.png"
-        ],
-        "isNew": false,
-        "onSale": false,
-        "isFeatured": false
-    },
-    {
-        "sku": "FD1035-100",
-        "name": "Nike Air Force 1 LV8",
-        "price": 100.0,
-        "description": "Start your day the Nike way with a fresh take on a legendary classic. Fruit-inspired colors give this Nike Air Force 1 LV8 mouth-watering style. Smooth leather keeps them durable while Nike Air unit in the heels cushion your every step, letting you play all day.",
-        "category": "Kids",
-        "style": "Big Kids' Shoes",
-        "images": [
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/466466e6-77dc-4dd6-81ba-db602e3e48a8/air-force-1-lv8-big-kids-shoes-1lGPrs.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/464a1935-c1ff-424e-9100-82f755dfcd95/air-force-1-lv8-big-kids-shoes-1lGPrs.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/12c36ab9-6250-4d21-a0a0-197699958ed9/air-force-1-lv8-big-kids-shoes-1lGPrs.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/16589d54-db8a-470e-ba26-324e4cb20c81/air-force-1-lv8-big-kids-shoes-1lGPrs.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f4b9550e-8876-4e29-99e5-bfd6f784c58d/air-force-1-lv8-big-kids-shoes-1lGPrs.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/e6b38eaa-e480-4455-9f66-fb7b7344da7b/air-force-1-lv8-big-kids-shoes-1lGPrs.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/64eb284e-87e3-4c42-aff1-2b1c1addb3e6/air-force-1-lv8-big-kids-shoes-1lGPrs.png",
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/bd240c37-8eac-4cea-8170-ad090233964c/air-force-1-lv8-big-kids-shoes-1lGPrs.png"
-        ],
         "isNew": false,
         "onSale": false,
         "isFeatured": false

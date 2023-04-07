@@ -30,12 +30,12 @@ const pageInformation: Record<Page, PageInformation> = {
   },
   kids: {
     name: "Kid's Sneakers",
-    description:"Ipsa consequatur recusandae non rem eos exercitationem soluta optio aspernatur minus animi deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description:"Ipsa consequatur recusandae non rem eos exercitationem soluta optio aspernatur minus animi deleniti. Lorem ipsum dolor sit amet consectetur.",
     path: "kids"
   },
   sale: {
     name:"Sneakers on Sale",
-    description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa consequatur recusandae non rem eos exercitationem soluta optio aspernatur minus animi deleniti.",
+    description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa consequatur recusandae non rem eos exercitationem soluta optio aspernatur.",
     path: "sale"
   },
 }
