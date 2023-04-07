@@ -1,3 +1,6 @@
+/* *{
+    border:1px solid red;
+} */
 .home{
     font-family: var(--font);
 }
@@ -7,9 +10,13 @@
 .hero-section-container{
     width:75%;
     margin: 0 auto;
+    display:flex;
+    flex-wrap: wrap;
+    /* border: 1px solid red; */
 }
 .hero-section-left-container, .hero-section-right-container{
     width:50%;
+    min-width:400px;
 }
 .hero-section-left-container > h1{
     font-size:4.25rem;
@@ -39,10 +46,38 @@ button > span > img{
     width:17px;
     margin-bottom:-3px;
 }
+.widget-container{
+    width:75%;
+    min-width:380px;
+    display:flex;
+    margin: 60px 0px 20px 0px;
+    /* border:1px solid red; */
+}
+.widget-splide{
+    width:100%;
+}
+.widget-splide-slide{
+    display:flex;
+}
+.splide__pagination{
+    top:135px;
+}
+.splide__pagination__page{
+    background: rgb(24, 24, 24) !important;
+}
+.splide__pagination__page.is-active{
+    background: black !important;
+}
+.splide__arrow--prev{
+    display:none !important;
+}
+.splide__arrow--next{
+    display:none !important;
+}
 .hero-section-footer{
     width:80%;
     margin: 0 auto;
-    padding:40px 0px;
+    padding: 60px 0px 80px 0px;
 }
 .hero-section-footer-container{
     width:100%;
@@ -66,28 +101,7 @@ button > span > img{
     border-left:2px solid var(--yellow);
     padding:0px 120px;
 }
-.widget-container{
-    margin:60px 0px 20px 0px;
-    width:75%;
-    min-width:400px;
-    display:flex !important;
-    justify-content: space-between;
-}
-.widget-splide{
-    width:100%;
-}
-.widget-splide-slide{
-    display:flex;
-}
-.splide__pagination{
-    top:120px;
-}
-.splide__pagination__page{
-    background: rgb(24, 24, 24) !important;
-}
-.splide__pagination__page.is-active{
-    background: black !important;
-}
+
 .section-title{
     max-width:600px;
     font-size:2.5rem;
@@ -111,7 +125,7 @@ button > span > img{
     padding:40px 0px;
 }
 .collection-nav{
-    width:45%;
+    width:40%;
     min-width:350px;
     margin: 0 auto;
     display:flex;
@@ -223,6 +237,15 @@ button > span > img{
     width:60%;
 }
 @media screen and (max-width:768px){
+    .hero-section-left-container > h1{
+        font-size:3.5rem;
+    }
+    /* .widget-container{
+        margin-left:-20px;
+    } */
+    .hero-section-footer{
+        padding:40px 0px;
+    }
     .hero-section-footer-container > li:nth-of-type(2){
         padding:0px;
         border:none;

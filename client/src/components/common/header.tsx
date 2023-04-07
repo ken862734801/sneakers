@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { ShoppingCart, Search, AccountCircleOutlined } from "@material-ui/icons";
+import { ShoppingCart, Search, AccountCircleOutlined, Menu } from "@material-ui/icons";
 import { Page } from "./types";
 import "../../styles/header.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 interface HeaderProps {
     page: Page;
@@ -33,6 +35,10 @@ export default function Header ({page, onPageChange}: HeaderProps){
                     </div>
                     <div>
                         <Link to={"/cart"}><AccountCircleOutlined/></Link>
+                    </div>
+                    <div>
+                        <Menu/>
+                        {/* <FontAwesomeIcon icon={faBars}/> */}
                     </div>
                 </div>
             </div>

@@ -14,9 +14,9 @@
     margin-left:20px;
 } */
 .widget-left-container{
-    width:95px;
-    height:95px;
-    margin:6px;
+    width:90px;
+    height:90px;
+    margin:4px 4px 4px 6px;
     overflow: hidden;
     border-radius:4px;
 }
@@ -30,20 +30,21 @@
 }
 .widget-product-name{
     font-weight:bold;
-    font-size:0.80rem;
-    padding-bottom:2px;
+    font-size:0.75rem;
+    padding:4px 0px 2px 0px;
 }
 .widget-product-rating{
-    font-size: 0.65rem;
+    font-size: 0.60rem;
     font-weight:bold;
     font-family: "Roboto", sans-serif;
     color:gray;
     display:flex;
     align-items: center;
     line-height: 1;
+    /* border:1px solid red; */
 }
 .widget-product-rating > p{
-    margin-top:2px;
+    margin-top:1px;
 }
 .widget-star{
     margin-right:4px;
@@ -58,6 +59,7 @@
 .widget-product-price{
     font-weight:bold;
     font-size:1.1rem;
+    margin-top:2px;
 }
 .widget-heart-btn{
     cursor: pointer;
@@ -68,8 +70,8 @@
 }
 .widget-add-btn{
     color:var(--yellow);
-    font-size:0.70rem;
-    margin:2px 0px 4px 0px;
+    font-size:0.65rem;
+    margin-bottom:4px;
 }
 .widget-add-btn:hover{
     cursor: pointer;

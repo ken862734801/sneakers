@@ -4,28 +4,40 @@ import { ProductDetailProps } from "../common/types";
 
 export default function ProductPage(){
     let {id} = useParams();
-    const [data, setData] = useState<ProductDetailProps | undefined>();
+
+    const [productData, setProductData] = useState<ProductDetailProps | undefined>();
+    const [inventoryData, setInventoryData] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
           const response = await fetch(`http://localhost:8080/api/product/${id?.toUpperCase()}`);
           const data = await response.json();
-          setData(data);
+          setProductData(data);
         }
         fetchData();
       }, []);
 
-      console.log(data);
+      console.log(productData);
+
+    //   useEffect(()=> {
+    //     async function fetchInventoryData(){
+    //         const response = await fetch(`http://localhost:8080/api/inventory/${id?.toUpperCase()}`);
+    //         const data = await response.json();
+    //         console.log(data);
+    //     }
+    //     fetchInventoryData();
+    //   }, [])
+
 
     return (
         <div className="product-detail-page">
             <div className="product-detail-container">
                 <div className="product-detail-left-container">
-                    <p>{data?.name}</p>
-                    <p>{data?.style}</p>
-                    <p>${data?.price}</p>
-                    <img src={data?.images[0]}/>
-                    <p>{data?.description}</p>
+                    <p>{productData?.name}</p>
+                    <p>{productData?.style}</p>
+                    <p>${productData?.price}</p>
+                    <img src={productData?.images[0]}/>
+                    <p>{productData?.description}</p>
                 </div>
                 <div className="product-detail-right-container"></div>
             </div>

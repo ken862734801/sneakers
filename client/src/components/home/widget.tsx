@@ -14,11 +14,11 @@ export default function Widget (){
             <div className="widget-right-container">
                 <h6 className="widget-product-name">Air Jordan 1 Low</h6>
                 <div className="widget-product-rating">
-                    <FontAwesomeIcon className="widget-star" icon={faStar} style={{fontSize: "8px"}}/>
+                    <FontAwesomeIcon className="widget-star" icon={faStar} style={{fontSize: "7px"}}/>
                     <p>(4.5)</p>
                 </div>
                 <div className="widget-product-row">
-                        <p className="widget-product-price">$200</p>
+                        <p className="widget-product-price">$120</p>
                         <FontAwesomeIcon className="widget-heart-btn" icon={faHeart} style={{fontSize: "14px", marginTop: "4px"}} />
                 </div>
                 <p className="widget-product-style">Men's</p>

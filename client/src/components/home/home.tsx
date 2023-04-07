@@ -7,19 +7,23 @@ import Arrow from "../../images/arrow.png";
 import CircleArrow from "../../images/circle-arrow.png";
 import Widget from "./widget";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import MainImage from "../../images/main-image.png";
 
 import "../../styles/home.css";
 
 export default function Home() {
 
   const breakpoints = {
-    768: {
+    1028: {
       perPage: 1,
+    }, 
+    768:{
+      perPage: 1
     }
   };
 
   const options = {
-    gap: 15,
+    gap:30,
     perPage: 2,
     breakpoints,
   };
@@ -94,7 +98,7 @@ export default function Home() {
               <div className="button-container">
                 <button>Shop Now <span><img src={CircleArrow}></img></span></button>
               </div>
-              <div className="widget-container">
+              {/* <div className="widget-container">
                 <Splide options={options} aria-label="featured products" className="widget-splide">
                   <SplideSlide>
                     <Widget/>
@@ -115,9 +119,18 @@ export default function Home() {
                     <Widget/>
                   </SplideSlide>
                 </Splide>
+              </div> */}
+            </div>
+            <div className="hero-section-right-container">
+              <div className="main-image-background">
+                {/* <h1>NIKE</h1>
+                <div className="ribbon"></div>
+                <div className="main-image-container">
+                  <img src={MainImage}/>
+                </div>
+                <div className="main-image-text"></div> */}
               </div>
             </div>
-            <div className="hero-section-right-container"></div>
         </div>
       </section>
       <div className="hero-section-footer">
