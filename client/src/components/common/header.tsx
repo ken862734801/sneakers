@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 interface HeaderProps {
+    loggedIn: boolean;
     page: Page;
     onPageChange: (newPage: Page) => void;
 }
@@ -34,7 +35,7 @@ export default function Header ({page, onPageChange}: HeaderProps){
                         <Link to={"/cart"}><ShoppingCart/></Link>
                     </div>
                     <div>
-                        <Link to={"/cart"}><AccountCircleOutlined/></Link>
+                        <Link to={"/login"}><AccountCircleOutlined/></Link>
                     </div>
                     <div>
                         <Menu/>

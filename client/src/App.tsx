@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/common/header';
 import Footer from './components/common/footer';
+import Account from './components/account/account';
+import Login from './components/login/login';
 import Home from './components/home/home';
 import Cart from './components/cart/cart';
 import ProductGrid from './components/product/product-grid';
@@ -41,6 +43,8 @@ const pageInformation: Record<Page, PageInformation> = {
 }
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const [page, setPage] = useState<Page>("men");
   const [pageName, setPageName] = useState(pageInformation[page].name);
   const [pageDescription, setPageDescription] = useState(pageInformation[page].description);
@@ -50,13 +54,15 @@ function App() {
     setPageName(pageInformation[newPage].name);
     setPageDescription(pageInformation[newPage].description);
   }
-
+  console.log(isLoggedIn);
   return (
     <div className="App">
-      <Header page={page} onPageChange={handlePageChange}/>
+      <Header loggedIn={isLoggedIn} page={page} onPageChange={handlePageChange}/>
           <main>
             <Routes>
-                <Route path= "/" element = {<Home/>}/>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/login" element = {isLoggedIn? <Navigate to="/account"/> : <Login/>}/>
+                <Route path="/account" element={isLoggedIn ? <Account /> : <Navigate to="/login" />} />
                 <Route path = "/men" element = {
                 <ProductGrid 
                   name={pageInformation.men.name} 

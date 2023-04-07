@@ -16,7 +16,6 @@ export interface ProductCardProps {
     price: number,
     images: string[],
     style : string,
-
 }
 
 export interface Review {

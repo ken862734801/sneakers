@@ -1,5 +1,5 @@
 .product-card{
-    max-width:325px;
+    max-width:310px;
 }
 .product-card > a{
     width:100%;
@@ -18,7 +18,7 @@
     /* margin: 0 auto; */
     /* border:1px solid red; */
     background-color: rgb(246, 246, 246);
-    padding:10px 10px;
+    padding:20px 20px 10px 20px;
 }
 .product-card-image{
     width:100%;

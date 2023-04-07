@@ -31,7 +31,7 @@ export default function Home() {
 
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
-  const [currentCategory, setCurrentCategory] = useState("Men");
+  const [currentCategory, setCurrentCategory] = useState("Women");
   const [featuredData, setFeaturedData] = useState();
 
   function handleCategoryChange(category: string){
@@ -159,61 +159,61 @@ export default function Home() {
         <div className="collection-container">
           <div className="product-card">
             <div className="product-card-image-container">
-              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4936f14-2fba-4d88-a7d8-445d6582c3e4/air-jordan-1-low-mens-shoes-6jlL02.png"></img>
+              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
             </div>
             <div className="product-card-text-container">
-                <p className="product-name">Air Jordan 1 Low</p>
-                <p className="product-style">Men's Shoe</p>
+                <p className="product-name">Jordan Sophia</p>
+                <p className="product-style">Women's Slide</p>
                 <p className="product-price">$100</p>
             </div>
           </div>
           <div className="product-card">
             <div className="product-card-image-container">
-              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4936f14-2fba-4d88-a7d8-445d6582c3e4/air-jordan-1-low-mens-shoes-6jlL02.png"></img>
+              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
             </div>
             <div className="product-card-text-container">
-                <p className="product-name">Air Jordan 1 Low</p>
-                <p className="product-style">Men's Shoe</p>
+                <p className="product-name">Jordan Sophia</p>
+                <p className="product-style">Women's Slide</p>
                 <p className="product-price">$100</p>
             </div>
           </div>
           <div className="product-card">
             <div className="product-card-image-container">
-              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4936f14-2fba-4d88-a7d8-445d6582c3e4/air-jordan-1-low-mens-shoes-6jlL02.png"></img>
+              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
             </div>
             <div className="product-card-text-container">
-                <p className="product-name">Air Jordan 1 Low</p>
-                <p className="product-style">Men's Shoe</p>
+                <p className="product-name">Jordan Sophia</p>
+                <p className="product-style">Women's Slide</p>
                 <p className="product-price">$100</p>
             </div>
           </div>
           <div className="product-card">
             <div className="product-card-image-container">
-              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4936f14-2fba-4d88-a7d8-445d6582c3e4/air-jordan-1-low-mens-shoes-6jlL02.png"></img>
+              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
             </div>
             <div className="product-card-text-container">
-                <p className="product-name">Air Jordan 1 Low</p>
-                <p className="product-style">Men's Shoe</p>
+                <p className="product-name">Jordan Sophia</p>
+                <p className="product-style">Women's Slide</p>
                 <p className="product-price">$100</p>
             </div>
           </div>
           <div className="product-card">
             <div className="product-card-image-container">
-              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4936f14-2fba-4d88-a7d8-445d6582c3e4/air-jordan-1-low-mens-shoes-6jlL02.png"></img>
+              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
             </div>
             <div className="product-card-text-container">
-                <p className="product-name">Air Jordan 1 Low</p>
-                <p className="product-style">Men's Shoe</p>
+                <p className="product-name">Jordan Sophia</p>
+                <p className="product-style">Women's Slide</p>
                 <p className="product-price">$100</p>
             </div>
           </div>
           <div className="product-card">
             <div className="product-card-image-container">
-              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4936f14-2fba-4d88-a7d8-445d6582c3e4/air-jordan-1-low-mens-shoes-6jlL02.png"></img>
+              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
             </div>
             <div className="product-card-text-container">
-                <p className="product-name">Air Jordan 1 Low</p>
-                <p className="product-style">Men's Shoe</p>
+                <p className="product-name">Jordan Sophia</p>
+                <p className="product-style">Women's Slide</p>
                 <p className="product-price">$100</p>
             </div>
           </div>

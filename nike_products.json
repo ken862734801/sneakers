@@ -1,5 +1,23 @@
 [
   {
+    "sku": "DO8863-800",
+    "name": "Jordan Sophia",
+    "price": 85.0,
+    "description": "Plush comfort is a must for your winter wardrobe\u2014and footwear is no exception. These luxe slides have pillowy, criss-cross straps lined with fabric that feels soft against your skin. Air cushioning and a slight platform give you that 'walking on clouds' feel with every step.",
+    "images": [
+      "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/02a73037-dffd-4922-ab70-564edf35e53f/jordan-sophia-womens-slides-bW5vFq.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/8f60677e-0ee8-430a-82b4-517ae669b24f/jordan-sophia-womens-slides-bW5vFq.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/dc074c17-c050-43f8-b613-715e4a0992d1/jordan-sophia-womens-slides-bW5vFq.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f1242436-7e21-48b5-8236-44300b58b9e3/jordan-sophia-womens-slides-bW5vFq.png"
+    ],
+    "category": "Women",
+    "style": "Women's Slides",
+    "isNew": false,
+    "onSale": false,
+    "isFeatured": false
+  },
+  {
     "sku": "DV7762-100",
     "name": "Nike Air Force 1",
     "price": 90.0,
