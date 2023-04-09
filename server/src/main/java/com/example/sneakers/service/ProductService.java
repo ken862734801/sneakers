@@ -39,6 +39,12 @@ public class ProductService {
     public List<Product> getAllNewProducts(){
         return productRepository.findByIsNew(true);
     }
+    public List<Product> getFeaturedProductsByCategory(String category){
+        return productRepository.findByCategoryAndIsFeatured(category, true);
+    }
+    public List<Product> getNewProductsByCategory(String category){
+        return productRepository.findByCategoryAndIsNew(category, true);
+    }
     public Optional<Product> getProductById(String id){
         return productRepository.findById(id);
     }

@@ -55,10 +55,22 @@ public class ProductController {
     public List<Product> getAllFeaturedProducts(){
         return productService.getAllFeaturedProducts();
     }
+    @GetMapping("/featured/{category}")
+    public List<Product> getAllFeaturedProductsByCategory(@PathVariable String category){
+        return productService.getFeaturedProductsByCategory(category);
+    }
     @GetMapping("/new")
     public List<Product> getAllNewProducts(){
         return productService.getAllNewProducts();
     }
+    @GetMapping("/new/{category}")
+    public List<Product> getAllNewProductsByCategory(@PathVariable String category){
+        return productService.getNewProductsByCategory(category);
+    }
+    // @GetMapping("/new/{category}")
+    // public List<Product> getAllNewProductsByCategory(){
+        
+    // }
     // @GetMapping("/{sku}")
     // public ResponseEntity<Product> getProductBySku(@PathVariable String sku){
     //     return productService.getProductBySku(sku)

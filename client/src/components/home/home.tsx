@@ -13,37 +13,22 @@ import "../../styles/home.css";
 
 export default function Home() {
 
-  const breakpoints = {
-    1028: {
-      perPage: 1,
-    }, 
-    768:{
-      perPage: 1
-    }
-  };
-
-  const options = {
-    gap:30,
-    perPage: 2,
-    breakpoints,
-  };
-  
-
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
-  const [currentCategory, setCurrentCategory] = useState("Women");
-  const [featuredData, setFeaturedData] = useState();
+  const [currentCategory, setCurrentCategory] = useState("women");
+  const [collectionData, setCollectionData] = useState();
 
   function handleCategoryChange(category: string){
     setCurrentCategory(category);
   }
 
-  // useEffect(() => {
-  //   fetch("http://localhost:8080/api/products")
-  //     .then(response => response.json())
-  //     .then(data => setFeaturedProducts(data));
-  // }, []);
-
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/product/${currentCategory}`)
+      .then(response => response.json())
+      .then(data => setCollectionData(data))
+  }, [currentCategory])
+  
+  console.log(collectionData);
 
   useEffect(() => {
     function updateNumReviewsDisplayed() {
@@ -62,6 +47,21 @@ export default function Home() {
       window.removeEventListener("resize", updateNumReviewsDisplayed);
     };
   }, []);
+
+  const breakpoints = {
+    1028: {
+      perPage: 1,
+    }, 
+    768:{
+      perPage: 1
+    }
+  };
+
+  const options = {
+    gap:30,
+    perPage: 2,
+    breakpoints,
+  };
 
   function handlePrevReviewClick() {
     if (currentReviewPage > 0) {
@@ -152,9 +152,9 @@ export default function Home() {
       <section className="collection-section">
         <h2 className="section-title">Our <span className="orange"> Collection</span></h2>
         <nav className="collection-nav">
-          <li className={currentCategory === "Men" ? "active" : ""} onClick={()=> handleCategoryChange("Men")}>Men</li>
-          <li className={currentCategory === "Women" ? "active" : ""} onClick={()=> handleCategoryChange("Women")}>Women</li>
-          <li className={currentCategory === "Kids" ? "active" : ""} onClick={()=> handleCategoryChange("Kids")}>Kids</li>
+          <li className={currentCategory === "men" ? "active" : ""} onClick={()=> handleCategoryChange("men")}>Men</li>
+          <li className={currentCategory === "women" ? "active" : ""} onClick={()=> handleCategoryChange("women")}>Women</li>
+          <li className={currentCategory === "kids" ? "active" : ""} onClick={()=> handleCategoryChange("kids")}>Kids</li>
         </nav>
         <div className="collection-container">
           <div className="product-card">
