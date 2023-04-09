@@ -1,11 +1,33 @@
 [
   {
+    "sku": "CD7782-112",
+    "name": "Nike Court Borough Mid 2",
+    "price": 75.0,
+    "description": "Look like an all star off the court with the Nike Court Borough Mid 2. The classic mid-top design features durable leather for a premium look and feel. Padding around the tongue and ankle provide extra comfort.",
+    "images": [
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/a7f720be-2bef-44fd-af41-e6952a9ad626/court-borough-mid-2-big-kids-shoes-3n7hz5.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/ca0cc26e-205e-46f2-8944-81f3435ab8ed/court-borough-mid-2-big-kids-shoes-3n7hz5.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/0e51643f-8ec3-4cde-8423-310575db3a4e/court-borough-mid-2-big-kids-shoes-3n7hz5.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/036fbe9f-19dd-4bdc-b5d0-4da4a9137a14/court-borough-mid-2-big-kids-shoes-3n7hz5.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/fa01d7d6-66ff-4a2b-917d-70772c3c1e82/court-borough-mid-2-big-kids-shoes-3n7hz5.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/ef2d12f0-6434-4221-a027-4ff4875c3ccf/court-borough-mid-2-big-kids-shoes-3n7hz5.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/79af2957-98c2-437b-8c9f-6ed064555c16/court-borough-mid-2-big-kids-shoes-3n7hz5.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/c16d3785-fe3e-4cdc-90d3-2cc6960e455c/court-borough-mid-2-big-kids-shoes-3n7hz5.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/0f42ccf8-3679-42de-bb37-88caac39eea8/court-borough-mid-2-big-kids-shoes-3n7hz5.png"
+    ],
+    "category": "Kids",
+    "style": "Big Kids' Shoes",
+    "isNew": false,
+    "onSale": false,
+    "isFeatured": false
+  },
+  {
     "sku": "DO8863-800",
     "name": "Jordan Sophia",
     "price": 85.0,
     "description": "Plush comfort is a must for your winter wardrobe\u2014and footwear is no exception. These luxe slides have pillowy, criss-cross straps lined with fabric that feels soft against your skin. Air cushioning and a slight platform give you that 'walking on clouds' feel with every step.",
     "images": [
-      "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/46946e31-f9d6-4fe9-839f-47d196217ccf/jordan-sophia-womens-slides-bW5vFq.png",
       "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/02a73037-dffd-4922-ab70-564edf35e53f/jordan-sophia-womens-slides-bW5vFq.png",
       "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/8f60677e-0ee8-430a-82b4-517ae669b24f/jordan-sophia-womens-slides-bW5vFq.png",
       "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/dc074c17-c050-43f8-b613-715e4a0992d1/jordan-sophia-womens-slides-bW5vFq.png",

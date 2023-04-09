@@ -15,20 +15,29 @@ export default function Home() {
 
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
-  const [currentCategory, setCurrentCategory] = useState("women");
-  const [collectionData, setCollectionData] = useState();
+  const [currentCategory, setCurrentCategory] = useState("Women");
+  const [featuredProductsData, setFeaturedProductsData] = useState();
+  const [newProductsData, setNewProductsData] = useState();
 
   function handleCategoryChange(category: string){
     setCurrentCategory(category);
   }
 
-  useEffect(() => {
-    fetch(`http://localhost:8080/api/product/${currentCategory}`)
+  useEffect(()=> {
+    fetch("http://localhost:8080/api/product/new")
       .then(response => response.json())
-      .then(data => setCollectionData(data))
+      .then(data => setNewProductsData(data))
+  }, [])
+
+  console.log(newProductsData)
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/product/featured/${currentCategory}`)
+      .then(response => response.json())
+      .then(data => setFeaturedProductsData(data))
   }, [currentCategory])
-  
-  console.log(collectionData);
+
+  console.log(featuredProductsData);
 
   useEffect(() => {
     function updateNumReviewsDisplayed() {
@@ -152,9 +161,9 @@ export default function Home() {
       <section className="collection-section">
         <h2 className="section-title">Our <span className="orange"> Collection</span></h2>
         <nav className="collection-nav">
-          <li className={currentCategory === "men" ? "active" : ""} onClick={()=> handleCategoryChange("men")}>Men</li>
-          <li className={currentCategory === "women" ? "active" : ""} onClick={()=> handleCategoryChange("women")}>Women</li>
-          <li className={currentCategory === "kids" ? "active" : ""} onClick={()=> handleCategoryChange("kids")}>Kids</li>
+          <li className={currentCategory === "Men" ? "active" : ""} onClick={()=> handleCategoryChange("Men")}>Men</li>
+          <li className={currentCategory === "Women" ? "active" : ""} onClick={()=> handleCategoryChange("Women")}>Women</li>
+          <li className={currentCategory === "Kids" ? "active" : ""} onClick={()=> handleCategoryChange("Kids")}>Kids</li>
         </nav>
         <div className="collection-container">
           <div className="product-card">
