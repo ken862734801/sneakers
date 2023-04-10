@@ -42,7 +42,7 @@
         "style": "Women's Shoes",
         "isNew": false,
         "onSale": false,
-        "isFeatured": false
+        "isFeatured": true
     },
     {
         "sku": "DC0774-501",
@@ -63,7 +63,7 @@
         "style": "Women's Shoes",
         "isNew": false,
         "onSale": false,
-        "isFeatured": false
+        "isFeatured": true
     },
     {
         "sku": "BQ6472-022",
@@ -84,7 +84,7 @@
         "style": "Women's Shoes",
         "isNew": false,
         "onSale": false,
-        "isFeatured": false
+        "isFeatured": true
     },
     {
         "sku": "BQ6472-701",
@@ -105,7 +105,7 @@
         "style": "Women's Shoes",
         "isNew": false,
         "onSale": false,
-        "isFeatured": false
+        "isFeatured": true
     },
     {
         "sku": "CD5432-604",
@@ -126,7 +126,7 @@
         "style": "Women's Shoes",
         "isNew": false,
         "onSale": false,
-        "isFeatured": false
+        "isFeatured": true
     },
     {
         "sku": "878068-001",
@@ -150,7 +150,7 @@
         "style": "Women's Shoe",
         "isNew": false,
         "onSale": false,
-        "isFeatured": false
+        "isFeatured": true
     },
     {
         "sku": "CW4554-601",
@@ -171,7 +171,7 @@
         "style": "Women's Shoes",
         "isNew": false,
         "onSale": false,
-        "isFeatured": false
+        "isFeatured": true
     },
     {
         "sku": "DH9523-200",
@@ -193,7 +193,7 @@
         "style": "Women's Shoes",
         "isNew": false,
         "onSale": false,
-        "isFeatured": false
+        "isFeatured": true
     },
     {
         "sku": "DJ6602-001",
@@ -211,7 +211,7 @@
         "style": "Women's Sandal",
         "isNew": false,
         "onSale": false,
-        "isFeatured": false
+        "isFeatured": true
     },
     {
         "sku": "DO8863-600",

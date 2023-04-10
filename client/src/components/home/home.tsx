@@ -10,34 +10,89 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import MainImage from "../../images/main-image.png";
 
 import "../../styles/home.css";
+import ProductCard from "../product/product-card";
+import { ProductCardProps } from "../common/types";
 
 export default function Home() {
+
 
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
   const [currentCategory, setCurrentCategory] = useState("Women");
-  const [featuredProductsData, setFeaturedProductsData] = useState();
-  const [newProductsData, setNewProductsData] = useState();
+  const [collectionData, setCollectionData] = useState<ProductCardProps[]>();
+  const [currentCollectionPage, setCurrentCollectionPage] = useState(0);
 
   function handleCategoryChange(category: string){
     setCurrentCategory(category);
   }
 
-  useEffect(()=> {
-    fetch("http://localhost:8080/api/product/new")
-      .then(response => response.json())
-      .then(data => setNewProductsData(data))
-  }, [])
-
-  console.log(newProductsData)
-
   useEffect(() => {
     fetch(`http://localhost:8080/api/product/featured/${currentCategory}`)
       .then(response => response.json())
-      .then(data => setFeaturedProductsData(data))
+      .then(data => setCollectionData(data))
   }, [currentCategory])
 
-  console.log(featuredProductsData);
+  const breakpoints = {
+    1028: {
+      perPage: 1,
+    }, 
+    768:{
+      perPage: 1
+    }
+  };
+
+  const options = {
+    gap:30,
+    perPage: 2,
+    breakpoints,
+  };
+
+  function renderCollectionCards(){
+    if (!collectionData) {
+      return (<p>loading...</p>) 
+    }
+    const startIndex = currentCollectionPage * 6;
+    const endIndex = startIndex + 6;
+    return collectionData.slice(startIndex, endIndex).map((data, index) => (
+      <ProductCard key={index} sku={data.sku} name={data.name} price={data.price} style={data.style} images={data.images}></ProductCard>
+    ));
+  };
+
+  function handlePrevCollectionClick(){
+    if(currentCollectionPage > 0){
+      setCurrentCollectionPage(currentCollectionPage - 1);
+    }
+  };
+
+  function handleNextCollectionClick(){
+    if(currentCollectionPage < Math.ceil(12 / 6) - 1){
+      setCurrentCollectionPage(currentCollectionPage + 1);
+    }
+  }
+
+  const isNextCollectionClickDisabled = currentCollectionPage === Math.ceil(2) - 1;
+
+  function renderReviewCards() {
+    const startIndex = currentReviewPage * numReviewsDisplayed;
+    const endIndex = startIndex + numReviewsDisplayed;
+    return Reviews.slice(startIndex, endIndex).map((review, index) => (
+      <ReviewCard key={index} name={review.name} occupation={review.occupation} review={review.review} image={review.image} />
+    ))
+  }
+
+  function handlePrevReviewClick() {
+    if (currentReviewPage > 0) {
+      setCurrentReviewPage(currentReviewPage - 1);
+    }
+  }
+
+  function handleNextReviewClick() {
+    if (currentReviewPage < Math.ceil(Reviews.length / numReviewsDisplayed) - 1) {
+      setCurrentReviewPage(currentReviewPage + 1);
+    }
+  }
+  
+  const isNextReviewClickDisabled = currentReviewPage === Math.ceil(Reviews.length / numReviewsDisplayed) - 1;
 
   useEffect(() => {
     function updateNumReviewsDisplayed() {
@@ -57,42 +112,6 @@ export default function Home() {
     };
   }, []);
 
-  const breakpoints = {
-    1028: {
-      perPage: 1,
-    }, 
-    768:{
-      perPage: 1
-    }
-  };
-
-  const options = {
-    gap:30,
-    perPage: 2,
-    breakpoints,
-  };
-
-  function handlePrevReviewClick() {
-    if (currentReviewPage > 0) {
-      setCurrentReviewPage(currentReviewPage - 1);
-    }
-  }
-
-  function handleNextReviewClick() {
-    if (currentReviewPage < Math.ceil(Reviews.length / numReviewsDisplayed) - 1) {
-      setCurrentReviewPage(currentReviewPage + 1);
-    }
-  }
-  
-  const isNextArrowDisabled = currentReviewPage === Math.ceil(Reviews.length / numReviewsDisplayed) - 1;
-
-  function renderReviewCards() {
-    const startIndex = currentReviewPage * numReviewsDisplayed;
-    const endIndex = startIndex + numReviewsDisplayed;
-    return Reviews.slice(startIndex, endIndex).map((review, index) => (
-      <ReviewCard key={index} name={review.name} occupation={review.occupation} review={review.review} image={review.image} />
-    ))
-  }
 
   return (
     <div className="home">
@@ -166,73 +185,17 @@ export default function Home() {
           <li className={currentCategory === "Kids" ? "active" : ""} onClick={()=> handleCategoryChange("Kids")}>Kids</li>
         </nav>
         <div className="collection-container">
-          <div className="product-card">
-            <div className="product-card-image-container">
-              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
-            </div>
-            <div className="product-card-text-container">
-                <p className="product-card-name">Jordan Sophia</p>
-                <p className="product-card-style">Women's Slide</p>
-                <p className="product-card-price">$100</p>
-            </div>
-          </div>
-          <div className="product-card">
-            <div className="product-card-image-container">
-              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
-            </div>
-            <div className="product-card-text-container">
-                <p className="product-card-name">Jordan Sophia</p>
-                <p className="product-card-style">Women's Slide</p>
-                <p className="product-card-price">$100</p>
-            </div>
-          </div>
-          <div className="product-card">
-            <div className="product-card-image-container">
-              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
-            </div>
-            <div className="product-card-text-container">
-                <p className="product-card-name">Jordan Sophia</p>
-                <p className="product-card-style">Women's Slide</p>
-                <p className="product-card-price">$100</p>
-            </div>
-          </div>
-          <div className="product-card">
-            <div className="product-card-image-container">
-              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
-            </div>
-            <div className="product-card-text-container">
-                <p className="product-card-name">Jordan Sophia</p>
-                <p className="product-card-style">Women's Slide</p>
-                <p className="product-card-price">$100</p>
-            </div>
-          </div>
-          <div className="product-card">
-            <div className="product-card-image-container">
-              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
-            </div>
-            <div className="product-card-text-container">
-                <p className="product-card-name">Jordan Sophia</p>
-                <p className="product-card-style">Women's Slide</p>
-                <p className="product-card-price">$100</p>
-            </div>
-          </div>
-          <div className="product-card">
-            <div className="product-card-image-container">
-              <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
-            </div>
-            <div className="product-card-text-container">
-                <p className="product-card-name">Jordan Sophia</p>
-                <p className="product-card-style">Women's Slide</p>
-                <p className="product-card-price">$100</p>
-            </div>
-          </div>
+          {renderCollectionCards()}
         </div>
         <div className="pagination-container">
           <div className="arrow-container">
-            <img className="arrow left" src={Arrow}></img>
+            <img className={`arrow left ${currentCollectionPage === 0 ? "disabled": ""}`} 
+                 src={Arrow}
+                 onClick={handlePrevCollectionClick}>
+            </img>
           </div>
           <div className="arrow-container">
-            <img className="arrow right" src={Arrow}></img>
+            <img className={`arrow right  ${isNextCollectionClickDisabled ? "disabled": ""}`} src={Arrow} onClick={handleNextCollectionClick}></img>
           </div>
         </div>
       </section>
@@ -242,14 +205,14 @@ export default function Home() {
         <div className="pagination-container">
         <div className="arrow-container">
           <img
-            className={`arrow left ${currentReviewPage === 0 ? 'disabled' : ''}`}
+            className={`arrow left ${currentReviewPage === 0 ? "disabled" : ''}`}
             src={Arrow}
             onClick={handlePrevReviewClick}
           />
         </div>
         <div className="arrow-container">
           <img
-            className={`arrow right ${isNextArrowDisabled ? 'disabled' : ''}`}
+            className={`arrow right ${isNextReviewClickDisabled ? 'disabled' : ''}`}
             src={Arrow}
             onClick={handleNextReviewClick}
           />
