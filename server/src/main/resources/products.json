@@ -14,11 +14,201 @@
     {
         "sku": "FB4315-100",
         "name": "Nike Air Max 90 SE",
-        "price": 140.00,
+        "price": 100.00,
         "description":"Step into the history books. Paying homage to Frank Rudy, the man who created the coveted cornerstone of cushioning—Air—these sneakers celebrate his legacy with fun details.",
         "images": ["https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/67cf2b36-73ef-443a-8e99-a496eff525d6/air-max-90-se-mens-shoes-fSGj72.png"],
         "category": "Men",
         "style" : "Men's Shoes",
+        "isNew": false,
+        "onSale": false,
+        "isFeatured": false
+    },
+    {
+        "sku": "DV1305-004",
+        "name": "Air Jordan 1 Zoom CMFT 2",
+        "price": 100.0,
+        "description": "Soft suede and Jordan Brand's signature Formula 23 foam come together to give you an extra luxurious (and extra cozy) AJ1. You don't need to play \"either or\" when it comes to choosing style or comfort with this one\u2014which is nice, 'cause you deserve both.",
+        "images": [
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/dadf3c2b-a4a1-4fb2-a3de-79b4eeeb1656/air-jordan-1-zoom-cmft-2-womens-shoes-1NmSPm.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/22fa8711-3cb2-4c2f-81e3-62a3ca431f03/air-jordan-1-zoom-cmft-2-womens-shoes-1NmSPm.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/c1470953-eda8-4400-942b-210e1b506182/air-jordan-1-zoom-cmft-2-womens-shoes-1NmSPm.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/4900b5fc-397c-478b-b963-d384d56d339d/air-jordan-1-zoom-cmft-2-womens-shoes-1NmSPm.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f58f79f1-f70f-4fdf-86a0-d76c7a6afc0f/air-jordan-1-zoom-cmft-2-womens-shoes-1NmSPm.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/239d84e2-ab4b-4f40-934d-73311307b550/air-jordan-1-zoom-cmft-2-womens-shoes-1NmSPm.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/811c6b1d-96d3-4e56-98be-94c54b37c42a/air-jordan-1-zoom-cmft-2-womens-shoes-1NmSPm.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2ff4c747-96d8-4cf0-98d7-7962077ab0f6/air-jordan-1-zoom-cmft-2-womens-shoes-1NmSPm.png"
+        ],
+        "category": "Women",
+        "style": "Women's Shoes",
+        "isNew": false,
+        "onSale": false,
+        "isFeatured": false
+    },
+    {
+        "sku": "DC0774-501",
+        "name": "Air Jordan 1 Low",
+        "price": 100.0,
+        "description": "Always fresh, always in-season. The AJ1 is a wearable piece of Jordan history, with premium materials and a classic silhouette. This pair serves up a subtle sweetness with Barely Grape leather and Lemon Wash accents, plus Nike Air cushioning as the cherry on top (er, bottom). No free samples, but trust us\u2014they're good.",
+        "images": [
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2813665f-a027-48bd-aacc-ae2d526aaf44/air-jordan-1-low-womens-shoes-rJrHLw.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/14746bdb-a940-4320-b6a9-272c0792a901/air-jordan-1-low-womens-shoes-rJrHLw.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f141c1f4-0e89-4bc5-a17a-0f615dfa406f/air-jordan-1-low-womens-shoes-rJrHLw.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/bbf059c1-03b1-477c-af55-c325a247270e/air-jordan-1-low-womens-shoes-rJrHLw.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/a10ba673-6869-4431-808a-22814250eb34/air-jordan-1-low-womens-shoes-rJrHLw.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/ae6f34f5-a37d-4f48-83a3-9fd6da3a8721/air-jordan-1-low-womens-shoes-rJrHLw.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/c922deff-dc3e-4678-82c4-235b2f9d79d8/air-jordan-1-low-womens-shoes-rJrHLw.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/42d9a3c9-b6ad-45bc-abcb-c5b260108e81/air-jordan-1-low-womens-shoes-rJrHLw.png"
+        ],
+        "category": "Women",
+        "style": "Women's Shoes",
+        "isNew": false,
+        "onSale": false,
+        "isFeatured": false
+    },
+    {
+        "sku": "BQ6472-022",
+        "name": "Air Jordan 1 Mid",
+        "price": 100.0,
+        "description": "The Air Jordan 1 Mid brings full-court style and premium comfort to an iconic look. Its Air-Sole unit cushions play on the hardwood, while the padded collar gives you a supportive feel.",
+        "images": [
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/7815ef11-1c6f-482e-92cc-012c26d38271/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/c3814052-9efb-4c4e-948e-5a60e7cb3696/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/7d8f6472-f06c-40ff-9b3a-e4d9212fbfd7/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/1331b5a4-0670-4fda-80dc-0f1d05226525/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/babde6b9-2121-41f5-a90d-d5973dfb5219/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/556ac68e-518a-453c-a947-5b84c003a127/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/47c08552-ff5a-4bd6-b845-a8e6ac6d3158/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/90740b97-19ca-430d-8dc7-003bdfdb2c05/air-jordan-1-mid-womens-shoes-Kg3nnj.png"
+        ],
+        "category": "Women",
+        "style": "Women's Shoes",
+        "isNew": false,
+        "onSale": false,
+        "isFeatured": false
+    },
+    {
+        "sku": "BQ6472-701",
+        "name": "Air Jordan 1 Mid",
+        "price": 100.0,
+        "description": "The Air Jordan 1 Mid brings full-court style and premium comfort to an iconic look. Its Air-Sole unit cushions play on the hardwood, while the padded collar gives you a supportive feel.",
+        "images": [
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/b31aeb85-0ff0-4735-95e6-8ab92dbfefec/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/88739090-b0de-4276-b00c-b14f33afb501/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/816961ea-c9b9-4a15-98f9-ba668a457d78/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f070dc76-0a6c-40d7-9d37-97a185ecab18/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f8acae73-a73e-4533-891f-b4a6b7fb933e/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/387e2722-d3bb-4667-b8a1-0c318d37abc5/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2e34deec-7712-48bc-a33c-581084ba4924/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/e4140923-5297-4b76-8504-127f4848c39e/air-jordan-1-mid-womens-shoes-Kg3nnj.png"
+        ],
+        "category": "Women",
+        "style": "Women's Shoes",
+        "isNew": false,
+        "onSale": false,
+        "isFeatured": false
+    },
+    {
+        "sku": "CD5432-604",
+        "name": "Nike Air Max Excee",
+        "price": 100.0,
+        "description": "Inspired by the Nike Air Max 90, the Nike Air Max Excee celebrates a classic through a new lens. Elongated design lines and distorted proportions on the upper elevate an icon into a modern space.",
+        "images": [
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/9ebc12e2-b3ae-4cc0-8056-a457f1eaf600/air-max-excee-womens-shoes-jKsgMj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/cb91c76d-9613-418f-a416-7bc8fddbb8bb/air-max-excee-womens-shoes-jKsgMj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/3b14daba-8d8e-47d4-afed-7c373906362a/air-max-excee-womens-shoes-jKsgMj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/31b92610-4f3c-4b32-85de-1b43c5577867/air-max-excee-womens-shoes-jKsgMj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/908b8411-9244-45b6-b5e0-7941aa59264b/air-max-excee-womens-shoes-jKsgMj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/c23ae86b-845f-44a2-a3eb-8bfcd73886a6/air-max-excee-womens-shoes-jKsgMj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/416f167d-3528-4975-a95d-066a292586c4/air-max-excee-womens-shoes-jKsgMj.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/a065c2be-0631-42e5-8c8a-c0bc1c122744/air-max-excee-womens-shoes-jKsgMj.png"
+        ],
+        "category": "Women",
+        "style": "Women's Shoes",
+        "isNew": false,
+        "onSale": false,
+        "isFeatured": false
+    },
+    {
+        "sku": "878068-001",
+        "name": "Nike Air Presto",
+        "price": 100.0,
+        "description": "The Nike Air Presto Women's Shoe delivers the same unrivaled fit and comfort that marked the 2000 debut of the original.",
+        "images": [
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/wokkcny4zbhvzobfwc7i/air-presto-womens-shoe-LMdjZP.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/ede9jni7zedvmlgh29yd/air-presto-womens-shoe-LMdjZP.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/53ce35c3-1ef5-4676-9308-90c9bd7fb6b6/air-presto-womens-shoe-LMdjZP.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/wpmiibryohufjjm0i5uo/air-presto-womens-shoe-LMdjZP.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/lmpq4yxn0aqre66opd5d/air-presto-womens-shoe-LMdjZP.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/c4nht5fdlmsnwrfsjxyz/air-presto-womens-shoe-LMdjZP.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/058f50cf-1476-4bb7-8066-b4bfb3705518/air-presto-womens-shoe-LMdjZP.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2beb6b72-52ce-4f74-8989-f21789051b08/air-presto-womens-shoe-LMdjZP.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/b02a67e8-ef80-492b-a6f3-fc283aaae4e4/air-presto-womens-shoe-LMdjZP.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/1ce80234-87ca-43ca-ab3a-f74a3dfb3e9a/air-presto-womens-shoe-LMdjZP.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/458afb4d-1c4a-4473-996c-e7efbac8f6e6/air-presto-womens-shoe-LMdjZP.png"
+        ],
+        "category": "Women",
+        "style": "Women's Shoe",
+        "isNew": false,
+        "onSale": false,
+        "isFeatured": false
+    },
+    {
+        "sku": "CW4554-601",
+        "name": "Nike Air Max SC",
+        "price": 100.0,
+        "description": "With its easy going lines, heritage track look and of course, visible Air cushioning, the Nike Air Max SC is the perfect finish to any outfit. The rich mixture of materials adds depth while making it a durable and lightweight shoe for everyday wear.",
+        "images": [
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/6264817f-fde5-4dcf-a68a-d3177488a489/air-max-sc-womens-shoes-CwMCK7.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/bacb2a39-d133-4a28-b31c-e66e2d52ce90/air-max-sc-womens-shoes-CwMCK7.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f4ac159a-09ec-4598-b1ae-abfebc4a5225/air-max-sc-womens-shoes-CwMCK7.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/24276753-ecda-4ccd-8a65-926ebf11d5ce/air-max-sc-womens-shoes-CwMCK7.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/04da6970-7cec-4f6d-87a1-234a8e18be37/air-max-sc-womens-shoes-CwMCK7.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/77050e02-2597-4801-9468-4f771bc8a4e8/air-max-sc-womens-shoes-CwMCK7.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/dafa85cb-14b8-4868-aa25-a339c42d5b50/air-max-sc-womens-shoes-CwMCK7.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/93e3ee0f-1e91-4d68-bdf4-940162173db1/air-max-sc-womens-shoes-CwMCK7.png"
+        ],
+        "category": "Women",
+        "style": "Women's Shoes",
+        "isNew": false,
+        "onSale": false,
+        "isFeatured": false
+    },
+    {
+        "sku": "DH9523-200",
+        "name": "Nike Waffle Debut",
+        "price": 100.0,
+        "description": "Retro gets modernized with these sleek sneaks inspired by the Nike Daybreak. Era-echoing suede and nylon are paired in complementary colors, and the updated wedge midsole gives you an extra lift. Style, comfort, iconic Waffle outsole\u2014this is a perfect new addition to your daily rotation.",
+        "images": [
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/3c7cce67-fa45-42a5-b9a0-fed6e74394c1/waffle-debut-womens-shoes-5Rl1KL.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/4a4028fd-d69f-4a51-a9ef-dc7f5673a5d5/waffle-debut-womens-shoes-5Rl1KL.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/854d6b3d-bc42-449e-84f5-9bdb0a209d99/waffle-debut-womens-shoes-5Rl1KL.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2ace001b-f84a-45f9-9e3b-281592e12962/waffle-debut-womens-shoes-5Rl1KL.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f594cb9a-b38d-453b-be26-fb03b2dbdb54/waffle-debut-womens-shoes-5Rl1KL.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2b2da839-4662-47df-976f-dba1c5d2b3a6/waffle-debut-womens-shoes-5Rl1KL.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/49066579-4a21-4424-8e15-f70cfc2f505b/waffle-debut-womens-shoes-5Rl1KL.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/e7bfcb7e-9196-4ef7-84e1-751de8838786/waffle-debut-womens-shoes-5Rl1KL.png",
+          "https://static.nike.com/a/videos/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5,so_5.32/2b32e0c2-017c-4c6f-b491-b8218ac1cc98/waffle-debut-womens-shoes-5Rl1KL.jpg"
+        ],
+        "category": "Women",
+        "style": "Women's Shoes",
+        "isNew": false,
+        "onSale": false,
+        "isFeatured": false
+    },
+    {
+        "sku": "DJ6602-001",
+        "name": "Nike Oneonta",
+        "price": 100.0,
+        "description": "Trails and rivers and trees, oh my! Named for the majestic falls that flow near the Columbia River in Oregon, these lightweight, durable sandals make adventuring fun. Strap in with the plush webbing system and personalize your fit with an elastic cord and heel toggle. Extra-rugged tread keeps you happy on your feet while exploring the great outdoors.",
+        "images": [
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2407f4da-173d-44b3-baee-3f43920f5054/oneonta-womens-sandal-wSZgcn.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/24f7f96b-030b-4c09-b3dc-bb26f62f57ce/oneonta-womens-sandal-wSZgcn.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/9973779a-a634-4edd-b53e-9b685360a6bf/oneonta-womens-sandal-wSZgcn.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/ba0fb111-03ab-44d4-aba0-f0663daa8d4c/oneonta-womens-sandal-wSZgcn.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/c943cc3c-69b7-40fc-8bbd-8e505f8c40d2/oneonta-womens-sandal-wSZgcn.png"
+        ],
+        "category": "Women",
+        "style": "Women's Sandal",
         "isNew": false,
         "onSale": false,
         "isFeatured": false
@@ -40,6 +230,42 @@
         "isNew": false,
         "onSale": false,
         "isFeatured": true
+    },
+    {
+        "sku": "DC0496-100",
+        "name": "Nike Offcourt Duo",
+        "price": 100.0,
+        "description": "Bringing a fresh look to the classic slide, the Nike Offcourt Duo features twin straps for a chic look you can wear with jeans or leggings and everything in between. Its foam footbed feels unbelievably soft while its plush straps are lined with cloud-like fabric that rolls over the top to help eliminate hotspots. The micro-textured footbed helps keep your foot in place while the sole adds traction that lasts.",
+        "images": [
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/b0e1298c-a2da-4d4a-8089-ce06cc33b404/offcourt-duo-womens-slides-X0HQzh.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/675dfc17-d8de-421a-8df7-7ca5b83d830b/offcourt-duo-womens-slides-X0HQzh.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/cd920143-4033-42c0-9154-80ed03d071d2/offcourt-duo-womens-slides-X0HQzh.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/004732b0-a8c1-4512-8853-5f31f5ba49de/offcourt-duo-womens-slides-X0HQzh.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/cb7101cf-b2be-4af3-bfae-3a1b604d4555/offcourt-duo-womens-slides-X0HQzh.png"
+        ],
+        "category": "Women",
+        "style": "Women's Slides",
+        "isNew": false,
+        "onSale": false,
+        "isFeatured": false
+    },
+    {
+        "sku": "CN9676-001",
+        "name": "Nike Victori One",
+        "price": 100.0,
+        "description": "From the beach to the bleachers, the Nike Victori One perfects a classic, must-have design. Delivering lightweight comfort that's easy to wear, it features new, softer foam that feels comfortable. The contoured footbed with grip pattern helps cradle and hold your foot in place. The wide, padded strap feels as good as it looks.",
+        "images": [
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/074fd25a-d760-4d33-b1db-17ddc21c6230/victori-one-womens-print-slides-2hJLv6.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/346201ce-c85e-486e-b969-9e4f247fc032/victori-one-womens-print-slides-2hJLv6.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/d8111fbe-6fa2-4cab-99de-019d670cac2d/victori-one-womens-print-slides-2hJLv6.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/39e13456-03b4-4c4f-9c7f-9465e3ffff82/victori-one-womens-print-slides-2hJLv6.png",
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/9257f060-48a2-4909-9b51-2cfc23d3fd84/victori-one-womens-print-slides-2hJLv6.png"
+        ],
+        "category": "Women",
+        "style": "Women's Print Slides",
+        "isNew": false,
+        "onSale": false,
+        "isFeatured": false
     },
     {
         "sku": "CD7782-112",
