@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { ProductDetailProps } from "../common/types";
+import "../../styles/product-page.css";
 
 export default function ProductPage(){
     let {id} = useParams();
@@ -33,13 +34,17 @@ export default function ProductPage(){
         <div className="product-detail-page">
             <div className="product-detail-container">
                 <div className="product-detail-left-container">
-                    <p>{productData?.name}</p>
-                    <p>{productData?.style}</p>
-                    <p>${productData?.price}</p>
-                    <img src={productData?.images[0]}/>
-                    <p>{productData?.description}</p>
+                    <div className="product-main-image-container">
+                        <img className="product-main-image" src={productData?.images[0]}/>
+                    </div>
                 </div>
-                <div className="product-detail-right-container"></div>
+                <div className="product-detail-right-container">
+                    <h2 className="product-name">{productData?.name}</h2>
+                    <p className="product-style">{productData?.style}</p>
+                    <p className="product-price">${productData?.price}</p>
+                    <button>Add to Bag</button>
+                    <p className="product-description">{productData?.description}</p>
+                </div>
             </div>
         </div>
     )

@@ -33,11 +33,11 @@
     text-decoration: none;
     font-size: 15px;
 }
-.product-style{
+.product-card-style{
     color:gray;
     font-size: 14px;
 }
-.product-price{
+.product-card-price{
     font-size: 15px;
 }
 .favorite-button:hover{

@@ -1,0 +1,21 @@
+.product-detail-container{
+    width:80%;
+    margin: 0 auto;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding:40px;
+}
+.product-main-image-container{
+    max-width:600px;
+}
+.product-main-image{
+    width:100%;
+}
+.product-price{
+    font-size: 1.15rem;
+}
+.product-description{
+    max-width:450px;
+    line-height: 2;
+}

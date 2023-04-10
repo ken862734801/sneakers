@@ -1,22 +1,18 @@
 [
   {
-    "sku": "BQ6472-701",
-    "name": "Air Jordan 1 Mid",
-    "price": 125.0,
-    "description": "The Air Jordan 1 Mid brings full-court style and premium comfort to an iconic look. Its Air-Sole unit cushions play on the hardwood, while the padded collar gives you a supportive feel.",
+    "sku": "DO8863-800",
+    "name": "Jordan Sophia",
+    "price": 85.0,
+    "description": "Plush comfort is a must for your winter wardrobe\u2014and footwear is no exception. These luxe slides have pillowy, criss-cross straps lined with fabric that feels soft against your skin. Air cushioning and a slight platform give you that 'walking on clouds' feel with every step.",
     "images": [
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/b31aeb85-0ff0-4735-95e6-8ab92dbfefec/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/88739090-b0de-4276-b00c-b14f33afb501/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/816961ea-c9b9-4a15-98f9-ba668a457d78/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f070dc76-0a6c-40d7-9d37-97a185ecab18/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f8acae73-a73e-4533-891f-b4a6b7fb933e/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/387e2722-d3bb-4667-b8a1-0c318d37abc5/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2e34deec-7712-48bc-a33c-581084ba4924/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/e4140923-5297-4b76-8504-127f4848c39e/air-jordan-1-mid-womens-shoes-Kg3nnj.png",
-      "https://static.nike.com/a/videos/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5,so_0/3a2e6424-9a36-4a51-80b3-37b0a1238c67/air-jordan-1-mid-womens-shoes-Kg3nnj.jpg"
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/46946e31-f9d6-4fe9-839f-47d196217ccf/jordan-sophia-womens-slides-bW5vFq.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/02a73037-dffd-4922-ab70-564edf35e53f/jordan-sophia-womens-slides-bW5vFq.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/8f60677e-0ee8-430a-82b4-517ae669b24f/jordan-sophia-womens-slides-bW5vFq.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/dc074c17-c050-43f8-b613-715e4a0992d1/jordan-sophia-womens-slides-bW5vFq.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f1242436-7e21-48b5-8236-44300b58b9e3/jordan-sophia-womens-slides-bW5vFq.png"
     ],
     "category": "Women",
-    "style": "Women's Shoes",
+    "style": "Women's Slides",
     "isNew": false,
     "onSale": false,
     "isFeatured": false

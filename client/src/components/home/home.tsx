@@ -171,9 +171,9 @@ export default function Home() {
               <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
             </div>
             <div className="product-card-text-container">
-                <p className="product-name">Jordan Sophia</p>
-                <p className="product-style">Women's Slide</p>
-                <p className="product-price">$100</p>
+                <p className="product-card-name">Jordan Sophia</p>
+                <p className="product-card-style">Women's Slide</p>
+                <p className="product-card-price">$100</p>
             </div>
           </div>
           <div className="product-card">
@@ -181,9 +181,9 @@ export default function Home() {
               <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
             </div>
             <div className="product-card-text-container">
-                <p className="product-name">Jordan Sophia</p>
-                <p className="product-style">Women's Slide</p>
-                <p className="product-price">$100</p>
+                <p className="product-card-name">Jordan Sophia</p>
+                <p className="product-card-style">Women's Slide</p>
+                <p className="product-card-price">$100</p>
             </div>
           </div>
           <div className="product-card">
@@ -191,9 +191,9 @@ export default function Home() {
               <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
             </div>
             <div className="product-card-text-container">
-                <p className="product-name">Jordan Sophia</p>
-                <p className="product-style">Women's Slide</p>
-                <p className="product-price">$100</p>
+                <p className="product-card-name">Jordan Sophia</p>
+                <p className="product-card-style">Women's Slide</p>
+                <p className="product-card-price">$100</p>
             </div>
           </div>
           <div className="product-card">
@@ -201,9 +201,9 @@ export default function Home() {
               <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
             </div>
             <div className="product-card-text-container">
-                <p className="product-name">Jordan Sophia</p>
-                <p className="product-style">Women's Slide</p>
-                <p className="product-price">$100</p>
+                <p className="product-card-name">Jordan Sophia</p>
+                <p className="product-card-style">Women's Slide</p>
+                <p className="product-card-price">$100</p>
             </div>
           </div>
           <div className="product-card">
@@ -211,9 +211,9 @@ export default function Home() {
               <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
             </div>
             <div className="product-card-text-container">
-                <p className="product-name">Jordan Sophia</p>
-                <p className="product-style">Women's Slide</p>
-                <p className="product-price">$100</p>
+                <p className="product-card-name">Jordan Sophia</p>
+                <p className="product-card-style">Women's Slide</p>
+                <p className="product-card-price">$100</p>
             </div>
           </div>
           <div className="product-card">
@@ -221,9 +221,9 @@ export default function Home() {
               <img className="product-card-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b3831dc7-7151-4fb4-82a3-d74306e9706a/jordan-sophia-womens-slides-bW5vFq.png"></img>
             </div>
             <div className="product-card-text-container">
-                <p className="product-name">Jordan Sophia</p>
-                <p className="product-style">Women's Slide</p>
-                <p className="product-price">$100</p>
+                <p className="product-card-name">Jordan Sophia</p>
+                <p className="product-card-style">Women's Slide</p>
+                <p className="product-card-price">$100</p>
             </div>
           </div>
         </div>

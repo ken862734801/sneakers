@@ -35,9 +35,9 @@ export default function ProductCard(props: ProductCardProps){
                         <img className="product-card-image" src={isHovered ? props.images[3] : props.images[0]}/>
                     </div>
                     <div className="product-card-text-container">
-                        <p className="product-name">{props.name}</p>
-                        <p className="product-style">{props.style}</p>
-                        <p className="product-price">${props.price}</p>
+                        <p className="product-card-name">{props.name}</p>
+                        <p className="product-card-style">{props.style}</p>
+                        <p className="product-card-price">${props.price}</p>
                     </div>
                 </Link>
             </div>
