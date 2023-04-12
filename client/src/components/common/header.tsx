@@ -39,7 +39,6 @@ export default function Header ({page, onPageChange}: HeaderProps){
                     </div>
                     <div>
                         <Menu/>
-                        {/* <FontAwesomeIcon icon={faBars}/> */}
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@
     font-family: var(--font);
 }
 .hero-section{
-    padding:40px 0px 20px 0px;
+    padding:20px 0px 20px 0px;
 }
 .hero-section-container{
     width:75%;
@@ -77,7 +77,7 @@ button > span > img{
 .hero-section-footer{
     width:80%;
     margin: 0 auto;
-    padding: 60px 0px 80px 0px;
+    padding: 60px 0px 60px 0px;
 }
 .hero-section-footer-container{
     width:100%;
@@ -248,6 +248,9 @@ button > span > img{
     width:60%;
 }
 @media screen and (max-width:768px){
+    .hero-section-container{
+        width:90%;
+    }
     .hero-section-left-container > h1{
         font-size:3.5rem;
     }

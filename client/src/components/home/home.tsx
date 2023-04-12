@@ -24,6 +24,7 @@ export default function Home() {
 
   function handleCategoryChange(category: string){
     setCurrentCategory(category);
+    setCurrentCollectionPage(0);
   }
 
   useEffect(() => {
