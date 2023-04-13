@@ -18,7 +18,7 @@ export default function Home() {
 
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
-  const [currentCategory, setCurrentCategory] = useState("Women");
+  const [currentCategory, setCurrentCategory] = useState("Men");
   const [collectionData, setCollectionData] = useState<ProductCardProps[]>();
   const [currentCollectionPage, setCurrentCollectionPage] = useState(0);
 
@@ -50,7 +50,7 @@ export default function Home() {
 
   function renderCollectionCards(){
     if (!collectionData) {
-      return (<p>loading...</p>) 
+      return null
     }
     const startIndex = currentCollectionPage * 6;
     const endIndex = startIndex + 6;

@@ -14,7 +14,7 @@ options.add_argument("--headless")  # run Chrome in headless mode (without a GUI
 driver = webdriver.Chrome(service=service, options=options)
 
 urls = [
-        "https://www.nike.com/t/air-max-sc-big-kids-shoe-MS26RR/CZ5358-116"
+        "https://www.nike.com/t/air-force-1-07-lv8-mens-shoes-ZvGj5Q/DQ7659-102"
     ]
 data = []
         # "https://www.nike.com/t/air-force-1-big-kids-shoes-M7mcL9/CT3839-101",

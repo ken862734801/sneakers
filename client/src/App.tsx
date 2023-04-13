@@ -27,7 +27,7 @@ const pageInformation: Record<Page, PageInformation> = {
   },
   women: {
     name:"Women's Sneakers",
-    description:"lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa consequatur recusandae non rem eos exercitationem soluta optio aspernatur minus animi deleniti.",
+    description:"lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa consequatur recusandae non rem eos exercitationem soluta optio aspernatur minus deleniti.",
     path: "women"
   },
   kids: {
@@ -43,8 +43,10 @@ const pageInformation: Record<Page, PageInformation> = {
 }
 
 function App() {
+  const [state, setState] = useState({
+    cart: []
+  })
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   const [page, setPage] = useState<Page>("men");
   const [pageName, setPageName] = useState(pageInformation[page].name);
   const [pageDescription, setPageDescription] = useState(pageInformation[page].description);

@@ -1,23 +1,24 @@
 [
   {
-    "sku": "CZ5358-116",
-    "name": "Nike Air Max SC",
-    "price": 80.0,
-    "description": "Simple, comfortable and cushioned with Air\u2014the Nike Air Max SC is an easy yes. The mixture of textures creates a durable and lightweight design you can rock all day, any day.",
+    "sku": "DQ7659-102",
+    "name": "Nike Air Force 1 '07 LV8",
+    "price": 100.0,
+    "description": "Wintertime warmth meets AF1 style. The radiance lives on with the b-ball original. Crossing hardwood comfort with off-court flair, it puts a soft, cold-weather spin on what you know best: era-echoing, \u201880s construction, bold details and nothin\u2019-but-net style.",
     "images": [
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/8de8d741-5b16-4de6-8bee-eb81361b0b14/air-max-sc-big-kids-shoe-MS26RR.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/b7e86cb1-61c0-474c-8fed-78eb7d6d62d4/air-max-sc-big-kids-shoe-MS26RR.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f6a4a2d5-6c6b-48fc-8691-81cd6653bf88/air-max-sc-big-kids-shoe-MS26RR.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/62cbf343-b558-42b6-ad4b-f5e12b0c57b7/air-max-sc-big-kids-shoe-MS26RR.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/acd79967-1877-4372-be20-c2741b2460a6/air-max-sc-big-kids-shoe-MS26RR.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/bd0b33ee-2304-49db-91e6-215cf19a2fad/air-max-sc-big-kids-shoe-MS26RR.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/1b8a1e14-2d71-483a-b15c-0e7494c62886/air-max-sc-big-kids-shoe-MS26RR.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2fe48a80-c03d-4b9d-af56-9b2b53a32fd8/air-max-sc-big-kids-shoe-MS26RR.png"
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/d3b57a87-7232-4b0f-9ec2-fc6a50cfea88/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/c988cdbc-d5c8-4dae-9202-ecd2758fc7a0/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/76e42df1-774b-49bb-bbb1-00d1fc78095c/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/51fc2b3c-8372-46f5-bac0-58763db520b3/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/14e779c8-c21b-4f0b-b482-0afbdb20625a/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f145fc92-bb56-4b13-b313-b9dd33be46c3/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/cfff6e28-845c-4ed5-84a4-390e142120c6/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2d373980-f4fe-45ed-8220-481372290d8e/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2a2b379a-6949-4920-bc96-b5380f590535/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png"
     ],
-    "category": "Kids",
-    "style": "Big Kids' Shoe",
+    "category": "Men",
+    "style": "Men's Shoes",
     "isNew": false,
     "onSale": false,
-    "isFeatured": false
+    "isFeatured": true
   }
 ]
