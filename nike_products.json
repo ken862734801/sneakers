@@ -1,24 +1,30 @@
 [
   {
-    "sku": "DQ7659-102",
-    "name": "Nike Air Force 1 '07 LV8",
-    "price": 100.0,
-    "description": "Wintertime warmth meets AF1 style. The radiance lives on with the b-ball original. Crossing hardwood comfort with off-court flair, it puts a soft, cold-weather spin on what you know best: era-echoing, \u201880s construction, bold details and nothin\u2019-but-net style.",
+    "sku": "921826-101",
+    "name": "Nike Air Max 97",
+    "price": 175.0,
+    "description": "Featuring the original ripple design inspired by Japanese bullet trains, the Nike Air Max 97 lets you push your style full-speed ahead. Taking the revolutionary full-length Nike Air unit that shook up the running world and adding fresh colors and crisp details, it lets you ride in first-class comfort.",
     "images": [
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/d3b57a87-7232-4b0f-9ec2-fc6a50cfea88/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/c988cdbc-d5c8-4dae-9202-ecd2758fc7a0/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/76e42df1-774b-49bb-bbb1-00d1fc78095c/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/51fc2b3c-8372-46f5-bac0-58763db520b3/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/14e779c8-c21b-4f0b-b482-0afbdb20625a/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f145fc92-bb56-4b13-b313-b9dd33be46c3/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/cfff6e28-845c-4ed5-84a4-390e142120c6/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2d373980-f4fe-45ed-8220-481372290d8e/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png",
-      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2a2b379a-6949-4920-bc96-b5380f590535/air-force-1-07-lv8-mens-shoes-ZvGj5Q.png"
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/a47b2ef9-8239-4e82-99fd-e6159c0df489/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/d72c523f-41df-4420-9d58-62532b06c429/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/50cbf7c9-2a4a-41e5-a2ef-4b3acd7fa664/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/9d8aae5c-a45b-4327-a7da-f847443a5321/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/7a717540-b712-486d-8612-acd2a8905d5f/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/33aea626-bb43-4091-805c-ba12cf978f2d/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/bkjigdwl4zsrrc1avnvw/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/9419b134-a3b3-4618-ab9b-7d201127c3ca/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/84c25034-65c3-4a15-b3c2-f9367b00bcd6/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/c67d1f9d-9bd3-48f3-8b7d-87a0a521df29/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/9fe9896d-8ddb-409e-a445-af9e83ce28be/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/940d2ff1-5443-4068-9770-88c08b39243b/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/4e26af15-82c3-423f-ab0b-da595f15692f/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/008da8d4-690c-4acd-bad5-41030a82f074/air-max-97-mens-shoes-LJmK45.png",
+      "https://static.nike.com/a/videos/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5,so_1.02/6c2cb044-db55-430e-8ca1-86b4f3a49a36/air-max-97-mens-shoes-LJmK45.jpg"
     ],
     "category": "Men",
     "style": "Men's Shoes",
     "isNew": false,
     "onSale": false,
-    "isFeatured": true
+    "isFeatured": false
   }
 ]

@@ -21,6 +21,7 @@ export default function Home() {
   const [currentCategory, setCurrentCategory] = useState("Men");
   const [collectionData, setCollectionData] = useState<ProductCardProps[]>();
   const [currentCollectionPage, setCurrentCollectionPage] = useState(0);
+  const [newProductData, setNewProductData] = useState<ProductCardProps[]>();
 
   function handleCategoryChange(category: string){
     setCurrentCategory(category);
@@ -32,6 +33,13 @@ export default function Home() {
       .then(response => response.json())
       .then(data => setCollectionData(data))
   }, [currentCategory])
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/product/new`)
+      .then(response => response.json())
+      .then(data => setNewProductData(data))
+  }, [])
+  // console.log(newProductData);
 
   const breakpoints = {
     1028: {
@@ -47,6 +55,17 @@ export default function Home() {
     perPage: 2,
     breakpoints,
   };
+
+  function renderWidgetCards(){
+    if(!newProductData){
+      return "LOADING..."
+    }
+    return newProductData.map((data, index) => (
+      <SplideSlide key={`slide-${index}`}>
+        <Widget key={index} name={data.name} sku={data.sku} price={data.price} style={data.style} images={data.images}/>
+      </SplideSlide>
+    ))
+  }
 
   function renderCollectionCards(){
     if (!collectionData) {
@@ -128,28 +147,11 @@ export default function Home() {
               <div className="button-container">
                 <button>Shop Now <span><img src={CircleArrow}></img></span></button>
               </div>
-              {/* <div className="widget-container">
-                <Splide options={options} aria-label="featured products" className="widget-splide">
-                  <SplideSlide>
-                    <Widget/>
-                  </SplideSlide>
-                  <SplideSlide>
-                    <Widget/>
-                  </SplideSlide>
-                  <SplideSlide>
-                    <Widget/>
-                  </SplideSlide>
-                  <SplideSlide>
-                    <Widget/>
-                  </SplideSlide>
-                  <SplideSlide>
-                    <Widget/>
-                  </SplideSlide>
-                  <SplideSlide>
-                    <Widget/>
-                  </SplideSlide>
+              <div className="widget-container">
+                <Splide options={options} className="widget-splide">
+                  {renderWidgetCards()}
                 </Splide>
-              </div> */}
+              </div>
             </div>
             <div className="hero-section-right-container">
               <div className="main-image-background">

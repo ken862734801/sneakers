@@ -56,7 +56,7 @@ function App() {
     setPageName(pageInformation[newPage].name);
     setPageDescription(pageInformation[newPage].description);
   }
-  console.log(isLoggedIn);
+
   return (
     <div className="App">
       <Header loggedIn={isLoggedIn} page={page} onPageChange={handlePageChange}/>

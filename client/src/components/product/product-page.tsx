@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { ProductDetailProps } from "../common/types";
 import "../../styles/product-page.css";
 
+
 export default function ProductPage(){
     let {id} = useParams();
 
@@ -20,16 +21,21 @@ export default function ProductPage(){
 
       console.log(productData);
 
-    //   useEffect(()=> {
-    //     async function fetchInventoryData(){
-    //         const response = await fetch(`http://localhost:8080/api/inventory/${id?.toUpperCase()}`);
-    //         const data = await response.json();
-    //         console.log(data);
-    //     }
-    //     fetchInventoryData();
-    //   }, [])
+      useEffect(()=> {
+        async function fetchInventoryData(){
+            const response = await fetch(`http://localhost:8080/api/inventory/${id?.toUpperCase()}`);
+            const data = await response.json();
+            setInventoryData(data);
+        }
+        fetchInventoryData();
+      }, [])
 
+      console.log(inventoryData)
 
+      function renderImageSplide(){
+    
+      }
+      
     return (
         <div className="product-detail-page">
             <div className="product-detail-container">
