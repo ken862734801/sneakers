@@ -3,13 +3,14 @@ import Facebook from "../../images/facebook.png";
 import Instagram from "../../images/instagram.png";
 import TikTok from "../../images/tiktok.png";
 import Twitter from "../../images/twitter.png";
+import Nike from "../../images/nike.png";
 
 export default function Footer (){
     return (
         <section className="footer-section">
             <div className="footer-container">
                 <div className="footer-left-container">
-                    <a>Sneakers</a>
+                    <img src={Nike}></img>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis sequi fuga excepturi consequatur. 
                        Aperiam at totam exercitationem vel illum nesciunt, architecto sunt dolorem voluptatem. Lorem ipsum dolor sit amet.</p>
                     <div className="footer-button-container">

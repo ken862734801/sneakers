@@ -18,11 +18,7 @@ export default function Widget (props: ProductCardProps){
                 <h6 className="widget-product-name">{props.name}</h6>
                 <div className="widget-product-rating-row">
                     <FontAwesomeIcon className="widget-star" icon={faStar} style={{fontSize: "7px"}}/>
-                    <FontAwesomeIcon className="widget-star" icon={faStar} style={{fontSize: "7px"}}/>
-                    <FontAwesomeIcon className="widget-star" icon={faStar} style={{fontSize: "7px"}}/>
-                    <FontAwesomeIcon className="widget-star" icon={faStar} style={{fontSize: "7px"}}/>
-                    <FontAwesomeIcon className="widget-star" icon={faStar} style={{fontSize: "7px"}}/>
-                    {/* <p>(4.5)</p> */}
+                    <p className="rating-text">(4.75)</p>
                 </div>
                 <div className="widget-product-price-row">
                         <h6 className="widget-product-price">${props.price}</h6>

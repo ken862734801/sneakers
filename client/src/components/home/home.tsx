@@ -154,13 +154,23 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-section-right-container">
-              <div className="main-image-background">
-                {/* <h1>NIKE</h1>
-                <div className="ribbon"></div>
-                <div className="main-image-container">
-                  <img src={MainImage}/>
+              <div className="main-image-background-border">
+                <h1>NIKE</h1>
+                <div className="ribbon">
+                  <h6>40% off</h6>
                 </div>
-                <div className="main-image-text"></div> */}
+                <div className="main-image-container">
+                  <img className="main-image" src={MainImage}/>
+                </div>
+                {/* <div className="main-image-text-container">
+                  <div className="main-image-rating-container">
+                    <h2>Air Jordan 1 Retro</h2>
+                  </div>
+                  <div className="main-image-button-container">
+                    <h2>$100</h2>
+                    <button>Buy Now</button>
+                  </div>
+                </div> */}
               </div>
             </div>
         </div>

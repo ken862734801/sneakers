@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { ProductDetailProps } from "../common/types";
 import "../../styles/product-page.css";
-
+import {Splide, SplideSlide} from "@splidejs/react-splide";
 
 export default function ProductPage(){
     let {id} = useParams();
@@ -33,7 +33,9 @@ export default function ProductPage(){
       console.log(inventoryData)
 
       function renderImageSplide(){
-    
+        if(!productData){
+            return "LOADING..."
+        }
       }
       
     return (
