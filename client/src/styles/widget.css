@@ -109,7 +109,8 @@
 }
 .widget-product-rating-row{
     display:flex;
-    margin-top:5px;
+    margin-top:4px;
+    margin-bottom:6px;
     width:85%;
 }
 .widget-star{
@@ -135,10 +136,12 @@
     font-size:0.55rem;
     margin-bottom:4px;
 }
-.widget-add-btn{
+.widget-link{
+    width:60px !important;
     color:var(--yellow);
-    font-size: .70rem;
+    font-size: .65rem;
 }
+
 .widget-add-btn:hover{
     text-decoration: underline;
 }
