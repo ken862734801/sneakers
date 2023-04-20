@@ -17,8 +17,6 @@ urls = [
         "https://www.nike.com/t/air-max-97-mens-shoes-LJmK45/921826-101"
     ]
 data = []
-        # "https://www.nike.com/t/air-force-1-big-kids-shoes-M7mcL9/CT3839-101",
-        # "https://www.nike.com/t/air-max-97-big-kids-shoes-fQk07c/921522-031"
 
 def filter_category(str):
     if "Women" in str:

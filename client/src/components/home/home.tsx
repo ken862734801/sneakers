@@ -12,6 +12,8 @@ import MainImage from "../../images/main-image.png";
 import "../../styles/home.css";
 import ProductCard from "../product/product-card";
 import { ProductCardProps } from "../common/types";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Home() {
 
@@ -157,20 +159,27 @@ export default function Home() {
               <div className="main-image-background-border">
                 <h1>NIKE</h1>
                 <div className="ribbon">
-                  <h6>40% off</h6>
+                  <h6>20% off</h6>
                 </div>
                 <div className="main-image-container">
                   <img className="main-image" src={MainImage}/>
                 </div>
-                {/* <div className="main-image-text-container">
+                <div className="main-image-text-container">
                   <div className="main-image-rating-container">
-                    <h2>Air Jordan 1 Retro</h2>
+                    <h2>Air Jordan 1</h2>
+                    <div className="star-container">
+                      <FontAwesomeIcon icon={faStar}style={{fontSize: "10px"}}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faStar}style={{fontSize: "10px"}}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faStar}style={{fontSize: "10px"}}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faStar}style={{fontSize: "10px"}}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faStar}style={{fontSize: "10px"}}></FontAwesomeIcon>
+                    </div>
                   </div>
                   <div className="main-image-button-container">
                     <h2>$100</h2>
                     <button>Buy Now</button>
                   </div>
-                </div> */}
+                </div>
               </div>
             </div>
         </div>

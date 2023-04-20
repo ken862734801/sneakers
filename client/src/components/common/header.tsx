@@ -14,27 +14,27 @@ interface HeaderProps {
 }
 
 export default function Header ({page, onPageChange}: HeaderProps){
-    const [hideHeader, setHideHeader] = useState(false);
-    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    // const [hideHeader, setHideHeader] = useState(false);
+    // const [prevScrollPos, setPrevScrollPos] = useState(0);
   
-    useEffect(() => {
-      const handleScroll = () => {
-        const currentScrollPos = window.pageYOffset;
-        const visible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
+    // useEffect(() => {
+    //   const handleScroll = () => {
+    //     const currentScrollPos = window.pageYOffset;
+    //     const visible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
   
-        setPrevScrollPos(currentScrollPos);
-        setHideHeader(!visible);
-      };
+    //     setPrevScrollPos(currentScrollPos);
+    //     setHideHeader(!visible);
+    //   };
   
-      window.addEventListener('scroll', handleScroll);
+    //   window.addEventListener('scroll', handleScroll);
   
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, [prevScrollPos]);
+    //   return () => {
+    //     window.removeEventListener('scroll', handleScroll);
+    //   };
+    // }, [prevScrollPos]);
    
     return (
-        <header className={hideHeader? "hide": ""}>
+        <header>
             <div className="header-container">
                 <div className="brand-logo-container">
                     <Link to={"/"}>
