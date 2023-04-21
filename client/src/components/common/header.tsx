@@ -42,7 +42,7 @@ export default function Header ({page, onPageChange}: HeaderProps){
                     </Link>
                 </div>
                 <nav className="header-navbar">
-                    <Link to={"/men"} className={page === "men" ? "active-nav" : ""} onClick={() => onPageChange("men")}>Men</Link>
+                    <Link to={"/men"} onClick={() => onPageChange("men")}>Men</Link>
                     <Link to={"/women"} onClick={() => onPageChange("women")}>Women</Link>
                     <Link to={"/kids"} onClick={() => onPageChange("kids")}>Kids</Link>
                     <Link to={"/sale"} onClick={() => onPageChange("sale")}>Sale</Link>

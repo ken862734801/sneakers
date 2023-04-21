@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import { faHeart, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { ProductCardProps } from "../common/types";
+import { WidgetProps } from "../common/types";
 
 
-export default function Widget (props: ProductCardProps){
+export default function Widget (props: WidgetProps){
     const productName = (props.name).split(" ").join("-");
     return (
         <div className="widget">

@@ -136,6 +136,27 @@
     "isFeatured": true
   },
   {
+    "sku": "DA8535-403",
+    "name": "Nike Structure 24",
+    "price": 100.0,
+    "description": "The Nike Structure 24 has you ready to hit the road. We tested hundreds of runners to design the crash pad under your heel that creates a cushioned, smooth transition from heel to toe. Those insights also created an airy upper with breathability right where you need it.",
+    "images": [
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/9c76e5fb-174f-46c2-9f3d-28c59ca13360/structure-24-mens-road-running-shoes-jNGSf3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2b0ed9bf-8c29-4c57-85b8-779e4aac4d3b/structure-24-mens-road-running-shoes-jNGSf3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/d61094e7-f0c7-4590-b3d5-a917bdcb3d88/structure-24-mens-road-running-shoes-jNGSf3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/a8b79e76-7ec1-4526-b9c9-0baabe4a7113/structure-24-mens-road-running-shoes-jNGSf3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/aebe9964-2727-4035-b26b-d826100830a5/structure-24-mens-road-running-shoes-jNGSf3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/0963acd7-bee2-4580-8b83-a1371d1542fa/structure-24-mens-road-running-shoes-jNGSf3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/e6c7ec88-6283-464f-9127-70bf679d54bd/structure-24-mens-road-running-shoes-jNGSf3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/99b2a29a-1412-4056-9f45-4cf84bf0e1ed/structure-24-mens-road-running-shoes-jNGSf3.png"
+    ],
+    "category": "Men",
+    "style": "Men's Running Shoes",
+    "isNew": false,
+    "onSale": true,
+    "isFeatured": false
+  },
+  {
     "sku": "DD9315-107",
     "name": "Air Jordan 1 Low G",
     "price": 100.0,
@@ -202,6 +223,27 @@
     "isFeatured": true
   },
   {
+    "sku": "DH3392-010",
+    "name": "Nike Zoom Metcon Turbo 2",
+    "price": 100.0,
+    "description": "The Nike Zoom Metcon Turbo 2 puts a shot of adrenalizing speed into your everyday workout. It combines stability and responsiveness in a lightweight package to help you move quickly during circuit training, high intensity intervals on the treadmill, a squeezed-in cardio workout on the way home whatever you choose. From the Zoom Air cushioning underfoot to the rope wrap at the instep, every detail is pared down to minimize weight while maximizing function and durability. Lighter, stronger materials are built for speed and strength.",
+    "images": [
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/d646b481-eece-4618-83b6-2aef6bb85047/zoom-metcon-turbo-2-mens-training-shoes-qzmdn3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/9418ec0c-18d1-4af9-b24d-4ae51cf879e8/zoom-metcon-turbo-2-mens-training-shoes-qzmdn3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/1146d0d8-3641-431c-a80c-e83f5ccd7c6d/zoom-metcon-turbo-2-mens-training-shoes-qzmdn3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/fe2307b9-a38b-4839-935a-5390d4ca48f8/zoom-metcon-turbo-2-mens-training-shoes-qzmdn3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/251e205c-1d87-4881-bd0a-82d6c6b8b1a2/zoom-metcon-turbo-2-mens-training-shoes-qzmdn3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/63b22cce-dc86-4192-b6da-609d463d6b8b/zoom-metcon-turbo-2-mens-training-shoes-qzmdn3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/4f82f50d-fbbc-4185-8b9c-bd7113a024d5/zoom-metcon-turbo-2-mens-training-shoes-qzmdn3.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/8c957f93-4e02-4889-b341-544f0c1a677a/zoom-metcon-turbo-2-mens-training-shoes-qzmdn3.png"
+    ],
+    "category": "Men",
+    "style": "Men's Shoes",
+    "isNew": false,
+    "onSale": true,
+    "isFeatured": false
+  },
+  {
     "sku": "CT0713-100",
     "name": "Jordan Crater",
     "price": 100.0,
@@ -219,6 +261,25 @@
     "isNew": true,
     "onSale": false,
     "isFeatured": true
+  },
+  {
+    "sku": "DJ6606-001",
+    "name": "Nike Vista",
+    "price": 100.0,
+    "description": "Lightweight and airy, less is more when it comes to these customizable sandals. The strap system is entirely removable so you can add your own look or color accent. They let you bridge city living and nature with the pull of a strap.",
+    "images": [
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/a66c9b31-aa47-46d3-bfbb-b6db40712279/vista-mens-sandals-TrbqsG.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/27f0fb77-c791-4e4f-9e06-54d3a8d72823/vista-mens-sandals-TrbqsG.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/1304419c-f6a1-4042-804f-4c0786ab3a3b/vista-mens-sandals-TrbqsG.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/bbc7da05-3037-466d-ad75-3ebb80faf67b/vista-mens-sandals-TrbqsG.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/3b35f156-cc8e-4628-af63-b4f524404bfa/vista-mens-sandals-TrbqsG.png",
+      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2c447ddb-e071-47bc-a75f-b3754439125f/vista-mens-sandals-TrbqsG.png"
+    ],
+    "category": "Men",
+    "style": "Men's Sandals",
+    "isNew": false,
+    "onSale": true,
+    "isFeatured": false
   },
   {
       "sku": "DR1330-413",
@@ -382,10 +443,32 @@
           "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/458afb4d-1c4a-4473-996c-e7efbac8f6e6/air-presto-womens-shoe-LMdjZP.png"
         ],
         "category": "Women",
-        "style": "Women's Shoe",
+        "style": "Women's Shoes",
         "isNew": false,
         "onSale": false,
         "isFeatured": true
+    },
+    {
+      "sku": "FJ7733-140",
+      "name": "Nike Pegasus Trail 4",
+      "price": 100.0,
+      "description": "Running is your daily ritual, taking you from road to trail as you seek out new adventures and goals. Let the Nike Pegasus Trail 4 take you there and back again with its supportive, springy feel. Underfoot traction keeps you going over rocky terrain while still providing a smooth ride for the road. Your trusted workhorse with wings is back and ready for an off-road journey.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/6b46c043-4b2e-487b-b072-70f9c5638f31/pegasus-trail-4-womens-trail-running-shoes-CQT261.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/75f4e0d6-769a-4df8-93ca-01057f5920c8/pegasus-trail-4-womens-trail-running-shoes-CQT261.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/b23b8ac0-c090-46a7-a5c9-6b46287e443c/pegasus-trail-4-womens-trail-running-shoes-CQT261.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/150b71fa-d396-4a1e-8dd0-94a56c70cf44/pegasus-trail-4-womens-trail-running-shoes-CQT261.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/3eec2a02-14ed-4b1e-95bc-5b906d6a9d54/pegasus-trail-4-womens-trail-running-shoes-CQT261.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/ac409c2b-acb3-4b75-b328-6cc24c397758/pegasus-trail-4-womens-trail-running-shoes-CQT261.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/78373f92-003e-45fe-8d36-01d6b1730b9f/pegasus-trail-4-womens-trail-running-shoes-CQT261.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/3abbf956-f691-4863-a485-976bd8589ae4/pegasus-trail-4-womens-trail-running-shoes-CQT261.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/c918e580-85bd-460a-972c-53b802ac81e0/pegasus-trail-4-womens-trail-running-shoes-CQT261.png"
+      ],
+      "category": "Women",
+      "style": "Women's Shoes",
+      "isNew": false,
+      "onSale": true,
+      "isFeatured": false
     },
     {
         "sku": "CW4554-601",
@@ -429,6 +512,27 @@
         "isNew": false,
         "onSale": false,
         "isFeatured": true
+    },
+    {
+      "sku": "DR9761-002",
+      "name": "Nike Tech Hera",
+      "price": 100.0,
+      "description": "When you can't get away with wearing slippers, wear these instead. The Tech Hera feels like a hug for your feet, with everything from a comfort collar to a lifted midsole for all-day comfort. The hairy suede makes your look extra cozy, while the wavy design of the midsole keeps it interesting. Its durable design holds up beautifully to everyday wear\u2014which is perfect, because you'll definitely want to wear these every day.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/4b2f5e8a-8638-4fa5-81fa-e714024efb39/tech-hera-womens-shoes-NjvkxR.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/31d5f3b3-1a87-43c4-b34d-00058fc96476/tech-hera-womens-shoes-NjvkxR.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/19bbbf33-f650-4f08-8563-56b3a67ac913/tech-hera-womens-shoes-NjvkxR.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/948fbfa8-d8d1-4baf-a7b3-1dff275608c2/tech-hera-womens-shoes-NjvkxR.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/8952de2f-3ba3-4eac-8c46-19d89a6cf892/tech-hera-womens-shoes-NjvkxR.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/d25c083d-3bb7-4ec2-b1d8-1fac2935716e/tech-hera-womens-shoes-NjvkxR.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2c52d5b5-b818-4dd6-9a8d-168ab430db81/tech-hera-womens-shoes-NjvkxR.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/ddb56a07-34af-4674-8227-c17bd3d09551/tech-hera-womens-shoes-NjvkxR.png"
+      ],
+      "category": "Women",
+      "style": "Women's Shoes",
+      "isNew": false,
+      "onSale": true,
+      "isFeatured": false
     },
     {
         "sku": "DJ6602-001",
@@ -497,10 +601,29 @@
           "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/9257f060-48a2-4909-9b51-2cfc23d3fd84/victori-one-womens-print-slides-2hJLv6.png"
         ],
         "category": "Women",
-        "style": "Women's Print Slides",
+        "style": "Women's Slides",
         "isNew": false,
         "onSale": false,
         "isFeatured": true
+    },
+    {
+      "sku": "DV1033-600",
+      "name": "Nike Offcourt Adjust",
+      "price": 100.0,
+      "description": "Post game, errands and more\u2014adjust your comfort on the go. The adjustable, padded strap lets you perfect your fit, while the lightweight foam midsole brings first-class comfort to your feet.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/6b1b78f7-6cb1-4733-969c-4f1a7278bc4d/offcourt-adjust-womens-slides-PLGCnm.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/7a6a272f-1884-4f64-87cc-cfb1f15c8cf3/offcourt-adjust-womens-slides-PLGCnm.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/969858e0-e69b-4590-aad6-09ac746c6b0e/offcourt-adjust-womens-slides-PLGCnm.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/21ce5c87-7a7b-401c-b1f7-c5b127a8d55e/offcourt-adjust-womens-slides-PLGCnm.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/677bf143-ac65-4216-99f8-c008789fa41b/offcourt-adjust-womens-slides-PLGCnm.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/425e0e05-1067-47c1-9ce7-6f505a603082/offcourt-adjust-womens-slides-PLGCnm.png"
+        ],
+      "category": "Women",
+      "style": "Women's Slides",
+      "isNew": false,
+      "onSale": true,
+      "isFeatured": false
     },
     {
       "sku": "DQ0284-108",
@@ -618,6 +741,28 @@
       "isFeatured": true
     },
     {
+      "sku": "DR0472-001",
+      "name": "Nike Run Flow",
+      "price": 100.0,
+      "description": "Are you a kid who likes to run the moment you get out of bed? Whether it's heading to school, recess or favorite afternoon activities, you know how much fun running is. The Nike Run Flow helps you do all that with supersoft and responsive cushioning underfoot. This lightweight and breathable shoe also has easy-to-use toggle lacing so you can get out the door fast because why does fun have to wait?",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f200a84c-a579-4859-9fc8-0cf91aebbf33/run-flow-big-kids-running-shoes-VMSRjc.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/7052c22d-e564-4ea8-99f6-4889646fa082/run-flow-big-kids-running-shoes-VMSRjc.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/e974a8eb-e0f0-4f64-b4bc-729342548918/run-flow-big-kids-running-shoes-VMSRjc.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/872ce2bb-bf98-4d3c-9a9f-c736acfec071/run-flow-big-kids-running-shoes-VMSRjc.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/0c4bf116-404e-4323-af1f-ca6d128de618/run-flow-big-kids-running-shoes-VMSRjc.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/5ae7f875-cd9a-4477-b13d-27e734a87647/run-flow-big-kids-running-shoes-VMSRjc.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/4486713e-d78b-4df9-9f5e-47450974fb18/run-flow-big-kids-running-shoes-VMSRjc.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/aed9efc6-766b-4ea4-9c3d-d671f1279da3/run-flow-big-kids-running-shoes-VMSRjc.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/f63badac-8c6b-44cd-8492-875a4a03ef09/run-flow-big-kids-running-shoes-VMSRjc.png"
+        ],
+      "category": "Kids",
+      "style": "Big Kids' Shoes",
+      "isNew": false,
+      "onSale": true,
+      "isFeatured": false
+    },
+    {
       "sku": "DX4379-400",
       "name": "Air Jordan 1 Mid SS",
       "price": 100.0,
@@ -639,6 +784,27 @@
       "isNew": false,
       "onSale": false,
       "isFeatured": true
+    },
+    {
+      "sku": "553560-066",
+      "name": "Air Jordan 1 Low",
+      "price": 100.0,
+      "description": "An iconic look that lasts. This AJ1 pairs the classic design of the original with premium materials that will keep you going all day.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/29149e86-62e4-43f7-9412-cb3fe5e5f19a/air-jordan-1-low-big-kids-shoes-kAvvx4.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/7d3398a8-4bf9-4804-b46d-ce5f4d4ea383/air-jordan-1-low-big-kids-shoes-kAvvx4.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/ae1a68be-13df-4a88-ad0f-4133766022c4/air-jordan-1-low-big-kids-shoes-kAvvx4.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/0f0dad01-6f94-4274-ad8e-9512cb31dd22/air-jordan-1-low-big-kids-shoes-kAvvx4.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/e2baf9da-f3a7-4827-a1ec-0b95a033f6dd/air-jordan-1-low-big-kids-shoes-kAvvx4.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/57dffd45-d6ab-49ca-81b2-5e393fbd91c7/air-jordan-1-low-big-kids-shoes-kAvvx4.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/d561d3ba-98f0-4088-b2d9-aebe27ac6e00/air-jordan-1-low-big-kids-shoes-kAvvx4.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/2f80005e-7102-40a4-80b9-98831331c225/air-jordan-1-low-big-kids-shoes-kAvvx4.png"
+      ],
+      "category": "Kids",
+      "style": "Big Kids' Shoes",
+      "isNew": false,
+      "onSale": true,
+      "isFeatured": false
     },
     {
       "sku": "DV1336-800",
@@ -767,5 +933,23 @@
       "isNew": false,
       "onSale": false,
       "isFeatured": true
+    },
+    {
+      "sku": "819352-003",
+      "name": "Nike Kawa",
+      "price": 100.0,
+      "description": "The Nike Kawa Slide is your super easy slip-on for any time. With a soft and flexible design, these sandals help growing feet recover after practice, playtime or any adventure (like a beach day).",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/d59be604-ac66-422f-97b6-832c13ae5765/kawa-little-big-kids-slides-VXZxnZ.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/eekmxafo0tkgcqqmhylv/kawa-little-big-kids-slides-VXZxnZ.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/hsu4ak8txlwpk7abtwyv/kawa-little-big-kids-slides-VXZxnZ.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/s2tfwq6q2fnaw2vzpko7/kawa-little-big-kids-slides-VXZxnZ.png",
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/94e18b76-6ecb-4ecb-821b-ad85018eb4c8/kawa-little-big-kids-slides-VXZxnZ.png"
+      ],
+      "category": "Kids",
+      "style": "Big Kids' Slides",
+      "isNew": false,
+      "onSale": true,
+      "isFeatured": false
     }
 ]

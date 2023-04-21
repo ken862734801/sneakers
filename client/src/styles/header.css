@@ -30,10 +30,10 @@ header{
     border-top:2px solid transparent;
     padding-top:19px !important;
 }
-.header-navbar >a:hover{
+/* .header-navbar >a:hover{
     color:var(--yellow);
     border-top:2px solid var(--yellow);
-}
+} */
 .active-nav{
     color:var(--yellow);
     border-top:2px solid var(--yellow);

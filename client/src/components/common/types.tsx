@@ -16,6 +16,15 @@ export interface ProductCardProps {
     price: number,
     images: string[],
     style : string,
+    onSale: boolean,
+}
+
+export interface WidgetProps{
+    sku: string,
+    name: string,
+    price: number,
+    images: string[],
+    style : string
 }
 
 export interface Review {

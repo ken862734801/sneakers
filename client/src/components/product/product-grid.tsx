@@ -30,6 +30,7 @@ export default function ProductGrid(props: any){
                                     images={product.images} 
                                     price={product.price}
                                     style = {product.style}
+                                    onSale = {product.onSale}
                                 />
                     })}
                 </div>

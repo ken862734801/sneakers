@@ -76,7 +76,7 @@ export default function Home() {
     const startIndex = currentCollectionPage * 6;
     const endIndex = startIndex + 6;
     return collectionData.slice(startIndex, endIndex).map((data, index) => (
-      <ProductCard key={index} sku={data.sku} name={data.name} price={data.price} style={data.style} images={data.images}></ProductCard>
+      <ProductCard key={index} sku={data.sku} name={data.name} price={data.price} style={data.style} images={data.images} onSale={data.onSale}></ProductCard>
     ));
   };
 

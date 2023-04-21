@@ -40,6 +40,10 @@
 .product-card-price{
     font-size: 15px;
 }
+.product-card-price--sale{
+    text-decoration: line-through;
+    margin-right:5px;
+}
 .favorite-button:hover{
     transform: scale(1.25);
 }
