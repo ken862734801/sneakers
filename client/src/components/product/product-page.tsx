@@ -15,6 +15,9 @@ export default function ProductPage(){
     const [productData, setProductData] = useState<ProductDetailProps | undefined>();
     const [inventoryData, setInventoryData] = useState<InventoryDataType[]>([]);
 
+    const onSaleBoolean = productData?.onSale;
+    console.log(onSaleBoolean);
+
     useEffect(() => {
         async function fetchData() {
           const response = await fetch(`http://localhost:8080/api/product/${id?.toUpperCase()}`);
@@ -25,6 +28,7 @@ export default function ProductPage(){
       }, []);
 
       console.log(productData);
+      console.log(productData?.category);
 
       useEffect(()=> {
         async function fetchInventoryData(){
@@ -69,7 +73,12 @@ export default function ProductPage(){
                 <div className="product-detail-right-container">
                     <h2 className="product-name">{productData?.name}</h2>
                     <p className="product-style">{productData?.style}</p>
-                    <p className="product-price">${productData?.price}</p>
+                    {onSaleBoolean?
+                     (<div className="product-price-row">
+                        <p className="orange">${productData?.price}</p>
+                        <span>$200</span>
+                     </div>) : 
+                     (<p className="product-style">${productData?.price}</p>)}
                     <div className="product-size-row">
                         <p>Select Size</p>
                         <p className="size-guide-text">Size Guide</p>

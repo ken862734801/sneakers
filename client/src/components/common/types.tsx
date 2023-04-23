@@ -7,7 +7,8 @@ export interface ProductDetailProps {
     images: string[],
     description: string,
     style: string
-    // category: string
+    category: string,
+    onSale: boolean
 }
 export interface AppState {
     cart: any[];

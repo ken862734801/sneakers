@@ -39,6 +39,17 @@
 .product-name{
     font-size: 1.6rem;
 }
+.product-price-row{
+    margin:10px 0px;
+    display:flex;
+    font-size: 1.15rem;
+}
+.product-price-row > span{
+    text-decoration: line-through;
+    margin:0px 10px;
+    /* color:rgb(175, 175, 175); */
+    color:black;
+}
 .product-price{
     margin:10px 0px;
     font-size: 1.15rem;
@@ -107,12 +118,15 @@
 @media screen and (max-width:768px){
     .product-detail-container{
         width:100%;
-        padding-top:20px;
+        padding:20px 30px 30px 30px;
     }
     .product-main-image-container{
         width:100%;
     }
     .product-detail-right-container{
+        width:100%;
+    }
+    .product-detail-left-container{
         width:100%;
     }
 }
