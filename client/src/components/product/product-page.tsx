@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { ProductDetailProps } from "../common/types";
+import { ProductCardProps, ProductDetailProps } from "../common/types";
 import "../../styles/product-page.css";
 import {Splide, SplideSlide} from "@splidejs/react-splide";
 
@@ -14,6 +14,7 @@ export default function ProductPage(){
 
     const [productData, setProductData] = useState<ProductDetailProps | undefined>();
     const [inventoryData, setInventoryData] = useState<InventoryDataType[]>([]);
+    const [recommendedData, setRecommendedData] = useState<ProductCardProps[]>([]);
 
     const onSaleBoolean = productData?.onSale;
     console.log(onSaleBoolean);
@@ -39,6 +40,7 @@ export default function ProductPage(){
         fetchInventoryData();
       }, [])
 
+      console.log(recommendedData);
       console.log(inventoryData)
 
       function handleThumbnailClick(event: React.MouseEvent<HTMLImageElement>) {
@@ -78,7 +80,7 @@ export default function ProductPage(){
                         <p className="orange">${productData?.price}</p>
                         <span>$200</span>
                      </div>) : 
-                     (<p className="product-style">${productData?.price}</p>)}
+                     (<p className="product-price">${productData?.price}</p>)}
                     <div className="product-size-row">
                         <p>Select Size</p>
                         <p className="size-guide-text">Size Guide</p>
@@ -96,10 +98,10 @@ export default function ProductPage(){
                     <p className="product-description">{productData?.description}</p>
                 </div>
             </div>
-            <div className="recommended-items">
-                <p>You may also like:</p>
+            {/* <div className="recommended-items">
+                <p>You Might Also Like:</p>
                 <div className="recommended-items-container"></div>
-            </div>
+            </div> */}
         </div>
     )
 };

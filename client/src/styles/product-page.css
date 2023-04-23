@@ -10,14 +10,14 @@
     margin-bottom:20px;
 }
 .product-main-image-container{
-    max-width:600px;
+    max-width:575px;
     /* margin-bottom:5px; */
 }
 .product-main-image{
     width:100%;
 }
 .product-thumbnails-container{
-    max-width:600px;
+    max-width:575px;
     /* border:1px solid red; */
     display:flex;
     flex-wrap: wrap;
