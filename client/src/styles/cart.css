@@ -1,0 +1,20 @@
+.cart{
+    width:60%;
+    margin: 0 auto;
+    padding:40px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width:400px;
+}
+.cart-left-container{
+    width:60%;
+    min-width:400px;
+}
+.cart-left-container-header > h2{
+    font-size: 1.6rem;
+}
+.cart-right-container{
+    width:40%;
+    min-width:400px;
+}

@@ -84,6 +84,9 @@
 .size-buttons > button:hover{
     border:1px solid black;
 }
+.selected-size{
+    border:1px solid black !important;
+}
 .payment-text{
     font-size:0.95rem;
     margin:8px 0px;

@@ -11,7 +11,7 @@ interface InventoryDataType {
 
 export default function ProductPage(){
     let {id} = useParams();
-
+    const [selectedSize, setSelectedSize] = useState("");
     const [productData, setProductData] = useState<ProductDetailProps | undefined>();
     const [inventoryData, setInventoryData] = useState<InventoryDataType[]>([]);
     const [recommendedData, setRecommendedData] = useState<ProductCardProps[]>([]);
@@ -53,7 +53,7 @@ export default function ProductPage(){
         mainImage.src = target.src;
         event.currentTarget.classList.add('active-thumbnail');
     }
-      
+
     return (
         <div className="product-detail-page">
             <div className="product-detail-container">
@@ -87,7 +87,7 @@ export default function ProductPage(){
                     </div>
                     <div className="size-buttons">
                         {inventoryData?.map(data => (
-                            <button className="size-button" key={data.sku}>{data.size}</button>
+                            <button className={selectedSize === data.size? "selected-size size-button": "size-button"} key={data.sku} onClick={() => setSelectedSize(data.size)}>{data.size}</button>
                         ))}
                     </div>
                     <p className="payment-text">10 interest-free payments of <span className="orange">$10.00</span> with Klarna.</p>
