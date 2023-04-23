@@ -35,8 +35,8 @@ header{
     border-top:2px solid var(--yellow);
 } */
 .active-nav{
-    color:var(--yellow);
-    border-top:2px solid var(--yellow);
+    color:var(--yellow)!important;
+    border-top:2px solid var(--yellow) !important;
 }
 .header-icon-container{
     display:flex;
@@ -69,7 +69,7 @@ header{
     .header-navbar{
         display:none;
     }
-    .icon-container{
+    .user-icon{
         display:none;
     }
     .menu-bar{

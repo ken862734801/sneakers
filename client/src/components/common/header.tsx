@@ -48,13 +48,13 @@ export default function Header ({page, onPageChange}: HeaderProps){
                     <Link to={"/sale"} onClick={() => onPageChange("sale")}>Sale</Link>
                 </nav>
                 <div className="header-icon-container">
-                    <div className="icon-container">
+                    <div className="icon-container search-icon">
                         <Search/>
                     </div>
-                    <div className="icon-container" id="shopping-cart-icon">
+                    <div className="icon-container shopping-cart-icon">
                         <Link to={"/cart"}><ShoppingCart/></Link>
                     </div>
-                    <div className="icon-container">
+                    <div className="icon-container user-icon">
                         <Link to={"/login"}><AccountCircleOutlined/></Link>
                     </div>
                     <div className="icon-container menu-bar">

@@ -9,6 +9,9 @@ import Cart from './components/cart/cart';
 import ProductGrid from './components/product/product-grid';
 import ProductPage from './components/product/product-page';
 
+import { Context } from './context';  
+import { AppState } from './components/common/types';
+
 import './App.css';
 
 import { Page } from './components/common/types';
@@ -27,23 +30,23 @@ const pageInformation: Record<Page, PageInformation> = {
   },
   women: {
     name:"Women's Sneakers",
-    description:"lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa consequatur recusandae non rem eos exercitationem soluta optio aspernatur minus deleniti.",
+    description:"lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa consequatur recusandae non rem eos exercitationem soluta optio aspernatur minus deleniti!",
     path: "women"
   },
   kids: {
     name: "Kid's Sneakers",
-    description:"Ipsa consequatur recusandae non rem eos exercitationem soluta optio aspernatur minus animi deleniti. Lorem ipsum dolor sit amet consectetur.",
+    description:"Ipsa consequatur recusandae non rem eos exercitationem soluta optio aspernatur minus animi deleniti. Lorem ipsum dolor sit amet consectetur!",
     path: "kids"
   },
   sale: {
     name:"Sneakers on Sale",
-    description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa consequatur recusandae non rem eos exercitationem soluta optio aspernatur.",
+    description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa consequatur recusandae non rem eos exercitationem soluta optio aspernatur!",
     path: "sale"
   },
 }
 
 function App() {
-  const [state, setState] = useState({
+  const [state, setState] = useState<AppState>({
     cart: []
   })
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -58,7 +61,8 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <Context.Provider value={{state:state}}>
+      <div className="App">
       <Header loggedIn={isLoggedIn} page={page} onPageChange={handlePageChange}/>
           <main>
             <Routes>
@@ -80,7 +84,7 @@ function App() {
                 <Route path = "/kids" element={
                 <ProductGrid
                   name={pageInformation.kids.name}
-                  description={pageInformation.women.description}
+                  description={pageInformation.kids.description}
                   path={pageInformation.kids.path}/>}
                 />
                 <Route path = "/sale" element={
@@ -95,6 +99,7 @@ function App() {
           </main>
       <Footer/>
     </div>
+    </Context.Provider>
   );
 }
 

@@ -48,7 +48,7 @@ public class SneakersApplication {
 
                 List<String> sizes;
 
-                if(product.getCategory().equals("Kid")){
+                if(product.getCategory().equals("Kids")){
                     sizes = List.of("3.5Y", "4Y", "4.5Y", "5Y", "5.5Y", "6Y", "6.5Y", "7Y");
                 } else if (product.getCategory().equals("Women")) {
                     sizes = List.of("5", "5.5","6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5","12");

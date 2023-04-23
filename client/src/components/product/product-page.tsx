@@ -4,11 +4,16 @@ import { ProductDetailProps } from "../common/types";
 import "../../styles/product-page.css";
 import {Splide, SplideSlide} from "@splidejs/react-splide";
 
+interface InventoryDataType {
+    sku: string,
+    size: string,
+}
+
 export default function ProductPage(){
     let {id} = useParams();
 
     const [productData, setProductData] = useState<ProductDetailProps | undefined>();
-    const [inventoryData, setInventoryData] = useState([]);
+    const [inventoryData, setInventoryData] = useState<InventoryDataType[]>([]);
 
     useEffect(() => {
         async function fetchData() {
@@ -32,11 +37,16 @@ export default function ProductPage(){
 
       console.log(inventoryData)
 
-      function renderImageSplide(){
-        if(!productData){
-            return "LOADING..."
-        }
-      }
+      function handleThumbnailClick(event: React.MouseEvent<HTMLImageElement>) {
+        const thumbnails = document.querySelectorAll('.product-thumbnail');
+        thumbnails.forEach((thumbnail) => {
+            thumbnail.classList.remove('active-thumbnail');
+        });
+        const mainImage = document.querySelector('.product-main-image') as HTMLImageElement;
+        const target = event.target as HTMLImageElement;
+        mainImage.src = target.src;
+        event.currentTarget.classList.add('active-thumbnail');
+    }
       
     return (
         <div className="product-detail-page">
@@ -45,14 +55,41 @@ export default function ProductPage(){
                     <div className="product-main-image-container">
                         <img className="product-main-image" src={productData?.images[0]}/>
                     </div>
+                    <div className="product-thumbnails-container">
+                    {productData?.images.map((image, index) => (
+                            <img 
+                                className={`product-thumbnail ${index === 0 ? 'active-thumbnail' : ''}`} 
+                                src={image} 
+                                key={index}
+                                onClick={handleThumbnailClick}
+                            />
+                        ))}
+                    </div>
                 </div>
                 <div className="product-detail-right-container">
                     <h2 className="product-name">{productData?.name}</h2>
                     <p className="product-style">{productData?.style}</p>
                     <p className="product-price">${productData?.price}</p>
-                    <button>Add to Bag</button>
+                    <div className="product-size-row">
+                        <p>Select Size</p>
+                        <p className="size-guide-text">Size Guide</p>
+                    </div>
+                    <div className="size-buttons">
+                        {inventoryData?.map(data => (
+                            <button className="size-button" key={data.sku}>{data.size}</button>
+                        ))}
+                    </div>
+                    <p className="payment-text">10 interest-free payments of <span className="orange">$10.00</span> with Klarna.</p>
+                    <div className="product-detail-button-container">
+                        <button className="add-to-bag-button">Add to Bag</button>
+                        <button className="add-to-favorite-button">Add to Favorites</button>
+                    </div>
                     <p className="product-description">{productData?.description}</p>
                 </div>
+            </div>
+            <div className="recommended-items">
+                <p>You may also like:</p>
+                <div className="recommended-items-container"></div>
             </div>
         </div>
     )

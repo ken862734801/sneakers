@@ -1,5 +1,10 @@
 import { createContext, useContext } from "react";
+import { AppState } from "../components/common/types";
 
-const Context = createContext([]);
-
-export {Context, useContext}
+type AppContextValue = {
+    state: AppState;
+  };
+  
+  export const Context = createContext<AppContextValue>({
+    state: {cart: []},
+  });

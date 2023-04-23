@@ -9,6 +9,9 @@ export interface ProductDetailProps {
     style: string
     // category: string
 }
+export interface AppState {
+    cart: any[];
+  }
 
 export interface ProductCardProps {
     sku: string,
