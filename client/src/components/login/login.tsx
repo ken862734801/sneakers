@@ -1,8 +1,10 @@
-
+import "../../styles/login.css";
 export default function Login(){
     return(
-        <div>
-            <p>Login page</p>
+        <div className="login-page">
+            <div className="login-page-container">
+                <p>Login</p>
+            </div>
         </div>
     )
 }
