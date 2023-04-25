@@ -14,6 +14,7 @@ interface HeaderProps {
 }
 
 export default function Header ({page, onPageChange}: HeaderProps){
+    
     // const [hideHeader, setHideHeader] = useState(false);
     // const [prevScrollPos, setPrevScrollPos] = useState(0);
   
