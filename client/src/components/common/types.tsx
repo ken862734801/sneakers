@@ -1,5 +1,8 @@
 export type Page = "men" | "women" | "kids" | "sale";
 
+export interface ShoppingCartContextType{
+    cart: any[];
+}
 export interface ProductDetailProps {
     sku: string,
     name: string,
@@ -10,9 +13,9 @@ export interface ProductDetailProps {
     category: string,
     onSale: boolean
 }
-export interface AppState {
+export interface ShoppingCartState {
     cart: any[];
-  }
+}
 
 export interface ProductCardProps {
     sku: string,

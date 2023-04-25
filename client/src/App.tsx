@@ -8,10 +8,7 @@ import Home from './components/home/home';
 import Cart from './components/cart/cart';
 import ProductGrid from './components/product/product-grid';
 import ProductPage from './components/product/product-page';
-
-import { Context } from './context';  
-import { AppState } from './components/common/types';
-
+import { CartContext } from './context';
 import './App.css';
 
 import { Page } from './components/common/types';
@@ -46,9 +43,8 @@ const pageInformation: Record<Page, PageInformation> = {
 }
 
 function App() {
-  const [state, setState] = useState<AppState>({
-    cart: []
-  })
+  const [cart, setCart] = useState([]);
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [page, setPage] = useState<Page>("men");
   const [pageName, setPageName] = useState(pageInformation[page].name);
@@ -62,8 +58,8 @@ function App() {
   }
 
   return (
-    <Context.Provider value={{state:state}}>
-      <div className="App">
+     <CartContext.Provider value={{cart}}>
+       <div className="App">
       <Header loggedIn={isLoggedIn} page={page} onPageChange={handlePageChange}/>
           <main>
             <Routes>
@@ -100,7 +96,7 @@ function App() {
           </main>
       <Footer/>
     </div>
-    </Context.Provider>
+     </CartContext.Provider>
   );
 }
 

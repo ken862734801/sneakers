@@ -1,7 +1,10 @@
 import "../../styles/cart.css";
 import CartItem from "./cart-item";
+import { CartContext } from "../../context";
+import { useContext } from "react";
+
 export default function Cart (){
-    let cart:number[] = [1,2,3];
+    const {cart} = useContext(CartContext);
 
     return (
         <div className="cart-page">
