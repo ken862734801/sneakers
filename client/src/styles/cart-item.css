@@ -9,6 +9,8 @@
 .cart-item-remove-btn-container{
     display:flex;
     justify-content: flex-end;
+    margin-bottom:8px;
+    width:98%;
 }
 .remove-btn{
     cursor: pointer;
@@ -24,7 +26,7 @@
     align-items: center;
 }
 .cart-item-column-left > .cart-item-image-container{
-    width:90%;
+    width:95%;
     padding:5px;
     background-color: rgb(246, 246, 246);
     display:flex;
@@ -35,6 +37,7 @@
 }
 .cart-item-column-right{
     width:80%;
+    padding-left:5px;
 }
 .cart-item-name-price-row{
     display:flex;
@@ -89,70 +92,13 @@
 .cart-item-quantity{
     margin-left:5px;
 }
-/* .cart-item-left-container{
-    width:20%;
-}
-.cart-item-image-container{
-    width:90%;
-    padding:5px;
-    background-color: rgb(246, 246, 246);
-}
-.cart-item-image-container > img{
-    width:100%;
-}
-.cart-item-right-container{
-    width:80%;
-}
-.cart-item-remove-btn-container{
-    display:flex;
-    justify-content: flex-end;
-    width:95%;
-}
-.cart-item-header{
-    width:90%;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.cart-item-name{
-    font-size:1rem;
-}
-.cart-item-price{
-    font-size:1rem;
-}
-.cart-item-sku{
-    margin:2px 0px;
-    font-family: 'Roboto', sans-serif;
-    font-size:0.90rem !important;
-}
-.cart-item-sku--span{
-    font-family: var(--font) !important;
-}
-.cart-item-sku, .cart-item-style, .cart-item-shipping, .cart-item-size, .cart-item-quantity{
-    font-size:0.95rem;
-}
-.cart-item-sku--span, .cart-item-style--span, .cart-item-shipping--span,.cart-item-size, .cart-item-quantity{
-    color:rgb(192, 192, 192);
-    font-size:0.95rem;
-}
-.cart-item-size-row{
-    display:flex;
-    margin:2px 0px;
-}
-.cart-item-size--span > select{
-    border:none;
-    font-size:1rem;
-}
-.cart-item-quantity--span > select{
-    border:none;
-    font-size:1.1rem;
-}
-.cart-item-quantity{
-    margin-left:10px;
-} */
+
 @media screen and (max-width:768px){
     .cart-item{
         padding:5px 0px 15px 0px;
+    }
+    .cart-item-remove-btn-container{
+        width:100%;
     }
     .remove-btn{
         font-size:18px !important;
@@ -163,8 +109,17 @@
     .cart-item-shipping{
         display:none;
     }
-    .cart-item-sku, .cart-item-style, .cart-item-size-quantity-row{
+    .cart-item-price,
+    .cart-item-name,
+    .cart-item-sku--span,
+    .cart-item-style,
+    .cart-item-style--span,
+    .cart-item-size-quantity-row{
         margin:2px 0px;
+        font-size:0.90rem !important;
+    }
+    .cart-item-sku{
+        font-size:0.80rem !important;
     }
     
 }
