@@ -121,5 +121,12 @@
     .cart-item-sku{
         font-size:0.80rem !important;
     }
-    
+    .cart-item-size--span > select{
+        border:none;
+        font-size:0.90rem;
+    }
+    .cart-item-quantity--span > select{
+        border:none;
+        font-size:0.90rem;
+    }
 }

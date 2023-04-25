@@ -11,17 +11,19 @@ export default function Cart (){
                         (<div className="cart-left-container--true">
                             <h2>Cart (<span>{`${cart.length}`}</span>)</h2>
                             <p>Items in your bag are not reserved — check out now to make them yours.</p>
+                            <div className="cart-item-list-container--true">
+                            <CartItem/>
+                            <CartItem/>
+                            <CartItem/>
+                            </div>
                         </div>) :
                         (<div className="cart-left-container--false">
-                            <div className="cart-left-container-header">
-                                <h2>Cart</h2>
+                                <h2>Cart (<span>{`${cart.length}`}</span>)</h2>
                                 <p>Items you add to your cart will be saved here for you.</p>
+                            <div className="cart-item-list-container--false">
+                                <p>There is nothing in your cart right now.</p>
                             </div>
-                            <div className="cart-left-container--cart-empty"></div>
                         </div>)}
-                        <CartItem/>
-                        <CartItem/>
-                        <CartItem/>
                 </div>
                 <div className="cart-right-container">
                     <div className="cart-right-container-header">

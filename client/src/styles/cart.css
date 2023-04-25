@@ -12,7 +12,10 @@
     min-width:400px;
 }
 .cart-left-container--true > h2{
-    margin-bottom:5px;
+    margin:5px 0px;
+}
+.cart-left-container--false > h2{
+    margin:5px 0px;
 }
 .cart-left-container-header > h2{
     font-size: 1.6rem;
@@ -20,6 +23,13 @@
 }
 .cart-left-container--true > h2 > span{
     font-family: 'Roboto', sans-serif;
+}
+.cart-item-list-container--false{
+    text-align: center;
+    min-height:500px;
+}
+.cart-item-list-container--false > p{
+    padding-top:10px;
 }
 .cart-right-container{
     width:30%;
@@ -76,5 +86,9 @@
     .cart-right-container{
         padding-left:0px;
         margin-top:10px;
+    }
+    .cart-item-list-container--false{
+        text-align: center;
+        min-height:200px;
     }
 }
