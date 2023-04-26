@@ -83,11 +83,13 @@
 }
 .cart-item-size--span > select{
     border:none;
-    font-size:1rem;
+    font-size:0.925rem;
+    font-family: 'Roboto', sans-serif;
 }
 .cart-item-quantity--span > select{
     border:none;
-    font-size:1.05rem;
+    font-size:0.925rem;
+    font-family: 'Roboto', sans-serif;
 }
 .cart-item-quantity{
     margin-left:5px;

@@ -28,6 +28,8 @@ export default function Cart (){
                                         sku={item.sku}
                                         style={item.style}
                                         image={item.image}
+                                        quantity ={item.quantity}
+                                        size={item.size}
                                         // price={item.price}
                                         // sku={item.sku}
                                         // style={item.style}

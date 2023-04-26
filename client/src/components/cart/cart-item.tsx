@@ -36,14 +36,14 @@ export default function CartItem(props:any){
                                 <p className="cart-item-size">Size:
                                     <span className="cart-item-size--span">
                                         <select>
-                                            <option>8</option>
+                                            <option>{props.size}</option>
                                         </select>
                                     </span>
                                 </p>
                                 <p className="cart-item-quantity">Quantity:
                                     <span className="cart-item-quantity--span">
                                         <select>
-                                            <option>10</option>
+                                            <option>{props.quantity}</option>
                                         </select>
                                     </span>
                                 </p>

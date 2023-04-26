@@ -21,7 +21,7 @@ interface CartItemType {
   }
 
 export default function ProductPage(){
-    const {cart} = useContext(CartContext);
+    const {cart, setCart} = useContext(CartContext);
 
     let {id} = useParams();
     const [selectedSize, setSelectedSize] = useState("");
@@ -67,20 +67,27 @@ export default function ProductPage(){
 
     function handleAddToCart() {
         const selectedInventory = inventoryData.find((item) => item.size === selectedSize);
-    
+      
         if (selectedInventory) {
-          const cartItem: CartItemType = {
-            name: productData?.name || "",
-            sku: selectedInventory.sku,
-            price: productData?.price || 0,
-            style: productData?.style || "",
-            image: productData?.images[0] || "",
-            size: selectedInventory.size,
-            quantity: 1,
-          };
-    
-          cart.push(cartItem);
-          console.log(cart)
+          const existingCartItemIndex = cart.findIndex((item) => item.sku === selectedInventory.sku && item.size === selectedInventory.size);
+          
+          if (existingCartItemIndex !== -1) {
+            const updatedCart = [...cart];
+            updatedCart[existingCartItemIndex].quantity += 1;
+            setCart(updatedCart);
+          } else {
+            const cartItem: CartItemType = {
+              name: productData?.name || "",
+              sku: selectedInventory.sku,
+              price: productData?.price || 0,
+              style: productData?.style || "",
+              image: productData?.images[0] || "",
+              size: selectedInventory.size,
+              quantity: 1,
+            };
+      
+            setCart([...cart, cartItem]);
+          }
         }
       }
 
