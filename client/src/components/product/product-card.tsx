@@ -22,11 +22,15 @@ export default function ProductCard(props: ProductCardProps){
     let productName = (props.name).split(" ").join("-");
     const onSaleBoolean = props.onSale;
     
+    const handleScrollTop = () => {
+        window.scrollTo(0, 0);
+    };
+    
 
     return (
 
             <div className="product-card" id={props.sku}>
-                <Link to={`/us/${productName.toLowerCase()}/${(props.sku).toLowerCase()}`}>
+                <Link to={`/us/${productName.toLowerCase()}/${(props.sku).toLowerCase()}`} onClick={handleScrollTop}>
                     {/* <div className="product-card-header">
                         <FavoriteBorderOutlined className="favorite-button" fontSize="small"/>
                     </div> */}
