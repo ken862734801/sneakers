@@ -16,8 +16,8 @@ export default function Cart (){
                             <p>Items in your bag are not reserved — check out now to make them yours.</p>
                             <div className="cart-item-list-container--true">
                             <CartItem/>
-                            <CartItem/>
-                            <CartItem/>
+                            {/* <CartItem/>
+                            <CartItem/> */}
                             </div>
                         </div>) :
                         (<div className="cart-left-container--false">
@@ -35,7 +35,7 @@ export default function Cart (){
                     <div className="cart-right-container-summary">
                         <div className="cart-right-subtotal-row">
                             <p>Subtotal</p>
-                            <p className="cart-right-subtotal-price">$300</p>
+                            <p className="cart-right-subtotal-price">$100</p>
                         </div>
                         <div className="cart-right-shipping-handling-row">
                             <p>Estimated Shipping & Handling</p>
@@ -47,7 +47,7 @@ export default function Cart (){
                         </div>
                         <div className="cart-right-total-row">
                             <p>Total</p>
-                            <p className="cart-right-total-price">$320</p>
+                            <p className="cart-right-total-price">$120</p>
                         </div>
                         <div className="cart-right-checkout-btn-container">
                             <button>Checkout</button>

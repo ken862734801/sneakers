@@ -11,6 +11,9 @@
     width:60%;
     min-width:400px;
 }
+.cart-left-container--true{
+    min-height:600px;
+}
 .cart-left-container--true > h2{
     margin:5px 0px;
 }
@@ -26,7 +29,7 @@
 }
 .cart-item-list-container--false{
     text-align: center;
-    min-height:500px;
+    min-height:550px;
 }
 .cart-item-list-container--false > p{
     padding-top:10px;
@@ -54,8 +57,8 @@
     display:flex;
     justify-content: space-between;
     padding:15px 0px;
-    border-top:1px solid rgb(192, 192, 192);
-    border-bottom:1px solid rgb(192, 192, 192);
+    border-top:1px solid rgb(235, 235, 235);;
+    border-bottom:1px solid rgb(235, 235, 235);;
 }
 .cart-right-subtotal-price,
 .cart-right-shipping-handling-price,
