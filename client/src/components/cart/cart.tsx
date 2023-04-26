@@ -5,6 +5,11 @@ import { useContext } from "react";
 
 export default function Cart (){
     const {cart} = useContext(CartContext);
+    const subtotalPrice = cart.reduce((acc, item) => acc + item.price, 0);
+    const shippingPrice = (cart.length) * 5;
+    const taxPrice = shippingPrice;
+
+    const totalPrice = subtotalPrice + shippingPrice + taxPrice;
 
     return (
         <div className="cart-page">
@@ -46,19 +51,19 @@ export default function Cart (){
                     <div className="cart-right-container-summary">
                         <div className="cart-right-subtotal-row">
                             <p>Subtotal</p>
-                            <p className="cart-right-subtotal-price">$100</p>
+                            <p className="cart-right-subtotal-price">${subtotalPrice}</p>
                         </div>
                         <div className="cart-right-shipping-handling-row">
                             <p>Estimated Shipping & Handling</p>
-                            <p className="cart-right-shipping-handling-price">$10</p>
+                            <p className="cart-right-shipping-handling-price">${shippingPrice}</p>
                         </div>
                         <div className="cart-right-tax-row">
                             <p>Estimated Tax</p>
-                            <p className="cart-right-tax-price">$10</p>
+                            <p className="cart-right-tax-price">${taxPrice}</p>
                         </div>
                         <div className="cart-right-total-row">
                             <p>Total</p>
-                            <p className="cart-right-total-price">$120</p>
+                            <p className="cart-right-total-price">${totalPrice}</p>
                         </div>
                         <div className="cart-right-checkout-btn-container">
                             <button>Checkout</button>
