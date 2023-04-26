@@ -57,7 +57,7 @@ public class SneakersApplication {
                 }
 
                 for(String size: sizes){
-                    ProductInventory inventory = new ProductInventory(product, product.getSku() + "-" + size, product.getName(), product.getStyle(), size, 100, product.getId());
+                    ProductInventory inventory = new ProductInventory(product, product.getSku() + "-" + size, product.getName(), product.getStyle(), product.getImages(), size, 100, product.getId());
                     productInventoryRepository.save(inventory);
                 }
             }

@@ -1,6 +1,7 @@
 package com.example.sneakers.model;
 
 import org.springframework.data.annotation.Id;
+import java.util.List;
 
 public class ProductInventory {
     @Id
@@ -9,16 +10,18 @@ public class ProductInventory {
     private String sku;
     private String name;
     private String style;
+    private List<String> images;
     private String size;
     private int quantity;
 
     public ProductInventory(){};
 
-    public ProductInventory(Product product, String sku, String name, String style, String size, int quantity, String reference){
+    public ProductInventory(Product product, String sku, String name, String style, List<String> images, String size, int quantity, String reference){
         this.reference = product.getSku();
         this.sku = sku;
         this.name = product.getName();
         this.style = product.getStyle();
+        this.images = product.getImages();
         this.size = size;
         this.quantity = quantity;
     };
@@ -48,6 +51,12 @@ public class ProductInventory {
     }
     public void setStyle(String style){
         this.style = style;
+    }
+    public List<String> getImages(){
+        return images;
+    }
+    public void setImages(List<String> images){
+        this.images = images;
     }
     public String getSize(){
         return size;
