@@ -17,7 +17,7 @@ export default function CartItem(props:any){
                         <div className="cart-item-text-container">
                             <div className="cart-item-name-price-row">
                                 <p className="cart-item-name">{props.name}</p>
-                                <p className="cart-item-price">$100</p>
+                                <p className="cart-item-price">${props.price}</p>
                             </div>
                             <p className="cart-item-sku"><span className="cart-item-sku--span">Sku:</span> {props.sku}</p>
                             <p className="cart-item-style"><span className="cart-item-style--span">Style:</span>{props.style}</p>

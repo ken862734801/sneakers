@@ -19,6 +19,7 @@ export default function Cart (){
                                     <CartItem
                                         key={item.sku}
                                         name={item.name}
+                                        price={item.price}
                                         sku={item.sku}
                                         style={item.style}
                                         image={item.image}

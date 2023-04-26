@@ -13,6 +13,7 @@ interface InventoryDataType {
 interface CartItemType {
     name: string;
     sku: string;
+    price: number;
     style: string;
     size: string;
     image: string;
@@ -71,6 +72,7 @@ export default function ProductPage(){
           const cartItem: CartItemType = {
             name: productData?.name || "",
             sku: selectedInventory.sku,
+            price: productData?.price || 0,
             style: productData?.style || "",
             image: productData?.images[0] || "",
             size: selectedInventory.size,
