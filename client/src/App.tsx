@@ -43,7 +43,7 @@ const pageInformation: Record<Page, PageInformation> = {
 }
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState<any[]>([]);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [page, setPage] = useState<Page>("men");
@@ -58,7 +58,7 @@ function App() {
   }
 
   return (
-     <CartContext.Provider value={{cart}}>
+     <CartContext.Provider value={{cart, setCart}}>
        <div className="App">
       <Header loggedIn={isLoggedIn} page={page} onPageChange={handlePageChange}/>
           <main>

@@ -2,6 +2,7 @@ export type Page = "men" | "women" | "kids" | "sale";
 
 export interface ShoppingCartContextType{
     cart: any[];
+    setCart: (cart: any[]) => void;
 }
 export interface ProductDetailProps {
     sku: string,

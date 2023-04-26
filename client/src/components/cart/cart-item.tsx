@@ -1,11 +1,22 @@
+import { useContext } from "react";
 import "../../styles/cart-item.css";
 import { Close } from "@material-ui/icons";
+import { CartContext } from "../../context";
+
 export default function CartItem(props:any){
+
+    const {cart, setCart} = useContext(CartContext);
+
+    const removeItem = (sku: string) => {
+        const updatedCart = cart.filter((item: any) => item.sku !== sku);
+        setCart(updatedCart);
+    };
+
     return (
         <div className="cart-item">
             <div className="cart-item-container">
                 <div className="cart-item-remove-btn-container">
-                    <Close className="remove-btn"/>
+                    <Close className="remove-btn" onClick={() => removeItem(props.sku)}/>
                 </div>
                 <div className="cart-item-column-container">
                     <div className="cart-item-column-left">
