@@ -15,6 +15,7 @@ interface CartItemType {
     sku: string;
     style: string;
     size: string;
+    image: string;
     quantity: number;
   }
 
@@ -71,6 +72,7 @@ export default function ProductPage(){
             name: productData?.name || "",
             sku: selectedInventory.sku,
             style: productData?.style || "",
+            image: productData?.images[0] || "",
             size: selectedInventory.size,
             quantity: 1,
           };

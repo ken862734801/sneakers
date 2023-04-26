@@ -1,6 +1,6 @@
 import "../../styles/cart-item.css";
 import { Close } from "@material-ui/icons";
-export default function CartItem(){
+export default function CartItem(props:any){
     return (
         <div className="cart-item">
             <div className="cart-item-container">
@@ -10,17 +10,17 @@ export default function CartItem(){
                 <div className="cart-item-column-container">
                     <div className="cart-item-column-left">
                         <div className="cart-item-image-container">
-                            <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/4b2f5e8a-8638-4fa5-81fa-e714024efb39/tech-hera-womens-shoes-NjvkxR.png"></img>
+                            <img src={props.image}></img>
                         </div>
                     </div>
                     <div className="cart-item-column-right">
                         <div className="cart-item-text-container">
                             <div className="cart-item-name-price-row">
-                                <p className="cart-item-name">Nike Tech Hera</p>
+                                <p className="cart-item-name">{props.name}</p>
                                 <p className="cart-item-price">$100</p>
                             </div>
-                            <p className="cart-item-sku"><span className="cart-item-sku--span">Sku:</span> DH3392-010</p>
-                            <p className="cart-item-style"><span className="cart-item-style--span">Style:</span> Women's Shoes</p>
+                            <p className="cart-item-sku"><span className="cart-item-sku--span">Sku:</span> {props.sku}</p>
+                            <p className="cart-item-style"><span className="cart-item-style--span">Style:</span>{props.style}</p>
                             <div className="cart-item-size-quantity-row">
                                 <p className="cart-item-size">Size:
                                     <span className="cart-item-size--span">

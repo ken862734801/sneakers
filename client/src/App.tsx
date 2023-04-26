@@ -43,7 +43,7 @@ const pageInformation: Record<Page, PageInformation> = {
 }
 
 function App() {
-  const [cart, setCart] = useState([1]);
+  const [cart, setCart] = useState([]);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [page, setPage] = useState<Page>("men");

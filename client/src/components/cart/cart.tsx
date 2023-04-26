@@ -15,9 +15,19 @@ export default function Cart (){
                             <h2>Cart (<span>{`${cart.length}`}</span>)</h2>
                             <p>Items in your bag are not reserved — check out now to make them yours.</p>
                             <div className="cart-item-list-container--true">
-                            <CartItem/>
-                            {/* <CartItem/>
-                            <CartItem/> */}
+                                {cart.map((item) => (
+                                    <CartItem
+                                        key={item.sku}
+                                        name={item.name}
+                                        sku={item.sku}
+                                        style={item.style}
+                                        image={item.image}
+                                        // price={item.price}
+                                        // sku={item.sku}
+                                        // style={item.style}
+                                        // image={item.image}
+                                    />
+                                ))}
                             </div>
                         </div>) :
                         (<div className="cart-left-container--false">
