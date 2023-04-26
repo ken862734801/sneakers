@@ -54,7 +54,7 @@ export default function Header ({page, onPageChange}: HeaderProps){
                     <div className="icon-container search-icon">
                         <Search/>
                     </div>
-                    <div className="icon-container shopping-cart-icon">
+                    <div className={cart.length > 0 ? "icon-container shopping-cart-icon--active" : "icon-container shopping-cart-icon"}>
                         <Link to={"/cart"}><ShoppingCart/></Link>
                     </div>
                     <div className="icon-container user-icon">
