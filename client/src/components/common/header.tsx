@@ -5,7 +5,8 @@ import "../../styles/header.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Nike from "../../images/nike.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { CartContext } from "../../context";
 
 interface HeaderProps {
     loggedIn: boolean;
@@ -14,6 +15,7 @@ interface HeaderProps {
 }
 
 export default function Header ({page, onPageChange}: HeaderProps){
+    const {cart} = useContext(CartContext);
     
     // const [hideHeader, setHideHeader] = useState(false);
     // const [prevScrollPos, setPrevScrollPos] = useState(0);
