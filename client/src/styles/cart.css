@@ -92,6 +92,9 @@
     }
     .cart-item-list-container--false{
         text-align: center;
-        min-height:200px;
+        min-height:250px;
+    }
+    .cart-left-container--true{
+        min-height:300px;
     }
 }
