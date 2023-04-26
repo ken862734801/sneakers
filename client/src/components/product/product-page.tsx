@@ -1,20 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
 import { ProductCardProps, ProductDetailProps } from "../common/types";
 import "../../styles/product-page.css";
 import {Splide, SplideSlide} from "@splidejs/react-splide";
+import { CartContext } from "../../context";
 
 interface InventoryDataType {
     sku: string,
     size: string,
 }
 
+interface CartItemType {
+    name: string;
+    sku: string;
+    style: string;
+    size: string;
+    quantity: number;
+  }
+
 export default function ProductPage(){
+    const {cart} = useContext(CartContext);
+
     let {id} = useParams();
     const [selectedSize, setSelectedSize] = useState("");
     const [productData, setProductData] = useState<ProductDetailProps | undefined>();
     const [inventoryData, setInventoryData] = useState<InventoryDataType[]>([]);
-    const [recommendedData, setRecommendedData] = useState<ProductCardProps[]>([]);
 
     const onSaleBoolean = productData?.onSale;
     console.log(onSaleBoolean);
@@ -40,7 +50,6 @@ export default function ProductPage(){
         fetchInventoryData();
       }, [])
 
-      console.log(recommendedData);
       console.log(inventoryData)
 
       function handleThumbnailClick(event: React.MouseEvent<HTMLImageElement>) {
@@ -53,6 +62,23 @@ export default function ProductPage(){
         mainImage.src = target.src;
         event.currentTarget.classList.add('active-thumbnail');
     }
+
+    function handleAddToCart() {
+        const selectedInventory = inventoryData.find((item) => item.size === selectedSize);
+    
+        if (selectedInventory) {
+          const cartItem: CartItemType = {
+            name: productData?.name || "",
+            sku: selectedInventory.sku,
+            style: productData?.style || "",
+            size: selectedInventory.size,
+            quantity: 1,
+          };
+    
+          cart.push(cartItem);
+          console.log(cart)
+        }
+      }
 
     return (
         <div className="product-detail-page">
@@ -92,16 +118,12 @@ export default function ProductPage(){
                     </div>
                     <p className="payment-text">10 interest-free payments of <span className="orange">$10.00</span> with Klarna.</p>
                     <div className="product-detail-button-container">
-                        <button className="add-to-bag-button">Add to Bag</button>
+                        <button className="add-to-bag-button" onClick={handleAddToCart}>Add to Bag</button>
                         <button className="add-to-favorite-button">Add to Favorites</button>
                     </div>
                     <p className="product-description">{productData?.description}</p>
                 </div>
             </div>
-            {/* <div className="recommended-items">
-                <p>You Might Also Like:</p>
-                <div className="recommended-items-container"></div>
-            </div> */}
         </div>
     )
 };
