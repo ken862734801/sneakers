@@ -36,11 +36,15 @@ export default function Header ({page, onPageChange}: HeaderProps){
     //   };
     // }, [prevScrollPos]);
    
+    function handleScrollTop(){
+        window.scrollTo(0,0)
+    };
+
     return (
         <header>
             <div className="header-container">
                 <div className="brand-logo-container">
-                    <Link to={"/"}>
+                    <Link to={"/"} onClick={handleScrollTop}>
                         <img src={Nike}></img>
                     </Link>
                 </div>
