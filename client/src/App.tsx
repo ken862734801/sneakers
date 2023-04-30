@@ -45,7 +45,9 @@ const pageInformation: Record<Page, PageInformation> = {
 
 function App() {
   const [cart, setCart] = useState<any[]>([]);
-  const [showSideNav, setShowSideNav] = useState<Boolean>(false);
+
+  const [showSideNav, setShowSideNav] = useState<boolean>(false);
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [page, setPage] = useState<Page>("men");
   const [pageName, setPageName] = useState(pageInformation[page].name);
@@ -61,8 +63,8 @@ function App() {
   return (
      <CartContext.Provider value={{cart, setCart}}>
       <div className="App">
-      <Header loggedIn={isLoggedIn} page={page} onPageChange={handlePageChange}/>
-      {showSideNav && (<SideNav/>)}
+      <Header setShowSideNav={setShowSideNav} loggedIn={isLoggedIn} page={page} onPageChange={handlePageChange}/>
+      {showSideNav && (<SideNav showSideNav={showSideNav} setShowSideNav={setShowSideNav}/>)}
           <main>
             <Routes>
                 <Route path="/" element={<Home/>}/>

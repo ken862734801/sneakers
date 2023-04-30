@@ -1,13 +1,11 @@
 .sidenav{
     height: 100%;
-    width: 75%;
+    width:75%;
     top:0;
     right: 0;
     position: fixed;
     z-index:1000000000000000000;
     background-color: white;
-    /* opacity: 0.1; */
-    border:1px dashed red;
 }
 .sidenav-container{
     width:90%;

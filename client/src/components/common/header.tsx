@@ -12,11 +12,15 @@ interface HeaderProps {
     loggedIn: boolean;
     page: Page;
     onPageChange: (newPage: Page) => void;
+    setShowSideNav: (show: boolean) => void;
 }
 
-export default function Header ({page, onPageChange}: HeaderProps){
+export default function Header ({page, onPageChange, setShowSideNav}: HeaderProps){
     const {cart} = useContext(CartContext);
     
+    function handleSideNavOpen(){
+        setShowSideNav(true)
+    }
     // const [hideHeader, setHideHeader] = useState(false);
     // const [prevScrollPos, setPrevScrollPos] = useState(0);
   
@@ -66,7 +70,7 @@ export default function Header ({page, onPageChange}: HeaderProps){
                         <Link to={"/login"} onClick={handleScrollTop}><AccountCircleOutlined/></Link>
                     </div>
                     <div className="icon-container menu-bar">
-                        <Menu/>
+                        <Menu onClick={handleSideNavOpen}/>
                     </div>
                 </div>
             </div>
