@@ -15,6 +15,7 @@ interface CartItemType {
     sku: string;
     price: number;
     style: string;
+    sizes: number[],
     size: string;
     image: string;
     quantity: number;
@@ -53,6 +54,13 @@ export default function ProductPage(){
       }, [])
 
       console.log(inventoryData)
+      let sizeOptions:number[] = [];
+      if (inventoryData){
+        for(let i = 0; i < inventoryData.length; i++){
+          sizeOptions.push(Number(inventoryData[i].size))
+        }
+      }
+      console.log(sizeOptions);
 
       function handleThumbnailClick(event: React.MouseEvent<HTMLImageElement>) {
         const thumbnails = document.querySelectorAll('.product-thumbnail');
@@ -82,6 +90,7 @@ export default function ProductPage(){
               price: productData?.price || 0,
               style: productData?.style || "",
               image: productData?.images[0] || "",
+              sizes: sizeOptions,
               size: selectedInventory.size,
               quantity: 1,
             };

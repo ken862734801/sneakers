@@ -57,6 +57,7 @@ function App() {
     setPage(newPage);
     setPageName(pageInformation[newPage].name);
     setPageDescription(pageInformation[newPage].description);
+    setShowSideNav(false);
     window.scrollTo(0, 0);
   }
 

@@ -29,6 +29,7 @@ export default function Cart (){
                                         style={item.style}
                                         image={item.image}
                                         quantity ={item.quantity}
+                                        sizes={item.sizes}
                                         size={item.size}
                                         // price={item.price}
                                         // sku={item.sku}

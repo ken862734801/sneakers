@@ -12,18 +12,20 @@ export default function SideNav(props: { showSideNav: boolean, setShowSideNav: (
             <div className="sidenav-container">
                 <div className="sidenav-header">
                     <div className="sidenav-header-container">
-                        <Close onClick={handleSideNavClose}/>
+                        <div className="icon-container">
+                            <Close className="close-sidenav-btn" onClick={handleSideNavClose}/>
+                        </div>
                     </div>
                 </div>
                 <div className="sidenav-body">
                     <div className="">
-                        <Link to={"/login"}><AccountCircleOutlined/></Link>
+                        <Link to={"/login"} onClick={handleSideNavClose}><AccountCircleOutlined/></Link>
                     </div>
                     <nav>
-                        <Link to={"/men"}>Men</Link>
-                        <Link to={"/women"}>Women</Link>
-                        <Link to={"/kids"}>Kids</Link>
-                        <Link to={"sale"}>Sale</Link>
+                        <Link to={"/men"} onClick={handleSideNavClose}>Men</Link>
+                        <Link to={"/women"} onClick={handleSideNavClose}>Women</Link>
+                        <Link to={"/kids"} onClick={handleSideNavClose}>Kids</Link>
+                        <Link to={"sale"} onClick={handleSideNavClose}>Sale</Link>
                     </nav>
                 </div>
             </div>

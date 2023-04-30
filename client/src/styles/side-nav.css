@@ -8,11 +8,14 @@
     background-color: white;
 }
 .sidenav-container{
-    width:90%;
+    width:95%;
     margin: 0 auto;
 }
 .sidenav-header > .sidenav-header-container{
     display:flex;
     justify-content: flex-end;
-    padding:15px 0px
+    padding:10px 0px
+}
+.close-sidenav-btn{
+    font-size:22px !important;
 }

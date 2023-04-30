@@ -21,6 +21,10 @@ export default function Header ({page, onPageChange, setShowSideNav}: HeaderProp
     function handleSideNavOpen(){
         setShowSideNav(true)
     }
+
+    function handleSideNavClose(){
+        setShowSideNav(false);
+    }
     // const [hideHeader, setHideHeader] = useState(false);
     // const [prevScrollPos, setPrevScrollPos] = useState(0);
   
@@ -41,7 +45,8 @@ export default function Header ({page, onPageChange, setShowSideNav}: HeaderProp
     // }, [prevScrollPos]);
    
     function handleScrollTop(){
-        window.scrollTo(0,0)
+        window.scrollTo(0,0);
+        handleSideNavClose();
     };
 
     return (
