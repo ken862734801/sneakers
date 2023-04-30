@@ -59,10 +59,11 @@ export default function Header ({page, onPageChange}: HeaderProps){
                         <Search/>
                     </div>
                     <div className={cart.length > 0 ? "icon-container shopping-cart-icon--active" : "icon-container shopping-cart-icon"}>
-                        <Link to={"/cart"}><ShoppingCart/></Link>
+                        <Link to={"/cart"} onClick={handleScrollTop}><ShoppingCart/></Link>
+                        <div className={cart.length > 0 ? "shopping-cart-notification--active" : "shopping-cart-notification"}></div>
                     </div>
                     <div className="icon-container user-icon">
-                        <Link to={"/login"}><AccountCircleOutlined/></Link>
+                        <Link to={"/login"} onClick={handleScrollTop}><AccountCircleOutlined/></Link>
                     </div>
                     <div className="icon-container menu-bar">
                         <Menu/>

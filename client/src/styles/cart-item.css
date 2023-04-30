@@ -81,12 +81,12 @@
 .cart-item-shipping--span{
     color:rgb(192, 192, 192);
 }
-.cart-item-size--span > select{
+.cart-item-size--span > select, .cart-item-size--span > select > option{
     border:none;
     font-size:0.925rem;
     font-family: 'Roboto', sans-serif;
 }
-.cart-item-quantity--span > select{
+.cart-item-quantity--span > select, .cart-item-quantity--span > select > option{
     border:none;
     font-size:0.925rem;
     font-family: 'Roboto', sans-serif;

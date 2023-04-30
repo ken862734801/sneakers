@@ -16,3 +16,6 @@
 .orange{
   color:var(--orange);
 }
+.main{
+  position:relative;
+}

@@ -43,6 +43,7 @@ header{
     align-items: center;
 }
 .icon-container{
+    position:relative;
     width:35px;
     height:35px;
     border-radius:50%;
@@ -64,8 +65,30 @@ header{
 }
 .shopping-cart-icon--active > a{
     color:var(--yellow) !important;
-
 }
+.shopping-cart-notification{
+    display:none;
+    position:absolute;
+    top:4px;
+    left:24px;
+    width:3px;
+    height:3px;
+    padding:2.5px;
+    border-radius:50%;
+    background-color: var(--orange);
+}
+.shopping-cart-notification--active{
+    display:block;
+    position:absolute;
+    top:4px;
+    left:24px;
+    width:3px;
+    height:3px;
+    padding:2.5px;
+    border-radius:50%;
+    background-color: var(--orange);
+}
+
 @media screen and (max-width:768px){
     .header-container{
         width:95%;

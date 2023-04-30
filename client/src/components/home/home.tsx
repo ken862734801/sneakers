@@ -71,7 +71,7 @@ export default function Home() {
 
   function renderCollectionCards(){
     if (!collectionData) {
-      return null
+      return "LOADING..."
     }
     const startIndex = currentCollectionPage * 6;
     const endIndex = startIndex + 6;

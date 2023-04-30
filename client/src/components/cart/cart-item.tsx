@@ -12,6 +12,11 @@ export default function CartItem(props:any){
         setCart(updatedCart);
     };
 
+    const quantityOptions = [];
+        for (let i = 1; i <= 10; i++) {
+            quantityOptions.push(i);
+        }
+
     return (
         <div className="cart-item">
             <div className="cart-item-container">
@@ -31,7 +36,7 @@ export default function CartItem(props:any){
                                 <p className="cart-item-price">${props.price}</p>
                             </div>
                             <p className="cart-item-sku"><span className="cart-item-sku--span">Sku:</span> {props.sku}</p>
-                            <p className="cart-item-style"><span className="cart-item-style--span">Style:</span>{props.style}</p>
+                            <p className="cart-item-style"><span className="cart-item-style--span">Style:</span> {props.style}</p>
                             <div className="cart-item-size-quantity-row">
                                 <p className="cart-item-size">Size:
                                     <span className="cart-item-size--span">
@@ -42,8 +47,10 @@ export default function CartItem(props:any){
                                 </p>
                                 <p className="cart-item-quantity">Quantity:
                                     <span className="cart-item-quantity--span">
-                                        <select>
-                                            <option>{props.quantity}</option>
+                                        <select value={props.quantity}>
+                                            {quantityOptions.map((quantity) => (
+                                                <option key={quantity}>{quantity}</option>
+                                            ))}
                                         </select>
                                     </span>
                                 </p>
