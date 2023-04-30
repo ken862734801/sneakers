@@ -5,10 +5,17 @@ import { useContext } from "react";
 
 export default function Cart (){
     const {cart} = useContext(CartContext);
-    const subtotalPrice = cart.reduce((acc, item) => acc + item.price, 0);
-    const shippingPrice = (cart.length) * 5;
-    const taxPrice = shippingPrice;
+    
+    const {subtotalPrice, totalQuantity} = cart.reduce((acc, item) => {
+        const subtotal = item.price * item.quantity;
+        return {
+            subtotalPrice: acc.subtotalPrice + subtotal,
+            totalQuantity: acc.totalQuantity + item.quantity,
+        };
+    }, {subtotalPrice: 0, totalQuantity: 0});
 
+    const shippingPrice = (totalQuantity) * 5;
+    const taxPrice = shippingPrice;
     const totalPrice = subtotalPrice + shippingPrice + taxPrice;
 
     return (
@@ -17,7 +24,7 @@ export default function Cart (){
                 <div className="cart-left-container">
                         {cart.length > 0? 
                         (<div className="cart-left-container--true">
-                            <h2>Cart (<span>{`${cart.length}`}</span>)</h2>
+                            <h2>Cart (<span>{`${totalQuantity}`}</span>)</h2>
                             <p>Items in your bag are not reserved — check out now to make them yours.</p>
                             <div className="cart-item-list-container--true">
                                 {cart.map((item) => (
@@ -31,10 +38,6 @@ export default function Cart (){
                                         quantity ={item.quantity}
                                         sizes={item.sizes}
                                         size={item.size}
-                                        // price={item.price}
-                                        // sku={item.sku}
-                                        // style={item.style}
-                                        // image={item.image}
                                     />
                                 ))}
                             </div>
