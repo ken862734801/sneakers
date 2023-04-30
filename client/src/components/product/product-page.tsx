@@ -97,6 +97,11 @@ export default function ProductPage(){
       
             setCart([...cart, cartItem]);
           }
+          const sizeButtons = document.querySelectorAll(".size-button");
+            sizeButtons.forEach((button) => {
+              button.classList.remove("selected-size");
+            });
+            setSelectedSize("");
         }
       }
 
