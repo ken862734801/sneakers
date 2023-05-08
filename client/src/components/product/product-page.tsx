@@ -74,6 +74,10 @@ export default function ProductPage(){
     }
 
     function handleAddToCart() {
+        if (!selectedSize){
+          window.alert("Please select a size.");
+          return;
+        }
         const selectedInventory = inventoryData.find((item) => item.size === selectedSize);
       
         if (selectedInventory) {
@@ -102,6 +106,7 @@ export default function ProductPage(){
               button.classList.remove("selected-size");
             });
             setSelectedSize("");
+            window.alert(`${productData?.name} has been added to your cart.`)
         }
       }
 

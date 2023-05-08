@@ -80,7 +80,7 @@ header{
 .shopping-cart-notification--active{
     display:block;
     position:absolute;
-    top:4px;
+    top:3.5px;
     left:24px;
     width:3px;
     height:3px;
@@ -101,5 +101,12 @@ header{
     }
     .menu-bar{
         display:block;
+    }
+    .shopping-cart-notification--active{
+        width:3px;
+        height:3px;
+        padding:2.25px;
+        top:4.5px;
+        left:24.5px;
     }
 }
