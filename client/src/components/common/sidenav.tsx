@@ -6,6 +6,7 @@ export default function SideNav(props: { showSideNav: boolean, setShowSideNav: (
 
     function handleSideNavClose (){
         setShowSideNav(false);
+        window.scrollTo(0,0);
     }
     return (
         <div className="sidenav">
@@ -18,10 +19,8 @@ export default function SideNav(props: { showSideNav: boolean, setShowSideNav: (
                     </div>
                 </div>
                 <div className="sidenav-body">
-                    <div className="">
+                    <nav className="sidenav-links">
                         <Link to={"/login"} onClick={handleSideNavClose}><AccountCircleOutlined/></Link>
-                    </div>
-                    <nav>
                         <Link to={"/men"} onClick={handleSideNavClose}>Men</Link>
                         <Link to={"/women"} onClick={handleSideNavClose}>Women</Link>
                         <Link to={"/kids"} onClick={handleSideNavClose}>Kids</Link>

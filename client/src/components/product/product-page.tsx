@@ -106,7 +106,7 @@ export default function ProductPage(){
               button.classList.remove("selected-size");
             });
             setSelectedSize("");
-            window.alert(`${productData?.name} has been added to your cart.`)
+            window.alert(`Size ${selectedSize} ${productData?.name} has been added to your cart.`)
         }
       }
 
