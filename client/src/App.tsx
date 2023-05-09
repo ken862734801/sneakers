@@ -45,9 +45,8 @@ const pageInformation: Record<Page, PageInformation> = {
 
 function App() {
   const [cart, setCart] = useState<any[]>([]);
-
   const [showSideNav, setShowSideNav] = useState<boolean>(false);
-
+  const [blurLevel, setBlurLevel] = useState<number>(0);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [page, setPage] = useState<Page>("men");
   const [pageName, setPageName] = useState(pageInformation[page].name);
@@ -64,9 +63,9 @@ function App() {
   return (
      <CartContext.Provider value={{cart, setCart}}>
       <div className="App">
-      <Header setShowSideNav={setShowSideNav} loggedIn={isLoggedIn} page={page} onPageChange={handlePageChange}/>
-      {showSideNav && (<SideNav showSideNav={showSideNav} setShowSideNav={setShowSideNav}/>)}
-          <main>
+      <Header blurLevel={blurLevel} setBlurLevel={setBlurLevel} setShowSideNav={setShowSideNav} loggedIn={isLoggedIn} page={page} onPageChange={handlePageChange}/>
+      {showSideNav && (<SideNav setBlurLevel={setBlurLevel} showSideNav={showSideNav} setShowSideNav={setShowSideNav}/>)}
+          <main style={{ filter: `blur(${blurLevel}px)`}}>
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/login" element = {isLoggedIn? <Navigate to="/account"/> : <Login/>}/>
@@ -99,7 +98,7 @@ function App() {
                 <Route path="/us/:name/:id" element={<ProductPage/>}></Route>
             </Routes>
           </main>
-      <Footer/>
+      <Footer blurLevel={blurLevel}/>
     </div>
      </CartContext.Provider>
   );

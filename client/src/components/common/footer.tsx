@@ -5,9 +5,12 @@ import TikTok from "../../images/tiktok.png";
 import Twitter from "../../images/twitter.png";
 import Nike from "../../images/nike.png";
 
-export default function Footer (){
+interface FooterProps {
+    blurLevel: number;
+}
+export default function Footer ({blurLevel}:FooterProps){
     return (
-        <section className="footer-section">
+        <section style={{filter: `blur(${blurLevel}px)`}} className="footer-section">
             <div className="footer-container">
                 <div className="footer-left-container">
                     <img src={Nike}></img>

@@ -1,12 +1,13 @@
 import "../../styles/side-nav.css";
 import { AccountCircleOutlined, Close } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-export default function SideNav(props: { showSideNav: boolean, setShowSideNav: (show: boolean) => void}){
-    const { showSideNav, setShowSideNav } = props;
+export default function SideNav(props: { showSideNav: boolean, setShowSideNav: (show: boolean) => void, setBlurLevel: (blur: number) => void}){
+    const { showSideNav, setShowSideNav, setBlurLevel } = props;
 
     function handleSideNavClose (){
         setShowSideNav(false);
         window.scrollTo(0,0);
+        setBlurLevel(0);
     }
     return (
         <div className="sidenav">

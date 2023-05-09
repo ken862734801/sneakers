@@ -16,7 +16,7 @@
 .orange{
   color:var(--orange);
 }
-.main{
+main{
   position:relative;
 }
 /* main{

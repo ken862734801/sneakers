@@ -13,18 +13,22 @@ interface HeaderProps {
     page: Page;
     onPageChange: (newPage: Page) => void;
     setShowSideNav: (show: boolean) => void;
+    blurLevel: number;
+    setBlurLevel : (blur: number) => void;
 }
 
-export default function Header ({page, onPageChange, setShowSideNav}: HeaderProps){
+export default function Header ({page, onPageChange, setShowSideNav, blurLevel, setBlurLevel}: HeaderProps){
     const {cart} = useContext(CartContext);
     
     function handleSideNavOpen(){
-        setShowSideNav(true)
+        setShowSideNav(true);
+        setBlurLevel(2);
     }
 
-    function handleSideNavClose(){
-        setShowSideNav(false);
-    }
+    // function handleSideNavClose(){
+    //     setShowSideNav(false);
+    //     setBlurLevel(0);
+    // }
     // const [hideHeader, setHideHeader] = useState(false);
     // const [prevScrollPos, setPrevScrollPos] = useState(0);
   
@@ -46,11 +50,11 @@ export default function Header ({page, onPageChange, setShowSideNav}: HeaderProp
    
     function handleScrollTop(){
         window.scrollTo(0,0);
-        handleSideNavClose();
+        // handleSideNavClose();
     };
 
     return (
-        <header>
+        <header style={{filter: `blur(${blurLevel}px)`}}>
             <div className="header-container">
                 <div className="brand-logo-container">
                     <Link to={"/"} onClick={handleScrollTop}>

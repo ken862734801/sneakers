@@ -32,8 +32,11 @@
     color:black;
     font-weight: bold;
     font-size:0.90rem;
-    padding:8px 0px 8px 16px;
+    padding:16px 0px 16px 12px;
+}
+.sidenav-links > a:nth-of-type(1){
+    padding:10px 0px 10px 12px; 
 }
 .sidenav-links > a:hover{
-    background-color: rgb(238, 238, 238);
+    background-color: var(--gray);
 }
