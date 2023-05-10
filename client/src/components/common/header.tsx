@@ -5,7 +5,7 @@ import "../../styles/header.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Nike from "../../images/nike.png";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, ChangeEvent } from "react";
 import { CartContext } from "../../context";
 
 interface HeaderProps {
@@ -20,6 +20,15 @@ interface HeaderProps {
 export default function Header ({page, onPageChange, setShowSideNav, blurLevel, setBlurLevel}: HeaderProps){
     const {cart} = useContext(CartContext);
     const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
+    const [searchText, setSearchText] = useState<string>('');
+
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setSearchText(e.target.value);
+      };    
+
+    const handleClearClick = () => {
+        setSearchText('');
+    };
     
     function handleSideNavOpen(){
         setShowSideNav(true);
@@ -32,7 +41,8 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
         setShowSearchBar(true)
     };
     function handleHideSearchBar(){
-        setShowSearchBar(false)
+        setShowSearchBar(false);
+        handleScrollTop();
     };
 
     return (
@@ -40,19 +50,25 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
             {showSearchBar ? (
                 <div className="search-container">
                     <div className="brand-logo-container">
-                        <Link to={"/"} onClick={handleScrollTop}>
+                        <Link to={"/"} onClick={handleHideSearchBar}>
                             <img src={Nike}></img>
                         </Link>
                     </div>
                     <div className="searchbar-container">
                         <div className="searchbar">
                             <div className="searchbar-search-icon-container">
-                                <Search/>
+                                <Search style={{fontSize: "23px"}}/>
                             </div>
-                            <input className="search-input" type="text" placeholder="Search"></input>
-                            <div className="searchbar-clear-button-container">
-                                <Close/>
-                            </div>
+                            <input className="search-input" 
+                                type="text"
+                                value={searchText}
+                                onChange={handleInputChange}
+                                placeholder="Search..."></input>
+                            {searchText && (
+                                <div className="searchbar-clear-button-container">
+                                    <Close className="clear-button" onClick={handleClearClick} style={{fontSize: "22px"}}/>
+                                </div>
+                            )}
                         </div>
                     </div>
                     <div className="searchbar-cancel-text-container">

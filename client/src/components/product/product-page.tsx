@@ -15,7 +15,7 @@ interface CartItemType {
     sku: string;
     price: number;
     style: string;
-    sizes: number[],
+    sizes: any[],
     size: string;
     image: string;
     quantity: number;
@@ -54,10 +54,10 @@ export default function ProductPage(){
       }, [])
 
       console.log(inventoryData)
-      let sizeOptions:number[] = [];
+      let sizeOptions:string[] = [];
       if (inventoryData){
         for(let i = 0; i < inventoryData.length; i++){
-          sizeOptions.push(Number(inventoryData[i].size))
+          sizeOptions.push(String(inventoryData[i].size))
         }
       }
       console.log(sizeOptions);

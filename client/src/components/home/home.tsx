@@ -53,7 +53,7 @@ export default function Home() {
   };
 
   const options = {
-    gap:20,
+    gap:0,
     perPage: 2,
     breakpoints,
   };

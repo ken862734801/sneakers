@@ -18,7 +18,7 @@ export default function CartItem(props:any){
         }
 
     const handleSizeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const newSize = Number(event.target.value);
+        const newSize = event.target.value;
         const updatedCart = cart.map((item: any) => {
             if(item.sku === props.sku){
                 return {...item, size: newSize}
@@ -62,7 +62,7 @@ export default function CartItem(props:any){
                                 <p className="cart-item-size">Size:
                                     <span className="cart-item-size--span">
                                         <select value={props.size} onChange={handleSizeChange}>
-                                            {(props.sizes).map((item:number) => (
+                                            {(props.sizes).map((item:string) => (
                                                 <option key={item}>{item}</option>
                                             ))}
                                         </select>

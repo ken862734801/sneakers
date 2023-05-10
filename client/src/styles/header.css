@@ -96,7 +96,7 @@ header{
     justify-content: space-between;
 }
 .searchbar-container{
-    width:50%;
+    width:45%;
 }
 .searchbar{
     width:100%;
@@ -104,12 +104,19 @@ header{
     display:flex;
     align-items: center;
     justify-content: center;
-    padding:2px 0px 1px 0px;
+    padding:3px 0px 1.5px 0px;
     background-color: var(--gray);
 }
 .searchbar-search-icon-container,
 .searchbar-clear-button-container{
     padding-top:3px;
+    width:5%;
+}
+.searchbar-search-icon-container{
+    text-align: center;
+}
+.clear-button{
+    cursor: pointer;
 }
 .search-input{
     width:90%;
@@ -117,8 +124,8 @@ header{
     border:none;
     background-color: transparent;
     font-size:1rem;
-    padding-left:6px;
     padding-bottom:1px;
+    flex:1;
 }
 .searchbar-cancel-text{
     cursor: pointer;
@@ -135,9 +142,12 @@ header{
     .search-input{
         width:75%;
     }
-    .searchbar-search-icon-container,
-    .searchbar-clear-button-container{
+    .searchbar-search-icon-container{
         padding-top:5px;
+        width:15%;
+    }
+    .searchbar-clear-button-container{
+        width:10%;
     }
     .header-container{
         width:95%;
