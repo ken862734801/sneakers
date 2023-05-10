@@ -15,7 +15,7 @@
 .sidenav-header > .sidenav-header-container{
     display:flex;
     justify-content: flex-end;
-    padding:10px 0px
+    padding:10px 0px 12px 0px;
 }
 .close-sidenav-btn{
     font-size:22px !important;

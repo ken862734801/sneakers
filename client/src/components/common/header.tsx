@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShoppingCart, Search, AccountCircleOutlined, Menu } from "@material-ui/icons";
+import { ShoppingCart, Search, AccountCircleOutlined, Menu, Close } from "@material-ui/icons";
 import { Page } from "./types";
 import "../../styles/header.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,43 +19,48 @@ interface HeaderProps {
 
 export default function Header ({page, onPageChange, setShowSideNav, blurLevel, setBlurLevel}: HeaderProps){
     const {cart} = useContext(CartContext);
+    const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
     
     function handleSideNavOpen(){
         setShowSideNav(true);
         setBlurLevel(2);
     }
-
-    // function handleSideNavClose(){
-    //     setShowSideNav(false);
-    //     setBlurLevel(0);
-    // }
-    // const [hideHeader, setHideHeader] = useState(false);
-    // const [prevScrollPos, setPrevScrollPos] = useState(0);
-  
-    // useEffect(() => {
-    //   const handleScroll = () => {
-    //     const currentScrollPos = window.pageYOffset;
-    //     const visible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
-  
-    //     setPrevScrollPos(currentScrollPos);
-    //     setHideHeader(!visible);
-    //   };
-  
-    //   window.addEventListener('scroll', handleScroll);
-  
-    //   return () => {
-    //     window.removeEventListener('scroll', handleScroll);
-    //   };
-    // }, [prevScrollPos]);
-   
     function handleScrollTop(){
         window.scrollTo(0,0);
-        // handleSideNavClose();
+    };
+    function handleShowSearchBar(){
+        setShowSearchBar(true)
+    };
+    function handleHideSearchBar(){
+        setShowSearchBar(false)
     };
 
     return (
         <header style={{filter: `blur(${blurLevel}px)`}}>
-            <div className="header-container">
+            {showSearchBar ? (
+                <div className="search-container">
+                    <div className="brand-logo-container">
+                        <Link to={"/"} onClick={handleScrollTop}>
+                            <img src={Nike}></img>
+                        </Link>
+                    </div>
+                    <div className="searchbar-container">
+                        <div className="searchbar">
+                            <div className="searchbar-search-icon-container">
+                                <Search/>
+                            </div>
+                            <input className="search-input" type="text" placeholder="Search"></input>
+                            <div className="searchbar-clear-button-container">
+                                <Close/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="searchbar-cancel-text-container">
+                        <p className="searchbar-cancel-text" onClick={handleHideSearchBar}>Cancel</p>
+                    </div>
+                </div>
+            ):(
+                <div className="header-container">
                 <div className="brand-logo-container">
                     <Link to={"/"} onClick={handleScrollTop}>
                         <img src={Nike}></img>
@@ -69,7 +74,7 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
                 </nav>
                 <div className="header-icon-container">
                     <div className="icon-container search-icon">
-                        <Search/>
+                        <Search onClick={handleShowSearchBar}/>
                     </div>
                     <div className={cart.length > 0 ? "icon-container shopping-cart-icon--active" : "icon-container shopping-cart-icon"}>
                         <Link to={"/cart"} onClick={handleScrollTop}><ShoppingCart/></Link>
@@ -83,6 +88,7 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
                     </div>
                 </div>
             </div>
+            )}
         </header>
     )
 };
