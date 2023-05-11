@@ -19,3 +19,11 @@
     width:100%;
     gap:20px 5px;
 }
+@media screen and (max-width:768px){
+    .product-grid{
+        grid-template-columns: 1fr 1fr; 
+    }
+    .search-result-page-container{
+        width:95%;
+    }
+}
