@@ -14,6 +14,7 @@ import ProductCard from "../product/product-card";
 import { ProductCardProps } from "../common/types";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router";
 
 export default function Home() {
 
@@ -57,6 +58,12 @@ export default function Home() {
     perPage: 2,
     breakpoints,
   };
+
+  let navigate = useNavigate();
+  function handleLinkToProductPage(){
+    let path = `/us/air-jordan-1-high-g/dq0660-101`;
+    navigate(path);
+  }
 
   function renderWidgetCards(){
     if(!newProductData){
@@ -177,7 +184,7 @@ export default function Home() {
                   </div>
                   <div className="main-image-button-container">
                     <h2>$100</h2>
-                    <button>Buy Now</button>
+                    <button onClick={handleLinkToProductPage}>Buy Now</button>
                   </div>
                 </div>
               </div>
