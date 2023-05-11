@@ -14,6 +14,7 @@ public interface ProductRepository extends MongoRepository<Product, String> {
     public List<Product> findByIsFeatured(Boolean isFeatured);
     public List<Product> findByIsNew(Boolean isNew);
     public Optional<Product> findBySku(String sku);
+    public List<Product> findByNameContaining(String name);
 
     public List<Product> findByCategoryAndIsFeatured(String category, Boolean isFeatured);
     public List<Product> findByCategoryAndIsNew(String category, Boolean isNew);

@@ -4,6 +4,7 @@ import com.example.sneakers.model.Product;
 import com.example.sneakers.repository.ProductRepository;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,14 @@ public class ProductService {
     }
     public Optional<Product> getProductBySku(String sku){
         return productRepository.findBySku(sku);
+    }
+    public List<Product> searchProducts(String query){
+        List<Product> matchingProducts = new ArrayList<>();
+
+        List<Product> productsByName = productRepository.findByNameContaining(query);
+        matchingProducts.addAll(0, productsByName);
+        
+            return matchingProducts;
     }
     public Product addProduct (Product product){
         return productRepository.save(product);

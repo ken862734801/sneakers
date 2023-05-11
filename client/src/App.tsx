@@ -9,10 +9,12 @@ import Home from './components/home/home';
 import Cart from './components/cart/cart';
 import ProductGrid from './components/product/product-grid';
 import ProductPage from './components/product/product-page';
+import SearchPage from './components/search/search-results';
 import { CartContext } from './context';
 import './App.css';
 
 import { Page } from './components/common/types';
+import SearchResults from './components/search/search-results';
 
 interface PageInformation {
   name: string;
@@ -45,6 +47,8 @@ const pageInformation: Record<Page, PageInformation> = {
 
 function App() {
   const [cart, setCart] = useState<any[]>([]);
+  const [favoriteItems, setFavoriteItems] = useState<any[]>([]);
+
   const [showSideNav, setShowSideNav] = useState<boolean>(false);
   const [blurLevel, setBlurLevel] = useState<number>(0);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -96,6 +100,7 @@ function App() {
                 />
                 <Route path= "/cart" element = {<Cart/>}/>
                 <Route path="/us/:name/:id" element={<ProductPage/>}></Route>
+                <Route path="/search" element={<SearchResults/>}></Route>
             </Routes>
           </main>
       <Footer blurLevel={blurLevel}/>

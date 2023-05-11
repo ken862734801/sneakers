@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ShoppingCart, Search, AccountCircleOutlined, Menu, Close } from "@material-ui/icons";
 import { Page } from "./types";
 import "../../styles/header.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Nike from "../../images/nike.png";
-import { useState, useEffect, useContext, ChangeEvent } from "react";
+import { useState, useEffect, useContext, ChangeEvent, KeyboardEvent } from "react";
 import { CartContext } from "../../context";
 import { useScrollDirection } from "./scroll";
 
@@ -21,16 +21,29 @@ interface HeaderProps {
 export default function Header ({page, onPageChange, setShowSideNav, blurLevel, setBlurLevel}: HeaderProps){
     const {cart} = useContext(CartContext);
     const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
+    const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
     const [searchText, setSearchText] = useState<string>('');
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchText(e.target.value);
       };    
-
     const handleClearClick = () => {
         setSearchText('');
     };
-    
+
+    const navigate = useNavigate();
+
+    function handleSearchSubmit(e: KeyboardEvent<HTMLInputElement>){
+        if(e.key === "Enter" && searchText.trim() !== ""){
+            setIsSubmitted(true);
+            navigate({
+                pathname:"search",
+                search: `?q=${searchText}`
+            });
+            handleClearClick();
+            handleHideSearchBar();
+        }
+    };
     function handleSideNavOpen(){
         setShowSideNav(true);
         setBlurLevel(2);
@@ -67,7 +80,9 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
                                 type="text"
                                 value={searchText}
                                 onChange={handleInputChange}
-                                placeholder="Search..."></input>
+                                onKeyDown={handleSearchSubmit}
+                                placeholder="Search...">
+                                </input>
                             {searchText && (
                                 <div className="searchbar-clear-button-container">
                                     <Close className="clear-button" onClick={handleClearClick} style={{fontSize: "22px"}}/>

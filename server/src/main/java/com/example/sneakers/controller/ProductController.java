@@ -28,7 +28,11 @@ public class ProductController {
     @GetMapping
     public List<Product> getAllProducts(){
         return productService.getAllProducts();
-        }
+    }
+    @GetMapping("/search")
+    public List<Product> searchProducts(@RequestParam("query") String query){
+        return productService.searchProducts(query);
+    }
     // @GetMapping("/{id}")
     // public ResponseEntity<Product> getProductById(@PathVariable String id) {
     //     return productService.getProductById(id)
