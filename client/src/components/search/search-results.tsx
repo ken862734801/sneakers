@@ -35,6 +35,7 @@ export default function SearchResults(){
                 setIsRecommended(true);
             } else {
                 setMatchingProducts(data);
+                setIsRecommended(false);
             }
         } catch (error){
             console.log("Error!")
@@ -53,11 +54,15 @@ export default function SearchResults(){
                     <p>Search results for:</p>
                     <h4 className="search-text">{`"${searchText}" `}</h4>
                     {/* <span className="search-result-length">{(`[${matchingProducts.length}]`)}</span> */}
-                    {IsRecommended && (
+                    {IsRecommended ? (
                         <div className="no-results-text">
                             There were no matching results. Try these recommendations.
                         </div>
-                        )}
+                        ) : matchingProducts.length > 0 ? (
+                        <div className="no-results-text">
+                            <p>Browse the following <span className="data-length">{`${matchingProducts.length}`}</span> number of styles.</p>
+                        </div>
+                        ) : null}
                 </div>
                 <div className="product-grid results-grid">
                     {matchingProducts.map((product, index)=> {

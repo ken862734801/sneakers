@@ -19,6 +19,10 @@
     width:100%;
     gap:20px 5px;
 }
+.data-length{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
 @media screen and (max-width:768px){
     .product-grid{
         grid-template-columns: 1fr 1fr; 
