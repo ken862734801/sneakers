@@ -1,13 +1,14 @@
 header{
     position:sticky;
     top:0;
-    /* padding:0px 0px 10px 0px; */
-    /* border:1px solid red; */
     background-color: white;
+    transition-property: all; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
     z-index:10000000000000;
 }
 .hide{
-    display:none;
+    top:-6rem;
 }
 .header-container{
     /* border:1px solid red; */
@@ -147,7 +148,7 @@ header{
         width:15%;
     }
     .searchbar-clear-button-container{
-        width:10%;
+        width:12%;
     }
     .header-container{
         width:95%;

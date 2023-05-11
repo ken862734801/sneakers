@@ -7,6 +7,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Nike from "../../images/nike.png";
 import { useState, useEffect, useContext, ChangeEvent } from "react";
 import { CartContext } from "../../context";
+import { useScrollDirection } from "./scroll";
 
 interface HeaderProps {
     loggedIn: boolean;
@@ -42,11 +43,14 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
     };
     function handleHideSearchBar(){
         setShowSearchBar(false);
+        handleClearClick();
         handleScrollTop();
     };
 
+    const scrollDirection = useScrollDirection();
+
     return (
-        <header style={{filter: `blur(${blurLevel}px)`}}>
+        <header className={`${scrollDirection === "down" ? "hide": "show"}`} style={{filter: `blur(${blurLevel}px)`}}>
             {showSearchBar ? (
                 <div className="search-container">
                     <div className="brand-logo-container">
