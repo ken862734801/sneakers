@@ -13,15 +13,6 @@ export default function SearchResults(){
     const [matchingProducts, setMatchingProducts] = useState<ProductCardProps[]>([]);
     const [IsRecommended, setIsRecommended] = useState<boolean>(false);
 
-    // useEffect(() => {
-    //     async function fetchData(){
-    //         const response = await fetch(`http://localhost:8080/api/product/search?query=${searchText}`);
-    //         const data = await response.json();
-    //         setMatchingProducts(data);
-    //     }
-    //     fetchData();
-    // }, []);
-
 
     async function fetchData(){
         try{

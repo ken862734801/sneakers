@@ -60,8 +60,7 @@ export default function Home() {
   };
 
   let navigate = useNavigate();
-  function handleLinkToProductPage(){
-    let path = `/us/air-jordan-1-high-g/dq0660-101`;
+  function handleNavigateToPage(path: string){
     navigate(path);
   }
 
@@ -154,7 +153,7 @@ export default function Home() {
                 Here shoes are endless and customers are happy.
               </p>
               <div className="button-container">
-                <button>Shop Now <span><img src={CircleArrow}></img></span></button>
+                <button onClick={()=>handleNavigateToPage("/men")}>Shop Now <span><img src={CircleArrow}></img></span></button>
               </div>
               <div className="widget-container">
                 <Splide options={options} className="widget-splide">
@@ -184,7 +183,7 @@ export default function Home() {
                   </div>
                   <div className="main-image-button-container">
                     <h2>$100</h2>
-                    <button onClick={handleLinkToProductPage}>Buy Now</button>
+                    <button onClick={()=> handleNavigateToPage("/us/air-jordan-1-high-g/dq0660-101")}>Buy Now</button>
                   </div>
                 </div>
               </div>

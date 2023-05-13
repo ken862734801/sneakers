@@ -55,8 +55,10 @@ button > span > img{
     width:100%;
 }
 .splide__pagination{
+    display:flex;
+    justify-content: center !important;
     top:135px;
-    margin-left:-60px !important;
+    text-align: center;
 }
 .splide__pagination__page{
     background: rgb(24, 24, 24) !important;
