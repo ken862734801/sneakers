@@ -47,11 +47,10 @@ const pageInformation: Record<Page, PageInformation> = {
 
 function App() {
   const [cart, setCart] = useState<any[]>([]);
-  const [favoriteItems, setFavoriteItems] = useState<any[]>([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [showSideNav, setShowSideNav] = useState<boolean>(false);
   const [blurLevel, setBlurLevel] = useState<number>(0);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [page, setPage] = useState<Page>("men");
   const [pageName, setPageName] = useState(pageInformation[page].name);
   const [pageDescription, setPageDescription] = useState(pageInformation[page].description);
@@ -72,7 +71,7 @@ function App() {
           <main style={{ filter: `blur(${blurLevel}px)`}}>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/login" element = {isLoggedIn? <Navigate to="/account"/> : <Login/>}/>
+                <Route path="/login" element = {isLoggedIn? <Navigate to="/account"/> : <Login isLoggedIn={isLoggedIn}/>}/>
                 <Route path="/account" element={isLoggedIn ? <Account /> : <Navigate to="/login" />} />
                 <Route path = "/men" element = {
                 <ProductGrid 

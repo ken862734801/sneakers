@@ -54,7 +54,7 @@ export default function Home() {
   };
 
   const options = {
-    gap:0,
+    gap:5,
     perPage: 2,
     breakpoints,
   };
