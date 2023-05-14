@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import jwtDecode from "jwt-decode";
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/common/header';
 import SideNav from './components/common/sidenav';
@@ -55,6 +56,24 @@ function App() {
   const [pageName, setPageName] = useState(pageInformation[page].name);
   const [pageDescription, setPageDescription] = useState(pageInformation[page].description);
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+        const decodedToken: any = jwtDecode(token);
+        const currentTime = Date.now() / 1000; // Convert to seconds
+
+        if (decodedToken.exp < currentTime) {
+            // Token has expired
+            setIsLoggedIn(false);
+        } else {
+            setIsLoggedIn(true);
+        }
+    } else {
+        setIsLoggedIn(false);
+    }
+}, []);
+
   function handlePageChange (newPage: Page){
     setPage(newPage);
     setPageName(pageInformation[newPage].name);
@@ -71,8 +90,8 @@ function App() {
           <main style={{ filter: `blur(${blurLevel}px)`}}>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/login" element = {isLoggedIn? <Navigate to="/account"/> : <Login isLoggedIn={isLoggedIn}/>}/>
-                <Route path="/account" element={isLoggedIn ? <Account /> : <Navigate to="/login" />} />
+                <Route path="/login" element = {isLoggedIn? <Navigate to="/account"/> : <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>}/>
+                <Route path="/account" element={isLoggedIn ? <Account setIsLoggedIn={setIsLoggedIn}/> : <Navigate to="/login" />}/>
                 <Route path = "/men" element = {
                 <ProductGrid 
                   name={pageInformation.men.name} 

@@ -1,4 +1,6 @@
 package com.example.sneakers;
+import com.example.sneakers.config.SecurityConfig;
+import org.springframework.context.annotation.Import;
 
 import com.example.sneakers.model.Product;
 import com.example.sneakers.service.ProductService;
@@ -20,6 +22,7 @@ import java.io.File;
 import java.util.List;
 
 @SpringBootApplication
+@Import(SecurityConfig.class)
 public class SneakersApplication {
 
     @Autowired
