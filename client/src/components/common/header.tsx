@@ -53,8 +53,8 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
 
     const navigate = useNavigate();
 
-    function handleAccountView(){
-        navigate("/account");
+    function handlePageNavigation(path: string){
+        navigate(path);
     }
     function handleSearchSubmit(e: KeyboardEvent<HTMLInputElement>){
         if(e.key === "Enter" && searchText.trim() !== ""){
@@ -152,11 +152,11 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
                             <div className="dropdown-menu">
                                 {loggedIn ? (
                                 <>
-                                    <p onClick={handleAccountView}>View Account</p>
+                                    <p onClick={()=> handlePageNavigation("/account")}>View Account</p>
                                     <p onClick={handleLogout}>Sign Out</p>
                                 </>
                                 ) : (
-                                <p>Sign In</p>
+                                <p onClick={()=> handlePageNavigation("/login")}>Sign In</p>
                                 )}
                             </div>
                             )}
