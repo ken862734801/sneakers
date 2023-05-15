@@ -1,7 +1,6 @@
 package com.example.sneakers.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +11,6 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import java.security.Key;
-import java.security.SecureRandom;
-import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
 
 
 import java.util.HashMap;
@@ -30,9 +25,6 @@ public class UserController {
     
     @Autowired
     private UserService userService;
-
-    @Value("${jwt.secret}")
-    private String jwtSecret;
 
     private int jwtExpirationInMs = 600000;
 
@@ -59,17 +51,27 @@ public class UserController {
 
         Map<String, String> response = new HashMap<>();
         response.put("token", token);
+        response.put("id", authenticatedUser.getId());
         response.put("firstName", authenticatedUser.getFirstName());
         response.put("lastName", authenticatedUser.getLastName());
         response.put("email", authenticatedUser.getEmail());
+        response.put("favorites", String.join(",", authenticatedUser.getFavorites())); // Convert favorites list to a comma-separated string
         return ResponseEntity.ok(response);
     }
     
-
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userService.getAllUsers();
         return ResponseEntity.ok(users);
     }
 
+    @PutMapping("/{userId}/favorites/add")
+    public void addFavoriteProduct(@PathVariable String userId, @RequestParam String productId) {
+        userService.addFavoriteProduct(userId, productId);
+    }
+
+    @PutMapping("/{userId}/favorites/remove")
+    public void removeFavoriteProduct(@PathVariable String userId, @RequestParam String productId) {
+        userService.removeFavoriteProduct(userId, productId);
+    }
 }

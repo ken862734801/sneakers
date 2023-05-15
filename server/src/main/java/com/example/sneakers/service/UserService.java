@@ -43,4 +43,16 @@ public class UserService {
     public List<User> getAllUsers(){
         return userRepository.findAll();
     }
+
+    public void addFavoriteProduct(String userId, String productId) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
+        user.addFavorite(productId);
+        userRepository.save(user);
+    }
+
+    public void removeFavoriteProduct(String userId, String productId) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
+        user.removeFavorite(productId);
+        userRepository.save(user);
+    }
 }

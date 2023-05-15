@@ -10,7 +10,7 @@ import Home from './components/home/home';
 import Cart from './components/cart/cart';
 import ProductGrid from './components/product/product-grid';
 import ProductPage from './components/product/product-page';
-import SearchPage from './components/search/search-results';
+import ErrorPage from './components/error/error-page';
 import { CartContext } from './context';
 import './App.css';
 
@@ -22,6 +22,15 @@ interface PageInformation {
   description: string;
   path: string;
 };
+
+interface UserInformation {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  favorites: string; 
+}
+
 
 const pageInformation: Record<Page, PageInformation> = {
   men: {
@@ -49,6 +58,13 @@ const pageInformation: Record<Page, PageInformation> = {
 function App() {
   const [cart, setCart] = useState<any[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userInformation, setUserInformation] = useState<UserInformation>({
+    id: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    favorites: "",
+  });
 
   const [showSideNav, setShowSideNav] = useState<boolean>(false);
   const [blurLevel, setBlurLevel] = useState<number>(0);
@@ -66,6 +82,13 @@ function App() {
         if (decodedToken.exp < currentTime) {
             // Token has expired
             setIsLoggedIn(false);
+            setUserInformation({
+              id: "",
+              firstName: "",
+              lastName: "",
+              email: "",
+              favorites: "",
+            });
         } else {
             setIsLoggedIn(true);
         }
@@ -73,6 +96,8 @@ function App() {
         setIsLoggedIn(false);
     }
 }, []);
+console.log(userInformation);
+
 
   function handlePageChange (newPage: Page){
     setPage(newPage);
@@ -90,8 +115,8 @@ function App() {
           <main style={{ filter: `blur(${blurLevel}px)`}}>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/login" element = {isLoggedIn? <Navigate to="/account"/> : <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>}/>
-                <Route path="/account" element={isLoggedIn ? <Account setIsLoggedIn={setIsLoggedIn}/> : <Navigate to="/login" />}/>
+                <Route path="/login" element = {isLoggedIn? <Navigate to="/account"/> : <Login userInformation={userInformation} setUserInformation={setUserInformation} setIsLoggedIn={setIsLoggedIn}/>}/>
+                <Route path="/account" element={isLoggedIn ? <Account userInformation={userInformation } setIsLoggedIn={setIsLoggedIn}/> : <Navigate to="/login" />}/>
                 <Route path = "/men" element = {
                 <ProductGrid 
                   name={pageInformation.men.name} 
@@ -119,6 +144,7 @@ function App() {
                 <Route path= "/cart" element = {<Cart/>}/>
                 <Route path="/us/:name/:id" element={<ProductPage/>}></Route>
                 <Route path="/search" element={<SearchResults/>}></Route>
+                <Route path="*" element={<ErrorPage/>}></Route>
             </Routes>
           </main>
       <Footer blurLevel={blurLevel}/>

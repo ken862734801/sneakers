@@ -1,21 +1,22 @@
 export default function Account(props: any){
 
-    const {setIsLoggedIn} = props;
+    const {userInformation, setIsLoggedIn} = props;
     
-    const token = localStorage.getItem("token");
 
     function handleLogout() {
         // Clear the token from local storage
         localStorage.removeItem('token');
-      
-        // Update the isLoggedIn state to false or perform any other necessary actions
         setIsLoggedIn(false);
+        window.alert("You have succesfully logged out!")
       }
 
     return(
-        <div>
-            <p>This is your account!</p>
-            <button onClick={handleLogout}>Logout</button>
+        <div className="account-page">
+            <div className="account-page-container">
+                <p>{`${userInformation.firstName} ${userInformation.lastName}`}</p>
+                <p>{userInformation.email}</p>
+                <button onClick={handleLogout}>Logout</button>
+            </div>
         </div>
     )
 }

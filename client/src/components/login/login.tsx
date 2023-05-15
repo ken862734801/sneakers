@@ -2,7 +2,7 @@ import "../../styles/login.css";
 import { useState } from "react";
 export default function Login(props: any){
     // prop passed in from the app.tsx, will check if user is logged in or not
-    const {isLoggedIn, setIsLoggedIn} = props;
+    const {userInformation, setUserInformation, setIsLoggedIn} = props;
 
     //check if screen should show login or sign up
     const [loggingIn, setLoggingIn] = useState<boolean>(true);
@@ -72,6 +72,13 @@ export default function Login(props: any){
             localStorage.setItem("token", token);
             window.alert("You have successfully signed in!")
             setIsLoggedIn(true);
+            setUserInformation({
+                id: data.id,
+                firstName: data.firstName,
+                lastName: data.lastName,
+                email: data.email,
+                favorites: data.favorites,
+              });
             })
             .catch((error) => {
                 console.log("Error:", error);

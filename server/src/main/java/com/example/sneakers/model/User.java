@@ -1,4 +1,5 @@
 package com.example.sneakers.model;
+import java.util.*;
 
 import org.springframework.data.annotation.Id;
 
@@ -9,14 +10,18 @@ public class User {
     private String lastName;
     private String email;
     private String password;
+    private List<String> favorites;
 
-    public User(){};
+    public User() {
+        favorites = new ArrayList<>();
+    }
 
     public User(String firstName, String lastName, String email, String password){
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        favorites = new ArrayList<>();
     }
     public String getId(){
         return id;
@@ -44,5 +49,16 @@ public class User {
     }
     public void setPassword(String password){
         this.password = password;
+    }
+    public List<String> getFavorites() {
+        return favorites;
+    }
+    public void addFavorite(String productId) {
+        if (!favorites.contains(productId)) {
+            favorites.add(productId);
+        }
+    }
+    public void removeFavorite(String productId) {
+        favorites.remove(productId);
     }
 }
