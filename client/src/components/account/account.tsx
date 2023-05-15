@@ -8,6 +8,7 @@ export default function Account(props: any){
     const [favoriteData, setFavoriteData] = useState<ProductCardProps[]>([]);
     const [recommendedData, setRecommendedData] = useState<ProductCardProps[]>([]);
     
+    // recommended items
     useEffect(() => {
         fetch(`http://localhost:8080/api/product/new`)
           .then(response => response.json())
