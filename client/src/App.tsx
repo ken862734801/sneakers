@@ -110,7 +110,7 @@ console.log(userInformation);
   return (
      <CartContext.Provider value={{cart, setCart}}>
       <div className="App">
-      <Header blurLevel={blurLevel} setBlurLevel={setBlurLevel} setShowSideNav={setShowSideNav} loggedIn={isLoggedIn} page={page} onPageChange={handlePageChange}/>
+      <Header blurLevel={blurLevel} setBlurLevel={setBlurLevel} setShowSideNav={setShowSideNav} loggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} page={page} onPageChange={handlePageChange}/>
       {showSideNav && (<SideNav setBlurLevel={setBlurLevel} showSideNav={showSideNav} setShowSideNav={setShowSideNav}/>)}
           <main style={{ filter: `blur(${blurLevel}px)`}}>
             <Routes>

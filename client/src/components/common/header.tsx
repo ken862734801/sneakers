@@ -11,6 +11,7 @@ import { useScrollDirection } from "./scroll";
 
 interface HeaderProps {
     loggedIn: boolean;
+    setIsLoggedIn: (login: boolean) => void;
     page: Page;
     onPageChange: (newPage: Page) => void;
     setShowSideNav: (show: boolean) => void;
@@ -18,11 +19,30 @@ interface HeaderProps {
     setBlurLevel : (blur: number) => void;
 }
 
-export default function Header ({page, onPageChange, setShowSideNav, blurLevel, setBlurLevel}: HeaderProps){
+export default function Header ({page, onPageChange, setShowSideNav, blurLevel, setBlurLevel, loggedIn, setIsLoggedIn}: HeaderProps){
     const {cart} = useContext(CartContext);
+    const [showDropdown, setShowDropdown] = useState(false);
+
     const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
     const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
     const [searchText, setSearchText] = useState<string>('');
+
+    useEffect(() => {
+        const handleOutsideClick = (event: MouseEvent) => {
+          const target = event.target as HTMLElement;
+          if (target.closest && target.closest('.account-dropdown') === null) {
+            setShowDropdown(false);
+          }
+        };
+      
+        if (showDropdown) {
+          document.addEventListener('click', handleOutsideClick);
+        }
+      
+        return () => {
+          document.removeEventListener('click', handleOutsideClick);
+        };
+      }, [showDropdown]);
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchText(e.target.value);
@@ -33,6 +53,9 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
 
     const navigate = useNavigate();
 
+    function handleAccountView(){
+        navigate("/account");
+    }
     function handleSearchSubmit(e: KeyboardEvent<HTMLInputElement>){
         if(e.key === "Enter" && searchText.trim() !== ""){
             setIsSubmitted(true);
@@ -47,6 +70,7 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
     function handleSideNavOpen(){
         setShowSideNav(true);
         setBlurLevel(2);
+        setShowDropdown(false);
     }
     function handleScrollTop(){
         window.scrollTo(0,0);
@@ -59,6 +83,12 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
         handleClearClick();
         handleScrollTop();
     };
+    function handleLogout() {
+        // Clear the token from local storage
+        localStorage.removeItem('token');
+        setIsLoggedIn(false);
+        window.alert("You have succesfully logged out!")
+      }
 
     const scrollDirection = useScrollDirection();
 
@@ -116,8 +146,22 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
                         <div className={cart.length > 0 ? "shopping-cart-notification--active" : "shopping-cart-notification"}></div>
                     </div>
                     <div className="icon-container user-icon">
-                        <Link to={"/login"} onClick={handleScrollTop}><AccountCircleOutlined/></Link>
-                    </div>
+                        <div className="account-dropdown" onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
+                            <AccountCircleOutlined />
+                            {showDropdown && (
+                            <div className="dropdown-menu">
+                                {loggedIn ? (
+                                <>
+                                    <p onClick={handleAccountView}>View Account</p>
+                                    <p onClick={handleLogout}>Sign Out</p>
+                                </>
+                                ) : (
+                                <p>Sign In</p>
+                                )}
+                            </div>
+                            )}
+                        </div>
+                        </div>
                     <div className="icon-container menu-bar">
                         <Menu onClick={handleSideNavOpen}/>
                     </div>

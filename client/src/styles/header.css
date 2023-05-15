@@ -133,6 +133,29 @@ header{
     font-weight:bold;
     font-size:0.85rem;
 }
+.account-dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdown-menu p {
+    margin: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu p:hover {
+    background-color: #f0f0f0;
+  }
 @media screen and (max-width:768px){
     .search-container{
         width:95%;
