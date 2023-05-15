@@ -66,12 +66,14 @@ public class UserController {
     }
 
     @PutMapping("/{userId}/favorites/add")
-    public void addFavoriteProduct(@PathVariable String userId, @RequestParam String productId) {
+    public ResponseEntity<String> addFavoriteProduct(@PathVariable String userId, @RequestParam String productId) {
         userService.addFavoriteProduct(userId, productId);
+        return ResponseEntity.ok("Favorite product added successfully");
     }
 
     @PutMapping("/{userId}/favorites/remove")
-    public void removeFavoriteProduct(@PathVariable String userId, @RequestParam String productId) {
+    public ResponseEntity<String> removeFavoriteProduct(@PathVariable String userId, @RequestParam String productId) {
         userService.removeFavoriteProduct(userId, productId);
+        return ResponseEntity.ok("Favorite product removed successfully");
     }
 }

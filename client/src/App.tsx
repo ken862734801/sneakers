@@ -119,6 +119,7 @@ console.log(userInformation);
                 <Route path="/account" element={isLoggedIn ? <Account userInformation={userInformation } setIsLoggedIn={setIsLoggedIn}/> : <Navigate to="/login" />}/>
                 <Route path = "/men" element = {
                 <ProductGrid 
+                  userInformation={userInformation}
                   name={pageInformation.men.name} 
                   description={pageInformation.men.description}
                   path={pageInformation.men.path}/>}
@@ -142,7 +143,7 @@ console.log(userInformation);
                   path={pageInformation.sale.path}/>}
                 />
                 <Route path= "/cart" element = {<Cart/>}/>
-                <Route path="/us/:name/:id" element={<ProductPage/>}></Route>
+                <Route path="/us/:name/:id" element={<ProductPage loggedIn={isLoggedIn} userInformation={userInformation}/>}></Route>
                 <Route path="/search" element={<SearchResults/>}></Route>
                 <Route path="*" element={<ErrorPage/>}></Route>
             </Routes>

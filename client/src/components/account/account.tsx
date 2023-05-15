@@ -5,6 +5,7 @@ import { ProductCardProps } from "../common/types";
 export default function Account(props: any){
 
     const {userInformation, setIsLoggedIn} = props;
+    const [favoriteData, setFavoriteData] = useState<ProductCardProps[]>([]);
     const [recommendedData, setRecommendedData] = useState<ProductCardProps[]>([]);
     
     useEffect(() => {
@@ -13,6 +14,35 @@ export default function Account(props: any){
           .then(data => setRecommendedData(data))
       }, [])
 
+    useEffect(()=> {
+        fetch(`http://localhost:8080/api/product`)
+            .then(response => response.json())
+          .then(data => setFavoriteData(data))
+    }, [])
+
+    function handleFavoriteProduct() {
+        if (!favoriteData) {
+          return "LOADING...";
+        }
+    
+        const favorites = userInformation.favorites.split(",")
+    
+        const favoriteProducts = favoriteData.filter((data) =>
+          favorites.includes(data.sku)
+        );
+    
+        return favoriteProducts.map((data, index) => (
+          <ProductCard
+            key={index}
+            sku={data.sku}
+            name={data.name}
+            price={data.price}
+            style={data.style}
+            images={data.images}
+            onSale={data.onSale}
+          />
+        ));
+      }
     function handleRecommendedProduct (){
         if (!recommendedData) {
             return "LOADING..."
@@ -21,6 +51,7 @@ export default function Account(props: any){
             <ProductCard key={index} sku={data.sku} name={data.name} price={data.price} style={data.style} images={data.images} onSale={data.onSale}></ProductCard>
             ))
     }
+    console.log(userInformation);
 
     return(
         <div className="account-page">
@@ -31,7 +62,9 @@ export default function Account(props: any){
                 <div className="wishlist">
                 <h1>Your Wishlist</h1>
                 {userInformation.favorites.length > 0 ? (
-                    <div className="wishlist-container--true">{/* Render the content when there are favorites */}</div>
+                    <div className="wishlist-container--true">
+                         <div className="wishlist-grid">{handleFavoriteProduct()}</div>
+                    </div>
                 ) : (
                     <div className="wishlist-container--false">
                         <p>You haven't saved any items to your wishlist yet. Check out these popular items.</p>

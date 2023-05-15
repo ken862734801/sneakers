@@ -21,13 +21,16 @@ interface CartItemType {
     quantity: number;
   }
 
-export default function ProductPage(){
+export default function ProductPage(props:any){
+    const {userInformation, loggedIn} = props;
     const {cart, setCart} = useContext(CartContext);
 
     let {id} = useParams();
     const [selectedSize, setSelectedSize] = useState("");
     const [productData, setProductData] = useState<ProductDetailProps | undefined>();
     const [inventoryData, setInventoryData] = useState<InventoryDataType[]>([]);
+    const [isFavorite, setIsFavorite] = useState(false);
+
 
     const onSaleBoolean = productData?.onSale;
     console.log(onSaleBoolean);
@@ -37,6 +40,7 @@ export default function ProductPage(){
           const response = await fetch(`http://localhost:8080/api/product/${id?.toUpperCase()}`);
           const data = await response.json();
           setProductData(data);
+          setIsFavorite(userInformation.favorites.includes(data.sku));
         }
         fetchData();
       }, []);
@@ -110,6 +114,29 @@ export default function ProductPage(){
         }
       }
 
+      async function handleAddToFavorites() {
+        if(!loggedIn){
+          window.alert("Login to add items to your wishlist!")
+          return
+        }
+        const userId = userInformation.id;
+        const productId = productData?.sku;
+    
+        if (isFavorite) {
+          // Remove from favorites
+          await fetch(`http://localhost:8080/api/users/${userId}/favorites/remove?productId=${productId}`, {
+            method: "PUT",
+          });
+        } else {
+          // Add to favorites
+          await fetch(`http://localhost:8080/api/users/${userId}/favorites/add?productId=${productId}`, {
+            method: "PUT",
+          });
+        }
+    
+        setIsFavorite(!isFavorite);
+      }
+
     return (
         <div className="product-detail-page">
             <div className="product-detail-container">
@@ -149,7 +176,9 @@ export default function ProductPage(){
                     <p className="payment-text">10 interest-free payments of <span className="orange">$10.00</span> with Klarna.</p>
                     <div className="product-detail-button-container">
                         <button className="add-to-bag-button" onClick={handleAddToCart}>Add to Bag</button>
-                        <button className="add-to-favorite-button">Add to Favorites</button>
+                        <button className="add-to-favorite-button" onClick={handleAddToFavorites}>
+                          {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+                        </button>
                     </div>
                     <p className="product-description">{productData?.description}</p>
                 </div>
