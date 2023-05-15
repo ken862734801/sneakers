@@ -32,13 +32,13 @@ export default function Home() {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/product/featured/${currentCategory}`)
+    fetch(`https://secret-falls-93039.herokuapp.com/api/product/featured/${currentCategory}`)
       .then(response => response.json())
       .then(data => setCollectionData(data))
   }, [currentCategory])
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/product/new`)
+    fetch(`https://secret-falls-93039.herokuapp.com/api/product/new`)
       .then(response => response.json())
       .then(data => setNewProductData(data))
   }, [])

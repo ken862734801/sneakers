@@ -37,7 +37,7 @@ export default function ProductPage(props:any){
 
     useEffect(() => {
         async function fetchData() {
-          const response = await fetch(`http://localhost:8080/api/product/${id?.toUpperCase()}`);
+          const response = await fetch(`https://secret-falls-93039.herokuapp.com/api/product/${id?.toUpperCase()}`);
           const data = await response.json();
           setProductData(data);
           setIsFavorite(userInformation.favorites.includes(data.sku));
@@ -50,7 +50,7 @@ export default function ProductPage(props:any){
 
       useEffect(()=> {
         async function fetchInventoryData(){
-            const response = await fetch(`http://localhost:8080/api/inventory/${id?.toUpperCase()}`);
+            const response = await fetch(`https://secret-falls-93039.herokuapp.com/api/inventory/${id?.toUpperCase()}`);
             const data = await response.json();
             setInventoryData(data);
         }
@@ -124,12 +124,12 @@ export default function ProductPage(props:any){
     
         if (isFavorite) {
           // Remove from favorites
-          await fetch(`http://localhost:8080/api/users/${userId}/favorites/remove?productId=${productId}`, {
+          await fetch(`https://secret-falls-93039.herokuapp.com/api/users/${userId}/favorites/remove?productId=${productId}`, {
             method: "PUT",
           });
         } else {
           // Add to favorites
-          await fetch(`http://localhost:8080/api/users/${userId}/favorites/add?productId=${productId}`, {
+          await fetch(`https://secret-falls-93039.herokuapp.com/api/users/${userId}/favorites/add?productId=${productId}`, {
             method: "PUT",
           });
         }

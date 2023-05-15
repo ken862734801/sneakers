@@ -8,7 +8,7 @@ export default function ProductGrid(props: any){
     const [data, setData] = useState<ProductCardProps[]>([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/product/${props.path}`)
+        fetch(`https://secret-falls-93039.herokuapp.com/api/product/${props.path}`)
             .then(response => response.json())
             .then(data => setData(data));
     }, [props.path]);

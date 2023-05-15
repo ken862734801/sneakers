@@ -10,13 +10,13 @@ export default function Account(props: any){
     
     // recommended items
     useEffect(() => {
-        fetch(`http://localhost:8080/api/product/new`)
+        fetch(`https://secret-falls-93039.herokuapp.com//api/product/new`)
           .then(response => response.json())
           .then(data => setRecommendedData(data))
       }, [])
 
     useEffect(()=> {
-        fetch(`http://localhost:8080/api/product`)
+        fetch(`https://secret-falls-93039.herokuapp.com//api/product`)
             .then(response => response.json())
           .then(data => setFavoriteData(data))
     }, [])

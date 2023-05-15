@@ -32,7 +32,7 @@ export default function Login(props: any){
             password
         };
 
-        fetch("http://localhost:8080/api/users/signup", {
+        fetch("https://secret-falls-93039.herokuapp.com//api/users/signup", {
             method: "POST",
             "headers": {
                 "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export default function Login(props: any){
           password: loginPassword
         };
       
-        fetch("http://localhost:8080/api/users/login", {
+        fetch("https://secret-falls-93039.herokuapp.com//api/users/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
