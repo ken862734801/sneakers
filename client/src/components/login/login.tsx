@@ -1,8 +1,10 @@
 import "../../styles/login.css";
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
+import { UserContext} from "../../context/UserContext";
 export default function Login(props: any){
+    const {userInformation, setUserInformation} = useContext(UserContext);
     // prop passed in from the app.tsx, will check if user is logged in or not
-    const {userInformation, setUserInformation, setIsLoggedIn} = props;
+    const {setIsLoggedIn} = props;
 
     //check if screen should show login or sign up
     const [loggingIn, setLoggingIn] = useState<boolean>(true);
@@ -32,7 +34,7 @@ export default function Login(props: any){
             password
         };
 
-        fetch("https://secret-falls-93039.herokuapp.com//api/users/signup", {
+        fetch("https://secret-falls-93039.herokuapp.com/api/users/signup", {
             method: "POST",
             "headers": {
                 "Content-Type": "application/json",
@@ -58,7 +60,7 @@ export default function Login(props: any){
           password: loginPassword
         };
       
-        fetch("https://secret-falls-93039.herokuapp.com//api/users/login", {
+        fetch("https://secret-falls-93039.herokuapp.com/api/users/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -70,19 +72,26 @@ export default function Login(props: any){
             console.log(data);
             const token = data.token;
             localStorage.setItem("token", token);
-            window.alert("You have successfully signed in!")
+            window.alert("You have successfully signed in!");
             setIsLoggedIn(true);
             setUserInformation({
-                id: data.id,
-                firstName: data.firstName,
-                lastName: data.lastName,
-                email: data.email,
-                favorites: data.favorites,
-              });
-            })
-            .catch((error) => {
-                console.log("Error:", error);
+              id: data.id,
+              firstName: data.firstName,
+              lastName: data.lastName,
+              email: data.email,
+              favorites: data.favorites
             });
+            localStorage.setItem("userInformation", JSON.stringify({
+              id: data.id,
+              firstName: data.firstName,
+              lastName: data.lastName,
+              email: data.email,
+              favorites: data.favorites
+            }));
+          })
+          .catch((error) => {
+            console.log("Error:", error);
+          });
       }
 
     return(

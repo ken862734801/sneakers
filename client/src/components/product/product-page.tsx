@@ -3,7 +3,9 @@ import { useParams } from "react-router";
 import { ProductCardProps, ProductDetailProps } from "../common/types";
 import "../../styles/product-page.css";
 import {Splide, SplideSlide} from "@splidejs/react-splide";
-import { CartContext } from "../../context";
+import { CartContext } from "../../context/CartContext";
+import { UserContext } from "../../context/UserContext";
+
 
 interface InventoryDataType {
     sku: string,
@@ -22,8 +24,10 @@ interface CartItemType {
   }
 
 export default function ProductPage(props:any){
-    const {userInformation, loggedIn} = props;
+
+    const { loggedIn} = props;
     const {cart, setCart} = useContext(CartContext);
+    const {userInformation} = useContext(UserContext);
 
     let {id} = useParams();
     const [selectedSize, setSelectedSize] = useState("");
@@ -40,7 +44,7 @@ export default function ProductPage(props:any){
           const response = await fetch(`https://secret-falls-93039.herokuapp.com/api/product/${id?.toUpperCase()}`);
           const data = await response.json();
           setProductData(data);
-          setIsFavorite(userInformation.favorites.includes(data.sku));
+          // setIsFavorite(userInformation.favorites.includes(data.sku));
         }
         fetchData();
       }, []);
@@ -119,7 +123,7 @@ export default function ProductPage(props:any){
           window.alert("Login to add items to your wishlist!")
           return
         }
-        const userId = userInformation.id;
+        const userId = userInformation?.id;
         const productId = productData?.sku;
     
         if (isFavorite) {
@@ -136,6 +140,13 @@ export default function ProductPage(props:any){
     
         setIsFavorite(!isFavorite);
       }
+
+      useEffect(() => {
+        // Check if the current product is in the user's favorites
+        if (userInformation && productData) {
+          setIsFavorite(userInformation.favorites.includes(productData.sku));
+        }
+      }, [userInformation, productData]);
 
     return (
         <div className="product-detail-page">

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import "../../styles/cart-item.css";
 import { Close } from "@material-ui/icons";
-import { CartContext } from "../../context";
+import { CartContext } from "../../context/CartContext";
 
 export default function CartItem(props:any){
 

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import jwtDecode from "jwt-decode";
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/common/header';
@@ -11,7 +11,8 @@ import Cart from './components/cart/cart';
 import ProductGrid from './components/product/product-grid';
 import ProductPage from './components/product/product-page';
 import ErrorPage from './components/error/error-page';
-import { CartContext } from './context';
+import { CartContext } from './context/CartContext';
+import { UserContext, UserProvider } from "./context/UserContext";
 import './App.css';
 
 import { Page } from './components/common/types';
@@ -22,15 +23,6 @@ interface PageInformation {
   description: string;
   path: string;
 };
-
-interface UserInformation {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  favorites: string; 
-}
-
 
 const pageInformation: Record<Page, PageInformation> = {
   men: {
@@ -58,13 +50,8 @@ const pageInformation: Record<Page, PageInformation> = {
 function App() {
   const [cart, setCart] = useState<any[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userInformation, setUserInformation] = useState<UserInformation>({
-    id: "",
-    firstName: "",
-    lastName: "",
-    email: "",
-    favorites: "",
-  });
+  const {userInformation, setUserInformation} = useContext(UserContext);
+
 
   const [showSideNav, setShowSideNav] = useState<boolean>(false);
   const [blurLevel, setBlurLevel] = useState<number>(0);
@@ -74,29 +61,24 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-
+  
     if (token) {
-        const decodedToken: any = jwtDecode(token);
-        const currentTime = Date.now() / 1000; // Convert to seconds
-
-        if (decodedToken.exp < currentTime) {
-            // Token has expired
-            setIsLoggedIn(false);
-            setUserInformation({
-              id: "",
-              firstName: "",
-              lastName: "",
-              email: "",
-              favorites: "",
-            });
-        } else {
-            setIsLoggedIn(true);
-        }
-    } else {
+      const decodedToken: any = jwtDecode(token);
+      const currentTime = Date.now() / 1000; // Convert to seconds
+  
+      if (decodedToken.exp < currentTime) {
+        // Token has expired
         setIsLoggedIn(false);
+        setUserInformation(undefined); // Clear user information
+      } else {
+        setIsLoggedIn(true);
+        const storedUserInformation = localStorage.getItem("userInformation");
+        if (storedUserInformation) {
+          setUserInformation(JSON.parse(storedUserInformation));
+        }
+      }
     }
-}, []);
-console.log(userInformation);
+  }, []);
 
 
   function handlePageChange (newPage: Page){
@@ -108,14 +90,15 @@ console.log(userInformation);
   }
 
   return (
-     <CartContext.Provider value={{cart, setCart}}>
+    <UserProvider>
+       <CartContext.Provider value={{cart, setCart}}>
       <div className="App">
       <Header blurLevel={blurLevel} setBlurLevel={setBlurLevel} setShowSideNav={setShowSideNav} loggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} page={page} onPageChange={handlePageChange}/>
       {showSideNav && (<SideNav setBlurLevel={setBlurLevel} showSideNav={showSideNav} setShowSideNav={setShowSideNav}/>)}
           <main style={{ filter: `blur(${blurLevel}px)`}}>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/login" element = {isLoggedIn? <Navigate to="/account"/> : <Login userInformation={userInformation} setUserInformation={setUserInformation} setIsLoggedIn={setIsLoggedIn}/>}/>
+                <Route path="/login" element = {isLoggedIn? <Navigate to="/account"/> : <Login setIsLoggedIn={setIsLoggedIn}/>}/>
                 <Route path="/account" element={isLoggedIn ? <Account userInformation={userInformation } setIsLoggedIn={setIsLoggedIn}/> : <Navigate to="/login" />}/>
                 <Route path = "/men" element = {
                 <ProductGrid 
@@ -151,6 +134,7 @@ console.log(userInformation);
       <Footer blurLevel={blurLevel}/>
     </div>
      </CartContext.Provider>
+    </UserProvider>
   );
 }
 

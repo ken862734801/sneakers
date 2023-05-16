@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Nike from "../../images/nike.png";
 import { useState, useEffect, useContext, ChangeEvent, KeyboardEvent } from "react";
-import { CartContext } from "../../context";
+import { CartContext } from "../../context/CartContext";
 import { useScrollDirection } from "./scroll";
 
 interface HeaderProps {

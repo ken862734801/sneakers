@@ -14,6 +14,21 @@ export default function ProductGrid(props: any){
     }, [props.path]);
     console.log(data);
 
+    function renderProductCards(){
+        if(!data){
+            return "LOADING..."
+        }
+        return data.map((data, index) => (
+            <ProductCard key={index}
+                         sku={data.sku}
+                         name={data.name}
+                         images={data.images}
+                         price={data.price}
+                         style={data.style}
+                         onSale={data.onSale}></ProductCard>
+        ))
+    }
+
     return(
         <div className="product-grid-page">
             <div className="product-grid-page-container">
@@ -22,17 +37,7 @@ export default function ProductGrid(props: any){
                     <p className="page-description">{props.description}</p>
                 </div>
                 <div className="product-grid">
-                    {data.map((product, index) => {
-                        return <ProductCard 
-                                    key={index}
-                                    sku={product.sku} 
-                                    name={product.name} 
-                                    images={product.images} 
-                                    price={product.price}
-                                    style = {product.style}
-                                    onSale = {product.onSale}
-                                />
-                    })}
+                    {renderProductCards()}
                 </div>
             </div>
         </div>
