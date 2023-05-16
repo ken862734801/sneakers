@@ -11,7 +11,7 @@ import Cart from './components/cart/cart';
 import ProductGrid from './components/product/product-grid';
 import ProductPage from './components/product/product-page';
 import ErrorPage from './components/error/error-page';
-import { CartContext } from './context/CartContext';
+import { CartProvider } from './context/CartContext';
 import { UserContext, UserProvider } from "./context/UserContext";
 import './App.css';
 
@@ -48,7 +48,7 @@ const pageInformation: Record<Page, PageInformation> = {
 }
 
 function App() {
-  const [cart, setCart] = useState<any[]>([]);
+  // const [cart, setCart] = useState<any[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const {userInformation, setUserInformation} = useContext(UserContext);
 
@@ -61,14 +61,15 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-  
+
     if (token) {
       const decodedToken: any = jwtDecode(token);
       const currentTime = Date.now() / 1000; // Convert to seconds
-  
+
       if (decodedToken.exp < currentTime) {
-        // Token has expired
+        // Token has expired or user has logged out
         setIsLoggedIn(false);
+        localStorage.removeItem('userInformation');
         setUserInformation(undefined); // Clear user information
       } else {
         setIsLoggedIn(true);
@@ -77,6 +78,10 @@ function App() {
           setUserInformation(JSON.parse(storedUserInformation));
         }
       }
+    } else {
+      // User has logged out
+      setIsLoggedIn(false);
+      setUserInformation(undefined); // Clear user information
     }
   }, []);
 
@@ -91,7 +96,7 @@ function App() {
 
   return (
     <UserProvider>
-       <CartContext.Provider value={{cart, setCart}}>
+       <CartProvider>
       <div className="App">
       <Header blurLevel={blurLevel} setBlurLevel={setBlurLevel} setShowSideNav={setShowSideNav} loggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} page={page} onPageChange={handlePageChange}/>
       {showSideNav && (<SideNav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setBlurLevel={setBlurLevel} showSideNav={showSideNav} setShowSideNav={setShowSideNav}/>)}
@@ -126,14 +131,14 @@ function App() {
                   path={pageInformation.sale.path}/>}
                 />
                 <Route path= "/cart" element = {<Cart/>}/>
-                <Route path="/us/:name/:id" element={<ProductPage loggedIn={isLoggedIn} userInformation={userInformation}/>}></Route>
+                <Route path="/us/:name/:id" element={<ProductPage setIsLoggedIn={setIsLoggedIn} loggedIn={isLoggedIn} userInformation={userInformation}/>}></Route>
                 <Route path="/search" element={<SearchResults/>}></Route>
                 <Route path="*" element={<ErrorPage/>}></Route>
             </Routes>
           </main>
       <Footer blurLevel={blurLevel}/>
     </div>
-     </CartContext.Provider>
+     </CartProvider>
     </UserProvider>
   );
 }

@@ -86,6 +86,7 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
     function handleLogout() {
         // Clear the token from local storage
         localStorage.removeItem('token');
+        localStorage.removeItem('userInformation');
         setIsLoggedIn(false);
         window.alert("You have succesfully logged out!")
       }

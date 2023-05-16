@@ -27,6 +27,7 @@ export default function SideNav(props: {
   function handleLogout() {
     // Clear the token from local storage
     localStorage.removeItem('token');
+    localStorage.removeItem('userInformation');
     setIsLoggedIn(false);
     window.alert("You have succesfully logged out!");
     handleSideNavClose();
@@ -58,7 +59,7 @@ export default function SideNav(props: {
                   </Link>
                 </div>
               ) : (
-                <div className={`accordion-content${accordionOpen ? "open" : "hide"}`}>
+                <div className={`accordion-content ${accordionOpen ? "open" : "hide"}`}>
                   <Link className="sidenav-link option" to={"/login"} onClick={handleSideNavClose}>
                     Sign In
                   </Link>

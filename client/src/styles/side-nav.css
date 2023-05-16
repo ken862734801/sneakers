@@ -40,10 +40,10 @@
 .sidenav-link:hover{
     background-color: var(--gray);
 }
-.sidenav-link.option{
+/* .sidenav-link.option{
     padding-left:40px;
-    font-size:0.85rem;
-}
+    font-size:0.90rem;
+} */
 .accordion-content{
     display:flex;
     flex-direction: column;

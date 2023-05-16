@@ -16,11 +16,11 @@ export default function SearchResults(){
 
     async function fetchData(){
         try{
-            const response = await fetch(`http://localhost:8080/api/product/search?query=${searchText}`);
+            const response = await fetch(`https://secret-falls-93039.herokuapp.com/api/product/search?query=${searchText}`);
             const data = await response.json();
             setMatchingProducts(data);
             if (data.length === 0){
-                const featuredResponse = await fetch("http://localhost:8080/api/product/new");
+                const featuredResponse = await fetch("https://secret-falls-93039.herokuapp.com/api/product/new");
                 const featuredData = await featuredResponse.json();
                 setMatchingProducts(featuredData);
                 setIsRecommended(true);

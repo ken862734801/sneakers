@@ -5,7 +5,7 @@ import { CartContext } from "../../context/CartContext";
 
 export default function CartItem(props:any){
 
-    const {cart, setCart} = useContext(CartContext);
+    const { cart, setCart } = useContext(CartContext);
 
     const removeItem = (sku: string) => {
         const updatedCart = cart.filter((item: any) => item.sku !== sku);

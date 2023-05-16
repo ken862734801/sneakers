@@ -25,7 +25,7 @@ interface CartItemType {
 
 export default function ProductPage(props:any){
 
-    const { loggedIn} = props;
+    const {loggedIn} = props;
     const {cart, setCart} = useContext(CartContext);
     const {userInformation} = useContext(UserContext);
 
@@ -147,6 +147,12 @@ export default function ProductPage(props:any){
           setIsFavorite(userInformation.favorites.includes(productData.sku));
         }
       }, [userInformation, productData]);
+
+      useEffect(() => {
+        if(!loggedIn){
+          setIsFavorite(false);
+        }
+      }, [loggedIn])
 
     return (
         <div className="product-detail-page">

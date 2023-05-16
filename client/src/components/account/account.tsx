@@ -6,38 +6,68 @@ import { UserContext } from "../../context/UserContext";
 
 export default function Account(props: any){
 
-    const {userInformation} = useContext(UserContext);
-    const { setIsLoggedIn} = props;
-    const [favoriteData, setFavoriteData] = useState<ProductCardProps[]>([]);
-    const [recommendedData, setRecommendedData] = useState<ProductCardProps[]>([]);
+  const { userInformation } = useContext(UserContext);
+  const [favoriteData, setFavoriteData] = useState<ProductCardProps[]>([]);
+  const [recommendedData, setRecommendedData] = useState<ProductCardProps[]>([]);
+  const [favoritesLoaded, setFavoritesLoaded] = useState(false);
 
+  useEffect(() => {
+    fetch("https://secret-falls-93039.herokuapp.com/api/product/new")
+      .then((response) => response.json())
+      .then((data) => setRecommendedData(data));
+  }, []);
 
-    useEffect(() => {
-        fetch(`https://secret-falls-93039.herokuapp.com/api/product/new`)
-          .then(response => response.json())
-          .then(data => setRecommendedData(data))
-      }, [])
+  useEffect(() => {
+    fetch("https://secret-falls-93039.herokuapp.com/api/product")
+      .then((response) => response.json())
+      .then((data) => setFavoriteData(data));
+  }, []);
 
-    useEffect(()=> {
-        fetch(`https://secret-falls-93039.herokuapp.com/api/product`)
-            .then(response => response.json())
-          .then(data => setFavoriteData(data))
-    }, [])
+  useEffect(() => {
+    if (!userInformation || !favoriteData) {
+      return;
+    }
+
+    const fetchUserFavorites = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8080/api/users/${userInformation.id}`
+        );
+        if (!response.ok) {
+          throw new Error("Error fetching user favorites");
+        }
+        const userData = await response.json();
+
+        if (!Array.isArray(userData.favorites)) {
+          throw new Error("Invalid user favorites data");
+        }
+
+        const favoriteArr = userData.favorites;
+        const favoriteProducts = favoriteData.filter((data) =>
+          favoriteArr.includes(data.sku)
+        );
+        setFavoriteData(favoriteProducts);
+        setFavoritesLoaded(true);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchUserFavorites();
+  }, [userInformation]);
 
     function handleFavoriteProduct() {
-      if (!userInformation || !favoriteData) {
+      if (!userInformation || !favoritesLoaded) {
         return "LOADING...";
       }
-  
-      const favoriteArr = userInformation.favorites.split(",");
-  
+    
       const favoriteProducts = favoriteData.filter((data) =>
-        favoriteArr.includes(data.sku)
+        userInformation.favorites.includes(data.sku)
       );
-  
-      return favoriteProducts.map((data, index) => (
+    
+      return favoriteProducts.map((data) => (
         <ProductCard
-          key={index}
+          key={data.sku} // Use a unique and stable identifier as the key
           sku={data.sku}
           name={data.name}
           price={data.price}
@@ -47,6 +77,8 @@ export default function Account(props: any){
         />
       ));
     }
+
+
     function handleRecommendedProduct (){
         if (!recommendedData) {
             return "LOADING..."
@@ -56,7 +88,7 @@ export default function Account(props: any){
             ))
     }
 
-    console.log(userInformation);
+    // console.log(userInformation?.favorites.length);
     return(
         <div className="account-page">
             <div className="account-page-container">

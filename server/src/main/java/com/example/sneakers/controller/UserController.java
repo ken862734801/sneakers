@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.Date;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -75,5 +76,16 @@ public class UserController {
     public ResponseEntity<String> removeFavoriteProduct(@PathVariable String userId, @RequestParam String productId) {
         userService.removeFavoriteProduct(userId, productId);
         return ResponseEntity.ok("Favorite product removed successfully");
+    }
+
+    @GetMapping("/{userId}")
+    public ResponseEntity<User> getUserById(@PathVariable String userId) {
+        Optional<User> userOptional = userService.getUserById(userId);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
