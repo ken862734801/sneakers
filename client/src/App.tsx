@@ -94,7 +94,7 @@ function App() {
        <CartContext.Provider value={{cart, setCart}}>
       <div className="App">
       <Header blurLevel={blurLevel} setBlurLevel={setBlurLevel} setShowSideNav={setShowSideNav} loggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} page={page} onPageChange={handlePageChange}/>
-      {showSideNav && (<SideNav setBlurLevel={setBlurLevel} showSideNav={showSideNav} setShowSideNav={setShowSideNav}/>)}
+      {showSideNav && (<SideNav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setBlurLevel={setBlurLevel} showSideNav={showSideNav} setShowSideNav={setShowSideNav}/>)}
           <main style={{ filter: `blur(${blurLevel}px)`}}>
             <Routes>
                 <Route path="/" element={<Home/>}/>
