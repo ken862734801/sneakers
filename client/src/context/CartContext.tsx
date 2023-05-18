@@ -1,28 +1,34 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { ShoppingCartContextType } from "../components/common/types";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { CartItemType } from "../components/common/types";
 
-export const CartContext = createContext<ShoppingCartContextType>({
+interface CartContextProps {
+  cart: CartItemType[];
+  setCart: (cart: CartItemType[]) => void;
+}
+
+export const CartContext = createContext<CartContextProps>({
   cart: [],
-  setCart(cart) {},
+  setCart: () => {},
 });
 
-export const CartProvider = (props: { children: React.ReactNode }) => {
-  const [cart, setCart] = useState<any[]>([]);
-
-  useEffect(() => {
-    const storedCart = localStorage.getItem('cart');
+export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [cart, setCart] = useState<CartItemType[]>(() => {
+    const storedCart = localStorage.getItem("cart");
     if (storedCart) {
-      setCart(JSON.parse(storedCart));
+      return JSON.parse(storedCart);
     }
-  }, []);
+    return [];
+  });
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   return (
     <CartContext.Provider value={{ cart, setCart }}>
-      {props.children}
+      {children}
     </CartContext.Provider>
   );
 };

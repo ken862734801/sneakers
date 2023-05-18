@@ -12,7 +12,7 @@ export default function ProductGrid(props: any){
             .then(response => response.json())
             .then(data => setData(data));
     }, [props.path]);
-    console.log(data);
+    // console.log(data);
 
     function renderProductCards(){
         if(!data){

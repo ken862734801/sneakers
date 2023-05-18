@@ -48,7 +48,6 @@ const pageInformation: Record<Page, PageInformation> = {
 }
 
 function App() {
-  // const [cart, setCart] = useState<any[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const {userInformation, setUserInformation} = useContext(UserContext);
 
@@ -95,8 +94,8 @@ function App() {
   }
 
   return (
+  <CartProvider>
     <UserProvider>
-       <CartProvider>
       <div className="App">
       <Header blurLevel={blurLevel} setBlurLevel={setBlurLevel} setShowSideNav={setShowSideNav} loggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} page={page} onPageChange={handlePageChange}/>
       {showSideNav && (<SideNav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setBlurLevel={setBlurLevel} showSideNav={showSideNav} setShowSideNav={setShowSideNav}/>)}
@@ -138,8 +137,8 @@ function App() {
           </main>
       <Footer blurLevel={blurLevel}/>
     </div>
-     </CartProvider>
     </UserProvider>
+  </CartProvider>
   );
 }
 

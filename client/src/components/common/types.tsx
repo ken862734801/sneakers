@@ -41,3 +41,14 @@ export interface Review {
     review: string;
     image: string;
 }
+
+export interface CartItemType {
+    name: string;
+    sku: string;
+    price: number;
+    style: string;
+    sizes: any[],
+    size: string;
+    image: string;
+    quantity: number;
+}

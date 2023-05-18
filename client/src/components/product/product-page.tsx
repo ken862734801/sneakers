@@ -5,23 +5,13 @@ import "../../styles/product-page.css";
 import {Splide, SplideSlide} from "@splidejs/react-splide";
 import { CartContext } from "../../context/CartContext";
 import { UserContext } from "../../context/UserContext";
+import { CartItemType } from "../common/types";
 
 
 interface InventoryDataType {
     sku: string,
     size: string,
 }
-
-interface CartItemType {
-    name: string;
-    sku: string;
-    price: number;
-    style: string;
-    sizes: any[],
-    size: string;
-    image: string;
-    quantity: number;
-  }
 
 export default function ProductPage(props:any){
 
@@ -37,7 +27,7 @@ export default function ProductPage(props:any){
 
 
     const onSaleBoolean = productData?.onSale;
-    console.log(onSaleBoolean);
+    // console.log(onSaleBoolean);
 
     useEffect(() => {
         async function fetchData() {
@@ -49,8 +39,8 @@ export default function ProductPage(props:any){
         fetchData();
       }, []);
 
-      console.log(productData);
-      console.log(productData?.category);
+      // console.log(productData);
+      // console.log(productData?.category);
 
       useEffect(()=> {
         async function fetchInventoryData(){
@@ -61,14 +51,15 @@ export default function ProductPage(props:any){
         fetchInventoryData();
       }, [])
 
-      console.log(inventoryData)
+      // console.log(inventoryData);
+
       let sizeOptions:string[] = [];
       if (inventoryData){
         for(let i = 0; i < inventoryData.length; i++){
           sizeOptions.push(String(inventoryData[i].size))
         }
       }
-      console.log(sizeOptions);
+      // console.log(sizeOptions);
 
       function handleThumbnailClick(event: React.MouseEvent<HTMLImageElement>) {
         const thumbnails = document.querySelectorAll('.product-thumbnail');
@@ -117,6 +108,10 @@ export default function ProductPage(props:any){
             window.alert(`Size ${selectedSize} ${productData?.name} has been added to your cart.`)
         }
       }
+
+      useEffect(() => {
+        console.log(cart);
+      }, [cart]);
 
       async function handleAddToFavorites() {
         if(!loggedIn){
