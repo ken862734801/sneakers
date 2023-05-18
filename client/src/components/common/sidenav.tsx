@@ -61,7 +61,7 @@ export default function SideNav(props: {
               ) : (
                 <div className={`accordion-content ${accordionOpen ? "open" : "hide"}`}>
                   <Link className="sidenav-link option" to={"/login"} onClick={handleSideNavClose}>
-                    Sign In
+                    Sign in
                   </Link>
                 </div>
               )}
