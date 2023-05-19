@@ -2,9 +2,10 @@ import "../../styles/cart.css";
 import CartItem from "./cart-item";
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
+import { useNavigate } from "react-router";
 
 export default function Cart (){
-    const {cart} = useContext(CartContext);
+    const {cart, setCart} = useContext(CartContext);
     console.log(cart);
     
     const {subtotalPrice, totalQuantity} = cart.reduce((acc, item) => {
@@ -18,6 +19,22 @@ export default function Cart (){
     const shippingPrice = (totalQuantity) * 5;
     const taxPrice = shippingPrice;
     const totalPrice = subtotalPrice + shippingPrice + taxPrice;
+
+    const navigate = useNavigate();
+
+    function handleNavigation(){
+        window.scrollTo(0, 0);
+        navigate("/checkout");
+    };
+
+    function handleCheckout(){
+        if(cart.length > 0){
+            setCart([]);
+            handleNavigation();
+        } else {
+            window.alert("Add an item to your cart in order to checkout!");
+        }
+    };
 
     return (
         <div className="cart-page">
@@ -73,7 +90,7 @@ export default function Cart (){
                             <p className="cart-right-total-price">${totalPrice}</p>
                         </div>
                         <div className="cart-right-checkout-btn-container">
-                            <button>Checkout</button>
+                            <button onClick={handleCheckout}>Checkout</button>
                         </div>
                     </div>
                 </div>

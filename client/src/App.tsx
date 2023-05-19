@@ -11,6 +11,7 @@ import Cart from './components/cart/cart';
 import ProductGrid from './components/product/product-grid';
 import ProductPage from './components/product/product-page';
 import ErrorPage from './components/error/error-page';
+import CheckoutPage from './components/checkout/checkout';
 import { CartProvider } from './context/CartContext';
 import { UserContext, UserProvider } from "./context/UserContext";
 import './App.css';
@@ -130,6 +131,7 @@ function App() {
                   path={pageInformation.sale.path}/>}
                 />
                 <Route path= "/cart" element = {<Cart/>}/>
+                <Route path="/checkout" element={<CheckoutPage/>}></Route>
                 <Route path="/us/:name/:id" element={<ProductPage setIsLoggedIn={setIsLoggedIn} loggedIn={isLoggedIn} userInformation={userInformation}/>}></Route>
                 <Route path="/search" element={<SearchResults/>}></Route>
                 <Route path="*" element={<ErrorPage/>}></Route>
