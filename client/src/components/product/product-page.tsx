@@ -109,10 +109,6 @@ export default function ProductPage(props:any){
         }
       }
 
-      useEffect(() => {
-        console.log(cart);
-      }, [cart]);
-
       async function handleAddToFavorites() {
         if(!loggedIn){
           window.alert("Login to add items to your wishlist!")

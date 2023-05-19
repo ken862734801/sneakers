@@ -57,6 +57,9 @@
     color:white;
     cursor: pointer;
 }
+.widget-heart-btn.favorite{
+    color:red;
+}
 .widget-product-style{
     color:white;
     font-size:0.55rem;

@@ -11,14 +11,14 @@ import MainImage from "../../images/main-image.png";
 
 import "../../styles/home.css";
 import ProductCard from "../product/product-card";
-import { ProductCardProps } from "../common/types";
+import { HomeProps, ProductCardProps } from "../common/types";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router";
 
-export default function Home() {
+export default function Home(props: HomeProps) {
 
-
+  const {isLoggedIn} = props;
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const [numReviewsDisplayed, setNumReviewsDisplayed] = useState(3);
   const [currentCategory, setCurrentCategory] = useState("Men");
@@ -70,7 +70,7 @@ export default function Home() {
     }
     return newProductData.map((data, index) => (
       <SplideSlide key={`slide-${index}`}>
-        <Widget key={index} name={data.name} sku={data.sku} price={data.price} style={data.style} images={data.images}/>
+        <Widget isLoggedIn={isLoggedIn} key={index} name={data.name} sku={data.sku} price={data.price} style={data.style} images={data.images}/>
       </SplideSlide>
     ))
   }
@@ -108,16 +108,22 @@ export default function Home() {
     ))
   }
 
+  useEffect(()=> {
+    console.log(currentReviewPage)
+  }, [currentReviewPage]);
+
   function handlePrevReviewClick() {
     if (currentReviewPage > 0) {
       setCurrentReviewPage(currentReviewPage - 1);
     }
+    console.log(currentReviewPage);
   }
 
   function handleNextReviewClick() {
     if (currentReviewPage < Math.ceil(Reviews.length / numReviewsDisplayed) - 1) {
       setCurrentReviewPage(currentReviewPage + 1);
     }
+    console.log(currentReviewPage);
   }
   
   const isNextReviewClickDisabled = currentReviewPage === Math.ceil(Reviews.length / numReviewsDisplayed) - 1;
@@ -128,6 +134,7 @@ export default function Home() {
         setNumReviewsDisplayed(1);
       } else {
         setNumReviewsDisplayed(3);
+        setCurrentReviewPage(0);
       }
     }
 

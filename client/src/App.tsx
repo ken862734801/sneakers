@@ -101,7 +101,7 @@ function App() {
       {showSideNav && (<SideNav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setBlurLevel={setBlurLevel} showSideNav={showSideNav} setShowSideNav={setShowSideNav}/>)}
           <main style={{ filter: `blur(${blurLevel}px)`}}>
             <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route path="/" element={<Home isLoggedIn={isLoggedIn}/>}/>
                 <Route path="/login" element = {isLoggedIn? <Navigate to="/account"/> : <Login setIsLoggedIn={setIsLoggedIn}/>}/>
                 <Route path="/account" element={isLoggedIn ? <Account userInformation={userInformation } setIsLoggedIn={setIsLoggedIn}/> : <Navigate to="/login" />}/>
                 <Route path = "/men" element = {

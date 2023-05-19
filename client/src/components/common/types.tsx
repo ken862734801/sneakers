@@ -27,12 +27,17 @@ export interface ProductCardProps {
     onSale: boolean,
 }
 
+export interface HomeProps {
+    isLoggedIn: boolean;
+}
+
 export interface WidgetProps{
     sku: string,
     name: string,
     price: number,
     images: string[],
     style : string
+    isLoggedIn: boolean;
 }
 
 export interface Review {
