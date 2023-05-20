@@ -27,6 +27,11 @@ export default function Login(props: any){
     function handleUserSignUp(event: React.MouseEvent<HTMLButtonElement>){
         event.preventDefault();
 
+        if (firstName === "" || lastName === "" || email === "" || password === "") {
+            window.alert("Please complete all input fields.");
+            return;
+          }        
+
         const user = {
             firstName,
             lastName,

@@ -42,7 +42,7 @@ export default function Home(props: HomeProps) {
       .then(response => response.json())
       .then(data => setNewProductData(data))
   }, [])
-  // console.log(newProductData);
+  console.log(newProductData);
 
   const breakpoints = {
     1028: {

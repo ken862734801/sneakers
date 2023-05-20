@@ -147,6 +147,7 @@ button > span > img{
     margin-top:4px;
     margin-left:10px;
     cursor:pointer;
+    color:black;
 }
 .hero-section-footer{
     width:80%;

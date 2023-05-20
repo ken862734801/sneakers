@@ -14,6 +14,8 @@ export default function Widget (props: WidgetProps){
     const {userInformation} = useContext(UserContext);
     const [isFavorited, setIsFavorited] = useState<boolean>(false);
 
+    const testArr:string[] = ["CT0713-100"];
+
     useEffect(() => {
         console.log(userInformation)
     }, [userInformation])
@@ -24,9 +26,21 @@ export default function Widget (props: WidgetProps){
 
     function handleAddToFavorites(){
         if(!isLoggedIn){
-            window.alert("Login to add items to your wishlist!");
+            window.alert("Login to add an item to your wishlist!");
+            return
         }
-    }
+        if(testArr.includes(props.sku)){
+            setIsFavorited(true);
+        } else {
+            return
+        }
+    };
+
+    useEffect(() => {
+        if(isLoggedIn){
+            handleAddToFavorites();
+        }
+    }, [userInformation])
     
     const productName = (props.name).split(" ").join("-");
     return (
