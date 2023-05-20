@@ -29,18 +29,13 @@ export default function Widget (props: WidgetProps){
             window.alert("Login to add an item to your wishlist!");
             return
         }
-        if(testArr.includes(props.sku)){
-            setIsFavorited(true);
-        } else {
-            return
-        }
     };
 
-    useEffect(() => {
-        if(isLoggedIn){
-            handleAddToFavorites();
-        }
-    }, [userInformation])
+    // useEffect(() => {
+    //     if(isLoggedIn){
+    //         handleAddToFavorites();
+    //     }
+    // }, [userInformation])
     
     const productName = (props.name).split(" ").join("-");
     return (
