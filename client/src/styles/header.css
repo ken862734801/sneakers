@@ -105,7 +105,7 @@ header{
     display:flex;
     align-items: center;
     justify-content: center;
-    padding:3px 0px 1.5px 0px;
+    padding:3px 0px 1.5px 8px;
     background-color: var(--gray);
 }
 .searchbar-search-icon-container,
@@ -163,6 +163,9 @@ header{
     }
     .searchbar-container{
         width:60%;
+    }
+    .searchbar{
+        padding:3px 0px 1.5px 0px;
     }
     .search-input{
         width:75%;

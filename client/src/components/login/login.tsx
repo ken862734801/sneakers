@@ -58,7 +58,6 @@ export default function Login(props: any){
     }
 
     function handleUserLogin() {
-        // event.preventDefault();
         if(loginEmail === "" || loginPassword === ""){
             return
         }
@@ -79,7 +78,6 @@ export default function Login(props: any){
             console.log(data);
             const token = data.token;
             localStorage.setItem("token", token);
-            // window.alert("You have successfully signed in!");
             setIsLoggedIn(true);
             setUserInformation({
               id: data.id,
@@ -98,6 +96,8 @@ export default function Login(props: any){
           })
           .catch((error) => {
             console.log("Error:", error);
+            window.alert("Error:" + error);
+            return
           });
       }
 

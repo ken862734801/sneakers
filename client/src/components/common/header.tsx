@@ -84,11 +84,12 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
         handleScrollTop();
     };
     function handleLogout() {
+        setIsLoggedIn(false);
         // Clear the token from local storage
         localStorage.removeItem('token');
         localStorage.removeItem('userInformation');
-        setIsLoggedIn(false);
-        window.alert("You have succesfully logged out!")
+        window.alert("You have succesfully logged out!");
+        handlePageNavigation("/login");
       }
 
     const scrollDirection = useScrollDirection();
