@@ -4,7 +4,7 @@ import { ProductCardProps, ProductDetailProps } from "../common/types";
 import "../../styles/product-page.css";
 import { CartContext } from "../../context/CartContext";
 import { UserContext } from "../../context/UserContext";
-import { CartItemType } from "../common/types";
+import { CartItemType, UserInformation } from "../common/types";
 
 
 interface InventoryDataType {
@@ -16,7 +16,7 @@ export default function ProductPage(props:any){
 
     const {loggedIn} = props;
     const {cart, setCart} = useContext(CartContext);
-    const {userInformation} = useContext(UserContext);
+    const {userInformation, setUserInformation} = useContext(UserContext);
 
     let {id} = useParams();
     const [selectedSize, setSelectedSize] = useState("");
@@ -118,14 +118,18 @@ export default function ProductPage(props:any){
     
         if (isFavorite) {
           // Remove from favorites
-          await fetch(`https://secret-falls-93039.herokuapp.com/api/users/${userId}/favorites/remove?productId=${productId}`, {
+          const response = await fetch(`https://secret-falls-93039.herokuapp.com/api/users/${userId}/favorites/remove?productId=${productId}`, {
             method: "PUT",
           });
+          const data = await response.json();
+          console.log(data);
         } else {
           // Add to favorites
-          await fetch(`https://secret-falls-93039.herokuapp.com/api/users/${userId}/favorites/add?productId=${productId}`, {
+          const response = await fetch(`https://secret-falls-93039.herokuapp.com/api/users/${userId}/favorites/add?productId=${productId}`, {
             method: "PUT",
           });
+          const data = await response.json();
+          console.log(data);
         }
     
         setIsFavorite(!isFavorite);
@@ -143,6 +147,10 @@ export default function ProductPage(props:any){
           setIsFavorite(false);
         }
       }, [loggedIn])
+
+      useEffect(() => {
+        console.log(userInformation)
+      }, [userInformation])
 
     return (
         <div className="product-detail-page">

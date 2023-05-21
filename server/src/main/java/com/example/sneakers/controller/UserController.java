@@ -36,8 +36,9 @@ public class UserController {
         response.put("message", "User registered successfully");
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
+    
     @PostMapping("/login")
-    public ResponseEntity<Map<String, String>> loginUser(@RequestBody User user) {
+    public ResponseEntity<Map<String, Object>> loginUser(@RequestBody User user) {
         User authenticatedUser = userService.loginUser(user.getEmail(), user.getPassword());
 
         Key signingKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
@@ -50,15 +51,16 @@ public class UserController {
                 .signWith(signingKey)
                 .compact();
 
-        Map<String, String> response = new HashMap<>();
+        Map<String, Object> response = new HashMap<>();
         response.put("token", token);
         response.put("id", authenticatedUser.getId());
         response.put("firstName", authenticatedUser.getFirstName());
         response.put("lastName", authenticatedUser.getLastName());
         response.put("email", authenticatedUser.getEmail());
-        response.put("favorites", String.join(",", authenticatedUser.getFavorites())); // Convert favorites list to a comma-separated string
+        response.put("favorites", authenticatedUser.getFavorites());
         return ResponseEntity.ok(response);
     }
+
     
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {

@@ -1,13 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 
-
-interface UserInformation {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  favorites: string;
-}
+import { UserInformation } from '../components/common/types';
 
 interface UserContextProps {
   userInformation: UserInformation | undefined;

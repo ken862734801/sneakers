@@ -26,11 +26,9 @@ export default function Login(props: any){
         }
     };
 
-    function handleUserSignUp(event: React.MouseEvent<HTMLButtonElement>){
-        event.preventDefault();
+    function handleUserSignUp(){
 
         if (firstName === "" || lastName === "" || email === "" || password === "") {
-            window.alert("Please complete all input fields.");
             return;
           }        
 
@@ -53,18 +51,15 @@ export default function Login(props: any){
             console.log(data);
             window.alert("You have successfully created an account!")
             setLoggingIn(true);
-            setLoginEmail("");
-            setLoginPassword("");
         })
         .catch((error)=> {
             console.log("Error:", error);
         })
     }
 
-    function handleUserLogin(event: React.MouseEvent<HTMLButtonElement>) {
-        event.preventDefault();
+    function handleUserLogin() {
+        // event.preventDefault();
         if(loginEmail === "" || loginPassword === ""){
-            window.alert("Please enter a valid email and password.");
             return
         }
         const user = {
@@ -84,7 +79,7 @@ export default function Login(props: any){
             console.log(data);
             const token = data.token;
             localStorage.setItem("token", token);
-            window.alert("You have successfully signed in!");
+            // window.alert("You have successfully signed in!");
             setIsLoggedIn(true);
             setUserInformation({
               id: data.id,

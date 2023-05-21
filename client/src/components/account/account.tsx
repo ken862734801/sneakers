@@ -11,6 +11,8 @@ export default function Account(props: any){
   const [recommendedData, setRecommendedData] = useState<ProductCardProps[]>([]);
   const [favoritesLoaded, setFavoritesLoaded] = useState(false);
 
+  console.log(userInformation);
+  
   useEffect(() => {
     fetch("https://secret-falls-93039.herokuapp.com/api/product/new")
       .then((response) => response.json())

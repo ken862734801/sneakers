@@ -4,6 +4,14 @@ export interface ShoppingCartContextType{
     cart: any[];
     setCart: (cart: any[]) => void;
 }
+export interface UserInformation {
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    favorites: string[];
+}
+  
 export interface ProductDetailProps {
     sku: string,
     name: string,
