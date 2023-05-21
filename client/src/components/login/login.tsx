@@ -59,6 +59,10 @@ export default function Login(props: any){
 
     function handleUserLogin(event: React.MouseEvent<HTMLButtonElement>) {
         event.preventDefault();
+        if(loginEmail === "" || loginPassword === ""){
+            window.alert("Please enter a valid email and password.");
+            return
+        }
       
         const user = {
           email: loginEmail,

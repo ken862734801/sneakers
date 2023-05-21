@@ -2,7 +2,6 @@ import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
 import { ProductCardProps, ProductDetailProps } from "../common/types";
 import "../../styles/product-page.css";
-import {Splide, SplideSlide} from "@splidejs/react-splide";
 import { CartContext } from "../../context/CartContext";
 import { UserContext } from "../../context/UserContext";
 import { CartItemType } from "../common/types";
