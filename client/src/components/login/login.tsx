@@ -1,7 +1,9 @@
 import "../../styles/login.css";
 import { useState, useEffect, useContext } from "react";
 import { UserContext} from "../../context/UserContext";
+import { useNavigate } from "react-router";
 export default function Login(props: any){
+    const navigate = useNavigate();
     const {userInformation, setUserInformation} = useContext(UserContext);
     // prop passed in from the app.tsx, will check if user is logged in or not
     const {setIsLoggedIn} = props;
@@ -50,7 +52,9 @@ export default function Login(props: any){
         .then((data)=> {
             console.log(data);
             window.alert("You have successfully created an account!")
-            // setLoggingIn(true);
+            setLoggingIn(true);
+            setLoginEmail("");
+            setLoginPassword("");
         })
         .catch((error)=> {
             console.log("Error:", error);
@@ -63,7 +67,6 @@ export default function Login(props: any){
             window.alert("Please enter a valid email and password.");
             return
         }
-      
         const user = {
           email: loginEmail,
           password: loginPassword
