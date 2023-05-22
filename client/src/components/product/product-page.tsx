@@ -1,156 +1,165 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
-import { ProductCardProps, ProductDetailProps } from "../common/types";
+import { ProductCardProps, ProductDetailProps, UserInformation } from "../common/types";
 import "../../styles/product-page.css";
 import { CartContext } from "../../context/CartContext";
 import { UserContext } from "../../context/UserContext";
-import { CartItemType, UserInformation } from "../common/types";
-
+import { CartItemType } from "../common/types";
 
 interface InventoryDataType {
-    sku: string,
-    size: string,
+  sku: string,
+  size: string,
 }
 
-export default function ProductPage(props:any){
+export default function ProductPage(props: any) {
+  const { loggedIn } = props;
+  const { cart, setCart } = useContext(CartContext);
+  const { userInformation, setUserInformation } = useContext(UserContext);
 
-    const {loggedIn} = props;
-    const {cart, setCart} = useContext(CartContext);
-    const {userInformation, setUserInformation} = useContext(UserContext);
+  let { id } = useParams();
+  const [selectedSize, setSelectedSize] = useState("");
+  const [productData, setProductData] = useState<ProductDetailProps | undefined>();
+  const [inventoryData, setInventoryData] = useState<InventoryDataType[]>([]);
+  const [isFavorite, setIsFavorite] = useState(false);
 
-    let {id} = useParams();
-    const [selectedSize, setSelectedSize] = useState("");
-    const [productData, setProductData] = useState<ProductDetailProps | undefined>();
-    const [inventoryData, setInventoryData] = useState<InventoryDataType[]>([]);
-    const [isFavorite, setIsFavorite] = useState(false);
+  const onSaleBoolean = productData?.onSale;
 
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(`https://secret-falls-93039.herokuapp.com/api/product/${id?.toUpperCase()}`);
+      const data = await response.json();
+      setProductData(data);
+    }
+    fetchData();
+  }, [id]);
 
-    const onSaleBoolean = productData?.onSale;
-    // console.log(onSaleBoolean);
+  useEffect(() => {
+    async function fetchInventoryData() {
+      const response = await fetch(`https://secret-falls-93039.herokuapp.com/api/inventory/${id?.toUpperCase()}`);
+      const data = await response.json();
+      setInventoryData(data);
+    }
+    fetchInventoryData();
+  }, [id]);
 
-    useEffect(() => {
-        async function fetchData() {
-          const response = await fetch(`https://secret-falls-93039.herokuapp.com/api/product/${id?.toUpperCase()}`);
-          const data = await response.json();
-          setProductData(data);
-          // setIsFavorite(userInformation.favorites.includes(data.sku));
-        }
-        fetchData();
-      }, []);
+  let sizeOptions: string[] = [];
+  if (inventoryData) {
+    for (let i = 0; i < inventoryData.length; i++) {
+      sizeOptions.push(String(inventoryData[i].size))
+    }
+  }
 
-      // console.log(productData);
-      // console.log(productData?.category);
+  function handleThumbnailClick(event: React.MouseEvent<HTMLImageElement>) {
+    const thumbnails = document.querySelectorAll('.product-thumbnail');
+    thumbnails.forEach((thumbnail) => {
+      thumbnail.classList.remove('active-thumbnail');
+    });
+    const mainImage = document.querySelector('.product-main-image') as HTMLImageElement;
+    const target = event.target as HTMLImageElement;
+    mainImage.src = target.src;
+    event.currentTarget.classList.add('active-thumbnail');
+  }
 
-      useEffect(()=> {
-        async function fetchInventoryData(){
-            const response = await fetch(`https://secret-falls-93039.herokuapp.com/api/inventory/${id?.toUpperCase()}`);
-            const data = await response.json();
-            setInventoryData(data);
-        }
-        fetchInventoryData();
-      }, [])
+  function handleAddToCart() {
+    if (!selectedSize) {
+      window.alert("Please select a size.");
+      return;
+    }
+    const selectedInventory = inventoryData.find((item) => item.size === selectedSize);
 
-      // console.log(inventoryData);
+    if (selectedInventory) {
+      const existingCartItemIndex = cart.findIndex((item) => item.sku === selectedInventory.sku && item.size === selectedInventory.size);
 
-      let sizeOptions:string[] = [];
-      if (inventoryData){
-        for(let i = 0; i < inventoryData.length; i++){
-          sizeOptions.push(String(inventoryData[i].size))
-        }
+      if (existingCartItemIndex !== -1) {
+        const updatedCart = [...cart];
+        updatedCart[existingCartItemIndex].quantity += 1;
+        setCart(updatedCart);
+      } else {
+        const cartItem: CartItemType = {
+          name: productData?.name || "",
+          sku: selectedInventory.sku,
+          price: productData?.price || 0,
+          style: productData?.style || "",
+          image: productData?.images[0] || "",
+          sizes: sizeOptions,
+          size: selectedInventory.size,
+          quantity: 1,
+        };
+
+        setCart([...cart, cartItem]);
       }
-      // console.log(sizeOptions);
+      const sizeButtons = document.querySelectorAll(".size-button");
+      sizeButtons.forEach((button) => {
+        button.classList.remove("selected-size");
+      });
+      setSelectedSize("");
+      window.alert(`Size ${selectedSize} ${productData?.name} has been added to your cart.`);
+    }
+  }
 
-      function handleThumbnailClick(event: React.MouseEvent<HTMLImageElement>) {
-        const thumbnails = document.querySelectorAll('.product-thumbnail');
-        thumbnails.forEach((thumbnail) => {
-            thumbnail.classList.remove('active-thumbnail');
-        });
-        const mainImage = document.querySelector('.product-main-image') as HTMLImageElement;
-        const target = event.target as HTMLImageElement;
-        mainImage.src = target.src;
-        event.currentTarget.classList.add('active-thumbnail');
+  async function handleAddToFavorites() {
+    if (!loggedIn) {
+      window.alert("Login to add items to your wishlist!");
+      return;
+    }
+    const userId = userInformation?.id;
+    const productId = productData?.sku;
+
+    if (!productId) {
+      console.error("Product ID is undefined.");
+      return;
     }
 
-    function handleAddToCart() {
-        if (!selectedSize){
-          window.alert("Please select a size.");
-          return;
+    if (isFavorite) {
+      // Remove from favorites
+      const response = await fetch(
+        `https://secret-falls-93039.herokuapp.com/api/users/${userId}/favorites/remove?productId=${productId}`,
+        {
+          method: "PUT",
         }
-        const selectedInventory = inventoryData.find((item) => item.size === selectedSize);
-      
-        if (selectedInventory) {
-          const existingCartItemIndex = cart.findIndex((item) => item.sku === selectedInventory.sku && item.size === selectedInventory.size);
-          
-          if (existingCartItemIndex !== -1) {
-            const updatedCart = [...cart];
-            updatedCart[existingCartItemIndex].quantity += 1;
-            setCart(updatedCart);
-          } else {
-            const cartItem: CartItemType = {
-              name: productData?.name || "",
-              sku: selectedInventory.sku,
-              price: productData?.price || 0,
-              style: productData?.style || "",
-              image: productData?.images[0] || "",
-              sizes: sizeOptions,
-              size: selectedInventory.size,
-              quantity: 1,
-            };
-      
-            setCart([...cart, cartItem]);
-          }
-          const sizeButtons = document.querySelectorAll(".size-button");
-            sizeButtons.forEach((button) => {
-              button.classList.remove("selected-size");
-            });
-            setSelectedSize("");
-            window.alert(`Size ${selectedSize} ${productData?.name} has been added to your cart.`)
+      );
+      const data = await response.json();
+      console.log(data);
+      if (data.success) {
+        const updatedUserInformation = { ...userInformation } as UserInformation;
+        const index = updatedUserInformation.favorites.indexOf(productId);
+        if (index > -1) {
+          updatedUserInformation.favorites.splice(index, 1);
+          setUserInformation(updatedUserInformation);
         }
       }
-
-      async function handleAddToFavorites() {
-        if(!loggedIn){
-          window.alert("Login to add items to your wishlist!")
-          return
+      setIsFavorite(false);
+    } else {
+      // Add to favorites
+      const response = await fetch(
+        `https://secret-falls-93039.herokuapp.com/api/users/${userId}/favorites/add?productId=${productId}`,
+        {
+          method: "PUT",
         }
-        const userId = userInformation?.id;
-        const productId = productData?.sku;
-    
-        if (isFavorite) {
-          // Remove from favorites
-          const response = await fetch(`https://secret-falls-93039.herokuapp.com/api/users/${userId}/favorites/remove?productId=${productId}`, {
-            method: "PUT",
-          });
-          const data = await response.json();
-          console.log(data);
-        } else {
-          // Add to favorites
-          const response = await fetch(`https://secret-falls-93039.herokuapp.com/api/users/${userId}/favorites/add?productId=${productId}`, {
-            method: "PUT",
-          });
-          const data = await response.json();
-          console.log(data);
-        }
-    
-        setIsFavorite(!isFavorite);
+      );
+      const data = await response.json();
+      console.log(data);
+      if (data.success) {
+        const updatedUserInformation = { ...userInformation } as UserInformation;
+        updatedUserInformation.favorites.push(productId);
+        setUserInformation(updatedUserInformation);
       }
+      setIsFavorite(true);
+    }
+  }
 
-      useEffect(() => {
-        // Check if the current product is in the user's favorites
-        if (userInformation && productData) {
-          setIsFavorite(userInformation.favorites.includes(productData.sku));
-        }
-      }, [userInformation, productData]);
+  useEffect(() => {
+    // Check if the current product is in the user's favorites
+    if (userInformation && productData) {
+      setIsFavorite(userInformation.favorites.includes(productData.sku));
+    }
+  }, [userInformation, productData]);
 
-      useEffect(() => {
-        if(!loggedIn){
-          setIsFavorite(false);
-        }
-      }, [loggedIn])
-
-      useEffect(() => {
-        console.log(userInformation)
-      }, [userInformation])
+  useEffect(() => {
+    if (!loggedIn) {
+      setIsFavorite(false);
+    }
+  }, [loggedIn]);
 
     return (
         <div className="product-detail-page">

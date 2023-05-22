@@ -7,9 +7,9 @@ import { UserContext } from "../../context/UserContext";
 export default function Account(props: any){
 
   const { userInformation } = useContext(UserContext);
-  const [favoriteData, setFavoriteData] = useState<ProductCardProps[]>([]);
+  const [productData, setproductData] = useState<ProductCardProps[]>([]);
   const [recommendedData, setRecommendedData] = useState<ProductCardProps[]>([]);
-  const [favoritesLoaded, setFavoritesLoaded] = useState(false);
+  // const [favoritesLoaded, setFavoritesLoaded] = useState(false);
 
   console.log(userInformation);
 
@@ -22,73 +22,81 @@ export default function Account(props: any){
   useEffect(() => {
     fetch("https://secret-falls-93039.herokuapp.com/api/product")
       .then((response) => response.json())
-      .then((data) => setFavoriteData(data));
+      .then((data) => setproductData(data));
   }, []);
 
-  useEffect(() => {
-    if (!userInformation || !favoriteData) {
-      return;
+  
+  // useEffect(() => {
+  //   if (!userInformation || !productData) {
+  //     return;
+  //   }
+
+  //   const fetchUserFavorites = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         `http://localhost:8080/api/users/${userInformation.id}`
+  //       );
+  //       if (!response.ok) {
+  //         throw new Error("Error fetching user favorites!");
+  //       }
+  //       const userData = await response.json();
+
+  //       if (!Array.isArray(userData.favorites)) {
+  //         throw new Error("Invalid user favorites data!");
+  //       }
+
+  //       const favoriteArr = userData.favorites;
+  //       const favoriteProducts = productData.filter((data) =>
+  //         favoriteArr.includes(data.sku)
+  //       );
+  //       setproductData(favoriteProducts);
+  //       setFavoritesLoaded(true);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+
+  //   fetchUserFavorites();
+  // }, [userInformation]);
+
+  function handleFavoriteProduct() {
+    if (!userInformation) {
+      return "LOADING...";
     }
 
-    const fetchUserFavorites = async () => {
-      try {
-        const response = await fetch(
-          `http://localhost:8080/api/users/${userInformation.id}`
-        );
-        if (!response.ok) {
-          throw new Error("Error fetching user favorites");
-        }
-        const userData = await response.json();
+    const favoriteProducts = productData.filter((data) =>
+      userInformation.favorites.includes(data.sku)
+    );
 
-        if (!Array.isArray(userData.favorites)) {
-          throw new Error("Invalid user favorites data");
-        }
+    return favoriteProducts.map((data) => (
+      <ProductCard
+        key={data.sku}
+        sku={data.sku}
+        name={data.name}
+        price={data.price}
+        style={data.style}
+        images={data.images}
+        onSale={data.onSale}
+      />
+    ));
+  }
 
-        const favoriteArr = userData.favorites;
-        const favoriteProducts = favoriteData.filter((data) =>
-          favoriteArr.includes(data.sku)
-        );
-        setFavoriteData(favoriteProducts);
-        setFavoritesLoaded(true);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchUserFavorites();
-  }, [userInformation]);
-
-    function handleFavoriteProduct() {
-      if (!userInformation || !favoritesLoaded) {
-        return "LOADING...";
-      }
-    
-      const favoriteProducts = favoriteData.filter((data) =>
-        userInformation.favorites.includes(data.sku)
-      );
-    
-      return favoriteProducts.map((data) => (
-        <ProductCard
-          key={data.sku} 
-          sku={data.sku}
-          name={data.name}
-          price={data.price}
-          style={data.style}
-          images={data.images}
-          onSale={data.onSale}
-        />
-      ));
+  function handleRecommendedProduct() {
+    if (!recommendedData) {
+      return "LOADING...";
     }
-
-
-    function handleRecommendedProduct (){
-        if (!recommendedData) {
-            return "LOADING..."
-          }
-        return recommendedData.map((data, index) => (
-            <ProductCard key={index} sku={data.sku} name={data.name} price={data.price} style={data.style} images={data.images} onSale={data.onSale}></ProductCard>
-            ))
-    }
+    return recommendedData.map((data, index) => (
+      <ProductCard
+        key={index}
+        sku={data.sku}
+        name={data.name}
+        price={data.price}
+        style={data.style}
+        images={data.images}
+        onSale={data.onSale}
+      ></ProductCard>
+    ));
+  }
 
     // console.log(userInformation?.favorites.length);
     return(
