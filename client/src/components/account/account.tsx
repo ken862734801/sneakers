@@ -12,7 +12,7 @@ export default function Account(props: any){
   const [favoritesLoaded, setFavoritesLoaded] = useState(false);
 
   console.log(userInformation);
-  
+
   useEffect(() => {
     fetch("https://secret-falls-93039.herokuapp.com/api/product/new")
       .then((response) => response.json())
@@ -69,7 +69,7 @@ export default function Account(props: any){
     
       return favoriteProducts.map((data) => (
         <ProductCard
-          key={data.sku} // Use a unique and stable identifier as the key
+          key={data.sku} 
           sku={data.sku}
           name={data.name}
           price={data.price}

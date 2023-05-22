@@ -8,6 +8,7 @@ import Nike from "../../images/nike.png";
 import { useState, useEffect, useContext, ChangeEvent, KeyboardEvent } from "react";
 import { CartContext } from "../../context/CartContext";
 import { useScrollDirection } from "./scroll";
+import { UserContext } from "../../context/UserContext";
 
 interface HeaderProps {
     loggedIn: boolean;
@@ -21,6 +22,8 @@ interface HeaderProps {
 
 export default function Header ({page, onPageChange, setShowSideNav, blurLevel, setBlurLevel, loggedIn, setIsLoggedIn}: HeaderProps){
     const {cart} = useContext(CartContext);
+    const {setUserInformation} = useContext(UserContext);
+
     const [showDropdown, setShowDropdown] = useState(false);
 
     const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
@@ -85,6 +88,7 @@ export default function Header ({page, onPageChange, setShowSideNav, blurLevel, 
     };
     function handleLogout() {
         setIsLoggedIn(false);
+        setUserInformation(undefined);
         // Clear the token from local storage
         localStorage.removeItem('token');
         localStorage.removeItem('userInformation');

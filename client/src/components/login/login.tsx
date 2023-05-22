@@ -58,12 +58,12 @@ export default function Login(props: any){
     }
 
     function handleUserLogin() {
-        if(loginEmail === "" || loginPassword === ""){
-            return
+        if (loginEmail === "" || loginPassword === "") {
+          return;
         }
         const user = {
           email: loginEmail,
-          password: loginPassword
+          password: loginPassword,
         };
       
         fetch("https://secret-falls-93039.herokuapp.com/api/users/login", {
@@ -73,7 +73,15 @@ export default function Login(props: any){
           },
           body: JSON.stringify(user),
         })
-          .then((response) => response.json())
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else if (response.status === 401) {
+              throw new Error("Invalid email or password!");
+            } else {
+              throw new Error("Server error!");
+            }
+          })
           .then((data) => {
             console.log(data);
             const token = data.token;
@@ -84,22 +92,25 @@ export default function Login(props: any){
               firstName: data.firstName,
               lastName: data.lastName,
               email: data.email,
-              favorites: data.favorites
+              favorites: data.favorites,
             });
-            localStorage.setItem("userInformation", JSON.stringify({
-              id: data.id,
-              firstName: data.firstName,
-              lastName: data.lastName,
-              email: data.email,
-              favorites: data.favorites
-            }));
+            localStorage.setItem(
+              "userInformation",
+              JSON.stringify({
+                id: data.id,
+                firstName: data.firstName,
+                lastName: data.lastName,
+                email: data.email,
+                favorites: data.favorites,
+              })
+            );
           })
           .catch((error) => {
             console.log("Error:", error);
-            window.alert("Error:" + error);
-            return
+            window.alert("Error: " + error.message);
           });
       }
+      
 
     return(
         <div className="login-page">

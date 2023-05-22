@@ -28,6 +28,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
       localStorage.setItem('userInformation', JSON.stringify(userInformation));
     } else {
       localStorage.removeItem('userInformation');
+      localStorage.removeItem('token');
     }
   }, [userInformation]);
 
